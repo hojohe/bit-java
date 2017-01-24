@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	.month {
+		width: 350px;
+	    float: left;
+	}
+	
+
+	table, th, td {
+		border: 1px solid #345;
+		display:block;
+		background-clip: padding-box;
+		float:left;
+	}
+	
+	table {
+		border-collapse: collapse;
+		width: 784px;
+		table-layout: fixed;
+	}
+	
+	th {
+		height: 20px;
+		width: 108px;
+	}
+	
+	td {
+		height: 100px;
+		width: 100px;
+		padding: 5px;
+		font-size: 12px;
+		background-position: 20px 20px;
+	}
+	
+	.icon {
+		display: block;
+	}
+	
+	.img {
+		background-image: url("/07_css/99_exam/images/01/icon_closureday.gif");
+		background-repeat: no-repeat;
+		background-position: 5px 5px;
+	}
+	.img > span {
+		padding-top:20px;
+		display: block;
+	}
+	
+</style>
+
+</head>
+<body>
+	<div class="month">
+		<img src="/07_css/99_exam/images/01/2015.gif" />
+	</div>
+	<div>
+		<img src="/07_css/99_exam/images/01/schedule_ic.gif" />
+		<img src="/07_css/99_exam/images/01/schedule_10.gif" />
+		<img src="/07_css/99_exam/images/01/schedule_ic02.gif" />
+	</div>
+	<table>
+		<tr>
+			<th style="background-color: tomato;">일요일</th>
+			<th style="background-color: gray;">월요일</th>
+			<th style="background-color: gray;">화요일</th>
+			<th style="background-color: gray;">수요일</th>
+			<th style="background-color: gray;">목요일</th>
+			<th style="background-color: gray;">금요일</th>
+			<th style="background-color: skyblue;">토요일</th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>1</td>
+			<td>2</td>
+			<td class="img"><span>개천절</span></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td class="img"><span>정기휴관일</span></td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td class="img"><span>한글날</span></td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td class="img"><span>정기휴관일</span></td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td class="img"><span>정기휴관일</span></td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>25</td>
+			<td class="img"><span>정기휴관일</span></td>
+			<td>27</td>
+			<td>28</td>
+			<td>29</td>
+			<td>30</td>
+			<td>31</td>
+		</tr>
+	</table>
+
+</body>
+</html>
