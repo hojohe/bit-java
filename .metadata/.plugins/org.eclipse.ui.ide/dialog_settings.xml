@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="581" key="DIALOG_WIDTH"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="423" key="DIALOG_HEIGHT"/>
+		<item value="670" key="DIALOG_X_ORIGIN"/>
+		<item value="233" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\java90\git\workspace\07_css"/>
+			<item value="C:\java90\git\workspace\06_servletjsp"/>
+			<item value="C:\java90\git\workspace\05_javanetwork"/>
+			<item value="C:\java90\git\workspace\04_html"/>
+			<item value="C:\java90\git\workspace\03_mybatis-basic"/>
+			<item value="C:\java90\git\workspace\02_db-basic"/>
+			<item value="C:\java90\git\workspace\01_java-basic"/>
+			<item value="C:\java90\git\workspace\00_board_prj"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="641" key="DIALOG_X_ORIGIN"/>
+		<item value="274" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

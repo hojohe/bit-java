@@ -17,6 +17,8 @@ create table tb_user (
     , email varchar2(60)
 );
 
+select * from tb_user
+
 create table tb_read_recom (
     text_no number(5) not null
     , user_id varchar2(16) not null
