@@ -1,42 +1,44 @@
-package day11.Exam;
+package day11.exam;
 
 public class MyArrayList {
-	String[] list = new String[4];
+
+	Object[] elements = new Object[4];
 	int pos = 0;
-	
-	public void add(String data) {
-		if(pos == list.length) {
+	public void add(Object data) {
+		if (pos == elements.length) {
 			String[] temp = new String[pos * 2];
-			System.arraycopy(list, 0, temp, 0, pos);
-			list = temp;
+			System.arraycopy(elements, 0, temp, 0, pos);
+			elements = temp;
 		}
-		list[pos++] = data;
+		// 배열명[방번호] = 값;
+		elements[pos++] = data;
 	}
-	public String get(int index) {
-		return list[index];
+	public Object get(int index){
+		return elements[index];
 	}
 	public int size() {
 		return pos;
 	}
 	public void remove(int index) {
-		System.arraycopy(list, index + 1, list, index, pos - (index + 1));
-		list[--pos] = null;	
+		System.arraycopy(elements, index + 1, elements, index, pos - (index + 1));
+		elements[--pos] = null;
 	}
-	public void clear() {
-		for(int i = 0; i < pos; i++) {
-			list[i] = null;
+	void clear() {
+		for (int i = 0; i < pos; i++) {
+			elements[i] = null;
 		}
 		pos = 0;
 	}
+	
 	public String toString() {
 		String result = "MyArrayList[";
-		result += list[0];
-		for(int i = 1; i < pos; i++) {
-			result += "," + list[i];
+		result += elements[0];
+		for (int i = 1; i < pos; i++) {
+			result += ", " + elements[i];
 		}
 		result += "]";
+		
 		return result;
 	}
-	
-	
+
 }

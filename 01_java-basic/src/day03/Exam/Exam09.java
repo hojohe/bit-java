@@ -1,42 +1,28 @@
-package day03.Exam;
+package day03.exam;
 
- import java.util.Random;
- 
+import java.util.Random;
+
 public class Exam09 {
 	public static void main(String[] args) {
 		
-		Random r = new Random();
+		//객체 생성
+		Random r    = new Random();
 		
-		int num = r.nextInt(100)+1;
+		//난수 발생
+		int    val  = r.nextInt(100) + 1;
+		String s    = "";
 		
-		System.out.println(num);
-		String type; 
+		//홀짝 조건식
+		if(val % 2 == 0) {
+			s = "짝수";
+			
+		}else {
+			s = "홀수";
 		
-		 if (num % 2 == 0) {
-			 type = "짝수";
-		 } else {
-			 type = "홀수";
-		 } 
-			 System.out.printf("생성된 숫자 (%d)은 %s입니다.", num, type);
-			 
-			 
-	     /* 3항연산자 사용
-	      * System.out.printf("생성된 숫자 (%d)은 %s입니다.", 
-	      *                    num, 
-	      *                  ( num % 2 == 0) ? "짝수" : "홀수");
-	      */
-		 
-			 
-			 
-		 //영향을 받는 부분과 받지 않는 부분을 구분
-			 
-		 /*if ((num) % 2 == 0) {
-			 System.out.printf("생성된 숫자 (%d)은 짝수 입니다.", num);
-		 } else {
-			 System.out.printf("생성된 숫자 (%d)은 홀수 입니다.", num);
-		 }*/
-	
+		}
+		
+		//결과 출력
+		System.out.println("생성된 숫자(" + val + ")은 " + s + " 입니다.");
 		
 	}
-
 }

@@ -3,53 +3,50 @@ package day15.quiz;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class Quiz06 {
-	public static void main(String[] args) {
-		//data/day15/quiz06.txt 파일의 내용을 읽어서 아래와 같이 출력
+	public static void main(String[] args) throws FileNotFoundException {
+		// data/day15/quiz06.txt 파일의 내용을 읽어서 아래와 같이 출력
 		/*
-		 * 성적 발표
-		 * ----------------------------
-		 * 1. 이름 :    총점 :
-		 * 2. 이름 :    총점 :
-		 * 3. 이름 :    총점 :
-		 * ----------------------------
-		 * 
-		 * 
+		 * 성적 발표 
+		 * --------------
+		 * 1등 이름 : ... 총점 : ...
+		 * 2등 이름 : ... 총점 : ...
+		 * 3등 이름 : ... 총점 : ...
+		 *
 		 */
-		try {
-		List<StudentVO> list = new ArrayList<>();
-		File f = new File("data/day15/quiz06.txt");
+		
+		File f = new File("data/day15/Quiz06");
 		Scanner sc = new Scanner(f);
-		 while (sc.hasNextLine()){   
-			 String[] arr = sc.nextLine().split(":");
-				list.add(new StudentVO(
-						arr[0], 
-						Integer.parseInt(arr[1]), 
-						Integer.parseInt(arr[2]), 
-						Integer.parseInt(arr[3]) 
-				));
-			}
-			Collections.sort(list);
-			System.out.println("성적 발표");
-			System.out.println("========================");
-			int num = 1;
-			for (StudentVO student : list) {
-				System.out.printf(
-					"%d. 이름 : %s, 총점 : %d\n", num++, student.getName(), student.getSum());
-				if (num == 4) break;
-			}
-				
-			System.out.println("========================");
+		
+		List<StudentVO> arrStudent = new ArrayList<>();
+		while(sc.hasNextLine()) {
+			String[] arrStr = sc.nextLine().split(":");
+			StudentVO vo = new StudentVO(arrStr[0]
+					, Integer.parseInt(arrStr[1])
+					, Integer.parseInt(arrStr[2])
+					, Integer.parseInt(arrStr[3]));
+
+			arrStudent.add(vo);
 			
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
+		Collections.sort(arrStudent);
+		int i = 1;
+		String str = "";
+		for (StudentVO key : arrStudent) {
+			
+			str = i++ + "등 이름 : " + key.getName() + "총점 : " + key.getSum(); 
+			 
+			System.out.println(str);
+			if(i == 4) break; 
+			
+			
+		}
+		
 		
 	}
 }
-
-

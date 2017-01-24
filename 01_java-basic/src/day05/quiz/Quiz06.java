@@ -2,21 +2,19 @@ package day05.quiz;
 
 public class Quiz06 {
 	public static void main(String[] args) {
-		int [] arr = {6, 8, 3, 9, 7, 4};
 		
-		// 배열의 홀수 인덱스 요소들의 합계 : 21
+		//배열의 홀수 인덱스 요소들의 합계 :21
+		int[] arr = { 6, 8, 3, 9, 7, 4 };
 		
-		int sum = 0;
-		for (int i = 0; i < arr.length; i++){
-			if (i % 2 == 1){
-			 sum += arr[i];
-			}
+		int oddSum = 0;
+		for(int i = 0; i < arr.length; i++) {
 			
-		}	
+			if(i % 2 != 0) 	oddSum += arr[i];
 			
-         System.out.println("배열의 홀수 인덱스 요소들의 합계 : " + sum);
+		}
 		
-        	
+		System.out.println("홀수 인덱스 요소들의 합계 : " + oddSum);
+		System.out.printf("홀수 인덱스 요소들의 합계 : %d", oddSum);
+		
 	}
 }
-

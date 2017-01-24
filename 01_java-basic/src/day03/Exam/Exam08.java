@@ -1,20 +1,30 @@
-package day03.Exam;
+package day03.exam;
 
- import java.util.Random;
- 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Exam08 {
-	
 	public static void main(String[] args) {
 		
-		Random r = new Random();
-		int num = r.nextInt(101);
+		//객체 생성
+		Scanner sc  = new Scanner(System.in);
+		Random  r   = new Random();
 		
-		if (num + 1 > 60) {
- 		System.out.printf("생성된 점수 : %d점(합격)", num + 1);
-  	    } else {
-  		  System.out.printf("생성된 점수 : %d점(불합격)", num + 1);
-  	  }
-	
+		//변수 선언
+		int score   = r.nextInt(100) + 1;
+		String bool = "";
+		
+		//합격 조건식
+		if(score >= 60) {
+			bool = "합격";
+			
+		}else {
+			bool = "불합격";
+			
+		}
+		
+		//결과 출력
+		System.out.println("생성된 점수 : " + score + "점(" + bool + ")");
+		
 	}
-
 }

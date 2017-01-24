@@ -9,9 +9,6 @@ create table tb_board_file (
 
 create sequence s_board_file_no;
 
-
-
-
 /* 댓글 */
 create table tb_comment(
 	comment_no number(10) primary key
@@ -28,9 +25,21 @@ create sequence s_board_comment_no;
 insert into tb_comment(comment_no, no, id, comments, reg_date)
 values(s_board_comment_no.nextVal, 1, 'root', '안녕??', sysdate);
 
+SELECT * FROM TB_COMMENT
 
 delete from tb_comment
 select * from tb_comment;
 
 
 select * from tb_user
+
+create table tb_user
+(
+	user_id ,
+	password,
+	email
+)
+
+
+
+select * from tb_board

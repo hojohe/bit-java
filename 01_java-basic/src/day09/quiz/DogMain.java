@@ -12,5 +12,4 @@ public class DogMain {
 		d3.info();
 		d4.info();
 	}
-
 }

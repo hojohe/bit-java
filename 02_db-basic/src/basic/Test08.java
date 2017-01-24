@@ -13,56 +13,64 @@ public class Test08 {
 	public static void main(String[] args) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		List<BoardVO> list = new ArrayList<>(); 
 		
 		try {
+			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
-			String sql = "select no, title, writer, content, reg_date "
-					   + "from tb_board "
-					   + "order by no desc";
+			con = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:XE","hr","hr");
+			
+			String sql = "select no, title, writer, reg_date "
+						+ "from tb_board "
+						+ "order by no desc ";
+			
+			
 			pstmt = con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			
-			List<BoardVO> list = new ArrayList<>();
-			while(rs.next()) {
+			while (rs.next()) {
 				BoardVO vo = new BoardVO();
 				
 				vo.setNo(rs.getInt("no"));
 				vo.setTitle(rs.getString("title"));
 				vo.setWriter(rs.getString("writer"));
-				vo.setContent(rs.getString("content"));
-				// vo.setRegDate(rs.getDate("reg_date"));
-				// sqlÏóêÎäî Ïãú,Î∂Ñ,Ï¥à Ï†ïÎ≥¥Í∞Ä ÏóÜÏùå
-				// TimeStampÎ•º ÌôúÏö©ÌïòÏûê
+				// Ω√∫–√  ¡§∫∏∞° æ¯¿Ω..
+				//vo.setRegDate(rs.getDate("reg_date"));
+				// Ω√∫–√  ¡§∫∏∏¶ ¿Ø¡ˆ«œ±‚
 				vo.setRegDate(rs.getTimestamp("reg_date"));
+				
 				list.add(vo);
 			}
-			for (BoardVO vo : list) {
+			
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			for(BoardVO vo : list) {
 				System.out.printf(
-						"%d\t%s\t%s\t%s\n",
-						vo.getNo(), vo.getTitle(), vo.getWriter(), new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(vo.getRegDate()));
+						"%3d\t%-10s\t%-10s\t%10s\n",
+						vo.getNo(), vo.getTitle(), vo.getWriter(), sdf.format(vo.getRegDate()));
 			}
 			
 			
-		} catch (Exception e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (pstmt != null) {
+			
+			if(pstmt != null) {
 				try {
 					pstmt.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 			}
-			if (con != null) {
+			if(con != null) {
 				try {
 					con.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 			}
+			
 		}
-		
 	}
-
 }

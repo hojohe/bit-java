@@ -1,213 +1,178 @@
-day01
-FirstTest:출력
-
------------------
-day02
-MainTest:메인메소드 위치 변경
-ArgsTest:배열 공간의 길이, 위치
-VariableScopeTest:변수의 범위 선언
-ParseIntTest:문자열 → 정수
-DataTypePest:데이터타입 (기본형)
-PrintTest:출력문
-
------------------
 day03
-Test01:기본형에 대한 형변환 연습
-Test02:상수형 만들기(final), 문자열 상수 연습
-Test03:연산자(논리,비교,3항,산술,배정)연습
-Test04:조건문 if
-Test05:조건문 switch
-Test06:Scanner
-Test07:Random
-Quiz01:if+Scanner 연습
+Test01 : 기본형에 대한 형변환 연습
+Test02 : 상수에 대한 예제 (final키워드, 문자열상수)
+Test03 : 연산자 예제      (삼항, 산술, 논리, 비교, 배정)
+Test04 : 조건문 예제I   (if문)
+Test05 : 조건문 예제II  (switch문)
+Test06 : Scanner클래스
+Test07 : Random클래스
 
------------------ 
 day04
-Test01:반복문 for 1 기본형
-Test02:반복문 for 2 중첩(별, 공백만들기)
-Test03:반복문 for 3 break,continue
-Quiz01:반복문 for 연습
-Test04:반복문 while
+Test01 : 반복문 예제I    (for문 > 기본)
+Test02 : 반복문 예제II   (for문 > 다양하게 * 찍기)
+Test03 : 반복문 예제III  (break; continue; flag, outer :)
+Test04 : 반복문 예제        (while문)
 
------------------
+day04.quiz
+Quiz01 : 
+Quiz02 :
+Quiz03 :
+
+board_prj
+BoardTest : 게시판 구성
+
 day05
-Test01:배열+반복문
-Test02:배열의 초기화 방법
-Test03:배열의 요소값 확인법(for (배열 요소):배열명)
-Test04:배열의 복사
-Quiz01:최댓값,최솟값
-Quiz02:인덱스 Swap
-Quiz03:flag,반
-Quiz04:배열 연습(숫자 찾기)
-Quiz05:배열 연습(큰 수 찾기)
-Quiz06:배열 연습(홀수 인덱스 합계 구하기)
-Quiz07:배열 연습(인덱스 swap)
------------------
+Test01 : 배열 연습          (기본형, 참조형)
+Test02 : 배열 생성 방식     	  
+Test03 : 배열 요소 확인 방법 (for문, 향상된for문, Arrays.toString)
+Test04 : 배열 복사           (for문, 향상된for문, System.arrayCopy)
+
+day05.quiz
+Quiz01 : 배열 알고리즘 연습I   (최대,최소)
+Quiz02 : 배열 알고리즘 연습II  (swap)
+Quiz03 : 배열 알고리즘 연습III (flag)
+Quiz04 : 배열 알고리즘 연습IV  (flag, count)
+Quiz05 : 배열 알고리즘 연습V   (향상된 for문, 두 수 비교)
+Quiz06 : 배열 알고리즘 연습VI  (sum)
+Quiz07 : 배열 알고리즘 연습VII (대칭으로 바꾸기)
 
 day06
-Test01:클래스 + 메모리 그리기
-Quiz01:메모리 그리기 연습1 
-Quiz02:메모리 그리기 연습2 (빵)
-Quiz03:메모리 그리기 연습3 (Linked list, Double linked list-next, prev추가하기)
+Test01 : 
 
------------------
+day06.quiz
+Quiz01 : 클래스 예제I
+Quiz02 : 클래스 예제II  (클래스변수,인스턴스변수)
+Quiz03 : 클래스 예제III (node)
+
 day07
-BoardTest & BoardVO: 게시판 테스트
-Test01:호출 연습
-Sub01:메소드 연습
-Test02:호출 연습 - 반환타입
-Sub02:메소드 연습 - 반환타입
-Test03:호출 연습 - 응용(사칙연산, 배열-크기,범위,중복 삭제)
-Sub03:메소드 연습 - 응용(사칙연산, 배열-크기,범위,중복 삭제)
-Singer:setter와 getter 설정
-Member:setter와 getter 자동 설정
+Test01 : 메소드 실행 예제 I   (void타입)
+Sub01  : 메소드 선언 예제 I   (void타입)
+Test02 : 메소드 실행 예제 II  (return타입)
+Sub02  : 메소드 실행 예제 II  (return타입)
+Test03 : 메소드 실행 예제 III (return타입 + 매개변수)
+Sub03  : 메소드 실행 예제 III (return타입 + 매개변수)
+Singer : 메소드 예제 IV      (private 멤버 변수 getter, setter 메소드)
+Member : getter / setter / this (단축키 alt + shift + s 다음에 r)
 
------------------
 day08
-Test01:String class 주소에 대한 특징
-Test02:문자열을 다루는 클래스(String, StringBuffer, StringBuilder)
-Test03:String class API 
-Test04:파일 읽기
-Quiz01:파일 읽기 연습
-Quiz02:파일 읽기 연습-영화제목
+Test01 : String 클래스 예제 I
+Test02 : String 클래스 예제 II 
+Test03 : String 클래스 예제 III 
+						(charAt(), equals(), contains()
+						, indexOf(), lastIndexOf(), startsWith(), endsWith()
+						, toLowerCase(), toUpperCase(), toCharArray()
+						, replace(), replaceAll(정규표현식), substring(), split()
+						, trim(), format() > 클래스메소드, valueOf())
+Test04 : 파일 읽기
 
------------------
+
+day08.quiz
+Quiz01 : File 클래스 예제
+Quiz02 : 기능별 클래스 만드는 예제
+
 day09
-Test01:생성자
-Dog:생성자, 순서, 값 초기화, 오버로딩
-ExDate:연습문제1
-ExDateMain:연습문제1
-Dog(quiz):연습문제2
-DogMain:연습문제2
-Test02:static (Method Area)
-Test03:static & non-static
-Quiz01:디자인패턴 문제
+Test01 : 생성자 예제I
+Dog    : 생성자 예제I
+Test02 : static 예제II
+Test03 : 인스턴스, static 변수 접근 예제 I 
+Dog    : 생성자 메소드 예제 I
 
------------------
+day09.quiz
+Test01     : singleton pattern 예제 I
+Dog        : 생성자 메소드 예제 I(오버로딩)
+DogMain    : 생성자 메소드 예제 II(오버로딩)
+ExDate     : 생성자 메소드 예제 III(오버로딩)
+ExDateMain : 생성자 메소드 예제 III(ExDate 실행 클래스)
+ 
+day10.exam
+Exam01  :
+Exam02  :
+Exam03  :
+Exam04  :
+Exam05  :
+Exam06  :
+Bus     :
+BusTest : 
+TV      :
+WatchTV :
+
 day11
-Person:부모클래스
-Student:자식클래스
-Test01:상속테스트1
-Test02:super();
-Test03:toString
-Test04:객체의 형변환(묵시적)
-Test05:객체의 형변환(명시적)
-Exam01:게시판 기능+toString 연습
+Test01  : 상속 예제 I   ()
+Student : 상속 예제 I   (접근제한자)
+Test02  : 상속 예제 II  (super, 생성자함수, 최상위클래스Object)
+Test03  : 상속 예제 III (Object toString)
+Test04  : 상속 예제 IV  (생성자함수, override)
+Test05  : 상속 예제 V   (상속관계에서의 형변화)
+Person  :
+Student :
 
------------------
+day11.exam
+MyArrayList :
+Test01      :
+
 day12
-Test01:추상클래스 & 추상메소드
-Test02:인터페이스
-Test03:final
+Test01 : 추상클래스 예제 I
+Test02 : 인터페이스 예제 I
+Test03 : 상속 예제 (Random클래스 nextInt오버라이딩)
+         final 키워드 예제 
+    
 
------------------
+day12.exam
+Test01 : 도형 상속 예제
+
 day13
-Test01:Exception
-Test02:try,catch
-Test03:try,catch문의 활용법
-Test04:try,catch,finally
-Test05:throws
-Test06:throw
-Test07:사용자 정의 예외
+Test01 : 예외처리 예제 I   (간접처리        throws             FileNotFountException)
+Test02 : 예외처리 예제 II  (직접처리        try-catch          FileNotFountException)
+Test03 : 예외처리 예제 III (직접처리 다양한 try-catch          ArithmeticException, NullPointerException, Exception)
+Test04 : 예외처리 예제 IV  (직접처리        try-catch-finally)
+Test05 : 예외처리 예제 V   (직접-간접처리   try-catch, throws)
+Test06 : 예외처리 예제 VI  (try-catch, thorws, throw new UserException)
 
------------------
 day14
-Test01:Date
-Test02:Calendar
-Test03:Calendar2(날짜정보변경,date객체얻기,마지막날짜구하기)
-Test04:SimpleDateFormat(format,parse)
-Test05:Wrapper 클래스(1.4버전&1.5버전)
-Test06:Generic(+Box01~04)
-Box01:String타입만 받는 역할
-Box02:Object타입만 받는 역할 
-Box03:<> 단일
-Box04:<> 여러개
+Test01 : Date 클래스 예제 I
+Test02 : Calendar 클래스 예제 I
+Test03 : Calendar 클래스 예제 II
+Test04 : SimpleDateFormat 클래스 예제 I
+Test05 : Wrapper 클래스 예제 I (auto boxing, auto unboxing)
+Test06 : 제네릭 예제 I
+Box01  : 
+Box02  :
+Box03  : 
+Box04  :
 
------------------
+
+day14.exam
+MyCalendar     : 현재 달력 찍기 
+MyCalendarTest : MyCalendar 메인 함수
+
 day15
-Test01:list
-Test02:set
-Quiz01:set을 이용한 로또
-Test03:Map
-Quiz02:selection sort
-Quiz03:배열 안 데이터 정렬
-Data:내림차순, 오름차순
-Quiz04:배열 안 데이터 정렬(오름차순, 내림차순)
-Quiz05:collections(sort,reverse,shuffle)
-Quiz06:성적 발표(파일,split,list 등)
+Test01 : ArrayList 클래스 예제 I (List)
+Test02 : HashSet, TreeSet 클래스 예제 I (Set)
+Test03 : HashMap 클래스 예제 I (Map, keySet())
 
------------------
+day15.Quiz
+Quiz01 : HashSet 클래스 예제 I (Set)
+Quiz02 : 선택정렬 예제 I 
+Quiz03 : 선택정렬 예제 II  (클래스타입의 배열을 정렬하기)  
+Data   : 선택정렬 예제 II 
+Quiz04 : 선택정렬 예제 III (Comparable, Sort) 
+Quiz05 : 선택정렬 예제 IV  (Collections,sort(),reverse(), shuffle(), List, ArrayList)
+Quiz06 : 
+
+
 day16
-Test01:파일(객체 존재여부, 생성)
-Quiz01:파일 폴더 생성
-Test02:파일 폴더 출력
-Test03:파일 클래스 메소드(path,name,parent,length,createNewFile,delete)
-Test04:Read 메소드 기본
-Test05:IO객체 읽기(기준점,-1),닫기
-Test06:IO객체 쓰기
-Test07:파일 복사하기
-Test08:음악 파일 복사하기(방법 똑같음)
-Test09:음악 파일 복사하기(속도 향상 buffer[])
-Test10:Buffered 클래스
-Test11:close(1.7이후)
-Quiz02:문자 출력(\r,\n해결)
+Test01 : File 클래스 예제 I (exists(), isFile(), isDirectory(), mkdirs())
+Quiz01 : SimpleDateFormat 클래스, Date 클래스, File 클래스 활용
+Test02 : File 클래스 예제 II (list(), listFiles())
+Test03 : File 클래스 예제 III (getPath(), getName(), getParent(), length()-한글3byte, createNewFile(), delete())
+Test04 : InputStream, InputStreamReader 클래스 예제 IV (read()-아스키코드값리턴, System.in -> 바이트단위로 읽음)
+Test05 : FileInputStream, FileReader 클래스 V (FileInputStream 객체가 null이 아닐때만 close 해주기)
+Test06 : FileOutputStream, FileWirter 클래스 VI (객체 생성시 )
+Test07 : FileReader, FileWriter 클래스 VII (파일 복사)
+Test08 : FileInputStream, FileOutputStream 음악 파일 복사 예제 I  (1byte씩 복사)
+Test09 : FileInputStream, FileOutputStream 음악 파일 복사 예제 II (buffer로 32kb바이트씩 복사, buffer 배열 이용)
+Test10 : FileInputStream, FileOutputStream
+         BufferedInputStream, BufferedOutputStream
+         (1차 스트림, 2차 스트림)
+Test11 : try() -> auto close
 
------------------
-day18 - SQL
-1일차:select, create, drop, 제약조건, RENAME, DESC, insert, update, delete
-
------------------
-day19 - SQL
-2일차:where,order by,
-
------------------
-day20 - SQL
-3일차:join
-
------------------
-day21 - SQL & JDBC
-4일차:시퀀스, alter
-Test01:jdbc
-Test02:update jdbc
-Test03:delete jdbc
-Test04:resultset (게시판의 전체조회) 
-Test05:? ? ? (동적 sql-insert문)
-Test06:? ? (동적 sql-update)
-Test07:? (동적 sql-delete)
-Test08: timestamp
-
------------------
-day22
-Test01~04:connectionfactory
-ConnectionFactory:연결객체 얻기
-ConnectionPool:커넥션들이 담겨있는 객체
-Test05~08:connectionpool & connectionfactory.close()
-게시판 6단계:JDBC활용
-Test09:JDBC와 트랜잭션
-Test10:자동커밋해제,try문에서 commit,rollback
-Test11:rsmd를 통한 테이블 조회
-Test12:rsmd, columncount
-
------------------
-day23 - myBatis
-db.properties:db연결정보
-sqlMapConfig.xml:전체 환경설정 파일, db연결, vo alias설정, xml정의
-member.xml:쿼리문을 작성할 xml(id, parametertype,resulttype)
-MemberVO,SearchVO: 결과값
-MyAppSqlConfig:dao파일이 SqlSession을 얻어감
-member.sql:연습 테이블 생성
-MemberMapper:SqlSession메소드 
------------------
-day24 - myBatis & html
-MemberMapper:SqlSession메소드 
-member.xml:
-first.html:
-exam01:문서구조 이해
-exam02:경로찾기(절대,상대)
-exam03:block(div,h1)/inline(span)
-exam04:br, hr, &nbsp, hgroup 
-exam05:UL, OL
-exam06:th, td, tr, colspan,rowspan
------------------
-day25 - html
-exam07:form태그

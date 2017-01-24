@@ -7,43 +7,62 @@ import java.sql.SQLException;
 
 public class Test06 {
 	public static void main(String[] args) {
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		
 		try {
-			// 1ë‹¨ê³„: ë“œë¼ì´ë²„ ë¡œë”©
+			// 1´Ü°è µå¶óÀÌºê ·Îµù
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			// 2ë‹¨ê³„: ì—°ê²°
+			
+			// 2´Ü°è DB ¿¬°á
 			con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
-			// 3ë‹¨ê³„: sql ì‘ì„±
-			String sql = "update tb_board set title = ? where no = ?";
-			// 4ë‹¨ê³„: sql ì‹¤í–‰ ê°ì²´ ì–»ê¸°
+					"jdbc:oracle:thin:@localhost:1521:XE","hr","hr");
+			
+			// 3´Ü°è sql ÀÛ¼º
+			String sql = "update tb_board "
+					   + "   set title = ? "
+					   + " where no = ? ";
+			
+			// 4´Ü°è
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, "ì—°ìŠµì¤‘");
-			pstmt.setInt(2, 13);
-			// 5ë‹¨ê³„: sql ì‹¤í–‰
+			
+			pstmt.setString(1, "¿¬½ÀÁß...");
+			pstmt.setInt(2, 11);
+			
+			// 5´Ü°è
 			int cnt = pstmt.executeUpdate();
-			// 6ë‹¨ê³„: ê²°ê³¼ì²˜ë¦¬
-			System.out.println(cnt + "ê°œì˜ í–‰ì´ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.");
-		} catch (Exception e) {
+			
+			// 6´Ü°è 
+			System.out.println(cnt + "°³ÀÇ ÇàÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+			
+		} catch(Exception e) {
+			
 			e.printStackTrace();
+			
 		} finally {
-			// 7ë‹¨ê³„: ë‹«ê¸°
-			if (pstmt != null) {
+			// 7´Ü°è
+			if(pstmt != null) {
 				try {
 					pstmt.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 			}
-			if (con != null) {
+			
+			if(con != null) {
 				try {
 					con.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 			}
+			
 		}
+		
+		
+		
+		
+		
 	}
-
 }

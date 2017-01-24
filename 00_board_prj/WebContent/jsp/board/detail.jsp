@@ -26,9 +26,9 @@
 			등록일 : <fmt:formatDate value="${boardVO.regDate}" pattern="yyyy-MM-dd hh:mm:ss" /><br>
 			<hr>
 			
-			<a href='updateForm?no=${param.no}'>수정</a>
-			<a href='delete?no=${param.no}'>삭제</a>
-			<a href='list'>목록</a>
+			<a href='${pageContext.request.contextPath}/board/updateForm?no=${param.no}'>수정</a>
+			<a href='${pageContext.request.contextPath}/board/delete?no=${param.no}'>삭제</a>
+			<a href='${pageContext.request.contextPath}/board/list'>목록</a>
 			<br>
 			<br>
 			댓글등록

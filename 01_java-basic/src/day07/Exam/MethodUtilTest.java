@@ -1,10 +1,9 @@
-package day07.Exam;
+package  day07.exam;
 
 public class MethodUtilTest {
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		MethodUtil mu = new MethodUtil();
-		
 		boolean result = mu.isLowerChar('a');
 		System.out.println(result);     //  true 출력
 		
@@ -21,7 +20,7 @@ public static void main(String[] args) {
 		System.out.println(val);        //  100 출력 
 		
 		val = mu.min(100, 10);
-		System.out.println(val);        //  10 출력
+		System.out.println(val);        //  10 출력 
 		
 		String revStr = mu.reverse("Hello World");
 		System.out.println(revStr);                 // dlroW olleH 출력
@@ -31,7 +30,6 @@ public static void main(String[] args) {
 		
 		revStr = mu.toLowerString("Hello World");
 		System.out.println(revStr);                 // hello world 출력
-		
 		 
-
+	}
 }

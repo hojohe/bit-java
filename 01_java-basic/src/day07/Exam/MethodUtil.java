@@ -1,44 +1,41 @@
-package day07.Exam;
-
-
+package day07.exam;
 
 public class MethodUtil {
 	
-	
 	boolean isLowerChar(char c) {
-		if (c == 'a'){
-			return true;			
-		} 
-		else {
-			return false;
-		}
+		if(c == 'a') return true;
+		return false;
 	}
 	boolean isUpperChar(char c) {
-		if (c == 'a'){
-			return false;			
-		} 
-		else {
-			return true;
-		}
+		if(c == 'A') return true;
+		return false;
 	}
-	int max(int num1, int num2) {
-		if (num1 > num2){
-			return num1;
-		}
-		else {
-			return num2;
-		}
+	
+	int max(int i, int j) {
+		if(i > j) 
+			return i;
+		return j;
 	}
-	int min(int num1, int num2) {
-		if (num1 > num2){
-			return num2;
-		}
-		else {
-			return num1;
-		}
+	
+	int min(int i, int j) {
+		if(j < i) 
+			return j;
+		return i;
 	}
+	
 	String reverse(String s) {
-		return s;
+		StringBuffer buf = new StringBuffer(s);
+		return buf.reverse().toString();
+	}
+	
+	String toUpperString(String s) {
+		String test =new String(s);
+		return test.toUpperCase();
+	}
+	
+	String toLowerString(String s) {
+		String test =new String(s);
+		return test.toLowerCase();
 	}
 	
 

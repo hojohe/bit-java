@@ -9,12 +9,8 @@ class Quiz01Sub{
 	String s;
 }
 
-
 public class Quiz01 {
 	public static void main(String[] args) {
 		Quiz01Sub sub = new Quiz01Sub();
-		
-		
 	}
-
 }

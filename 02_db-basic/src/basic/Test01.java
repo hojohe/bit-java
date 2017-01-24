@@ -7,58 +7,68 @@ import java.sql.SQLException;
 
 public class Test01 {
 	public static void main(String[] args) {
+		
 		Connection con = null;
+		// »ç¿ë È¿À²ÀÌ ÁÁ´Ù. º¸¾ÈÃ³¸®, complieÀ» ¹Ì¸® ÇØ³õÀ½, µ¿ÀûÃ³¸®°¡´É(dynamic)
 		PreparedStatement pstmt = null;
+		
 		try {
-			// 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë”©
-			// ì˜¤ë¼í´ ë“œë¼ì´ë²„ í´ë˜ìŠ¤ëª… : ì˜¤ë¼í´ ì œê³µ
-			// ojdbc14.jarì— í¬í•¨ëœ í´ë˜ìŠ¤ëª…(íŒ¨í‚¤ì§€ í¬í•¨)
-			// ì˜¤ë¥˜ ë°œìƒ ì´ìœ  : 1_ í´ë˜ìŠ¤ ì´ë¦„ ì˜¤ë¥˜ or 2_ë¹Œë” ì„¤ì • X
-		    Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("ë“œë¼ì´ë²„ ë¡œë”© ì„±ê³µ");
+			// 1´Ü°è. µå¶óÀÌ¹ö ·Îµù
+			// ¿À¶óÅ¬ µå¶óÀÌ¹ö Å¬·¡½º¸í : ¿À¶óÅ¬ Á¦°ø
+			// ojdbc14.jar¿¡ Æ÷ÇÔµÈ Å¬·¡½º¸í(ÆĞÅ°Áö Æ÷ÇÔ)
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // Å¬·¡½º not found : ºôµåÆĞ½º ¼³Á¤ x ¶Ç´Â ¿ÀÅ¸·Î Å¬·¡½ºÆÄÀÏ ¸øÃ£À½
+			System.out.println("µå¶óÀÌ¹ö ·Îµù ¼º°ø");
 			
-			// 2ë‹¨ê³„ : ì—°ê²°ê°ì²´ ì–»ì–´ì˜¤ê¸°
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
-			System.out.println("ì—°ê²°ì •ë³´ : " + con);
-			// : -> í”„ë¡œí† ì½œëª…. í”„ë¡œí† ì½œ : ì•½ì†
-			// 127.0.0.1 
-			// ìˆœìˆ˜ thinì€ ìë°”ë¡œ ì´ë¤„ì§„ íƒ€ì…
+			// 2´Ü°è. ¿¬°á°´Ã¼ ¾ò¾î¿À±â
+			// jdbc ÇÁ·ÎÆ®ÄİÀ» »ç¿ëÇÏ°Ú´Ù. 127.0.0.1 or localhost or ¿À¶óÅ¬ ¼³Ä¡µÈ ip / port : 8080 À¥¿¡¼­ Á¢±Ù 1521 Á÷Á¢ DB Á¢±Ù
+			con = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");	
+			System.out.println("¿¬°áÁ¤º¸ : " + con);
 			
-			// 3ë‹¨ê³„ : SQLë¬¸ ì‘ì„±í•˜ê¸°
-			// ì¤„ë„˜ê¹€ ì‹œ ê¼­ ê³µë°± í•œ ì¹¸ ì£¼ê¸° (ê³µë°±ì´ ì—†ìœ¼ë©´ ì»¬ëŸ¼ëª…ì´ ë˜ë²„ë¦¼)
+			// 3´Ü°è : SQL ¹® ÀÛ¼ºÇÏ±â
 			String sql = "insert into tb_board(no, title, writer, content) "
 					   + "values(s_board_no.nextVal, 'test', 'hong', 'exam')";
 			
-			// 4ë‹¨ê³„ : SQL ì‹¤í–‰ ê°ì²´ ì–»ê¸°
+			// 4´Ü°è : SQL ½ÇÇà °´Ã¼ ¾ò±â
 			pstmt = con.prepareStatement(sql);
 			
-			// 5ë‹¨ê³„ : SQL ì‹¤í–‰í•˜ê¸°
+			// 5´Ü°è : SQL ½ÇÇà
 			int cnt = pstmt.executeUpdate();
 			
-			// 6ë‹¨ê³„ : ê²°ê³¼ ì²˜ë¦¬
-			System.out.println(cnt + "ê°œì˜ í–‰ì´ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.");
+			// 6´Ü°è ¤Ó °á°ú Ã³¸®
+			System.out.println(cnt + "°³ÀÇ ÇàÀÌ º¯°æµÇ¾ú½À´Ï´Ù.");
 			
-			// 7ë‹¨ê³„ : ê°ì²´ ë‹«ê¸°
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-		    if (con != null) {
-		    	try {
-		    		con.close();		    	
-		    	} catch (SQLException e) {
-		    		e.printStackTrace();
-		    	}
-		    if (pstmt != null) {
-		    	try {
-		    		pstmt.close();		    	
-		    	} catch (SQLException e) {
-		    		e.printStackTrace();
-		    	}
-		    	
-		    }
+			
+			// 7´Ü°è : °´Ã¼ ´İ±â
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		
-	}
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

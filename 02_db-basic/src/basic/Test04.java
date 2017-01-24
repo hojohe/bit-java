@@ -10,41 +10,42 @@ import java.util.List;
 
 public class Test04 {
 	public static void main(String[] args) {
-	// ì¡°íšŒëœ ê²°ê³¼ê°’ì„ ì €ì¥í•˜ê¸° ìœ„í•œ ë¦¬ìŠ¤íŠ¸ ì„ ì–¸
-	List<EmployeesVO> list = new ArrayList<>();
-	Connection con = null;
-	PreparedStatement pstmt = null;
-	
+		
+		// Á¶È¸µÈ °á°ú°ªÀ» ÀúÀåÇÏ±â À§ÇÑ ¸®½ºÆ® ¼±¾ğ
+		List<EmployeesVO> list = new ArrayList<>();
+		
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
 		try {
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-
 			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
-
-			String sql = "select employee_id, last_name, salary "
-			           + "from employees " 
-					   + "order by last_name ";
-
+			String sql = "select employee_id, last_name, salary " 
+						+ "from employees " 
+						+ "order by last_name ";
 			pstmt = con.prepareStatement(sql);
-
-			// ì‹¤í–‰í•˜ê¸°
+			
 			ResultSet rs = pstmt.executeQuery();
-			// ì¡°íšŒëœ ë°ì´í„° ì ‘ê·¼í•˜ê¸°
+
 			while (rs.next()) {
-				// booleaní˜•ì„ ë°˜í™˜í•˜ë¯€ë¡œ falseê°’ì´ ë°˜í™”ë˜ë©´ ë
 				EmployeesVO vo = new EmployeesVO();
-				vo.setEmployees_id(rs.getInt("employee_id"));
-				vo.setLast_name(rs.getString("last_name"));
+				vo.setEmployeeId(rs.getInt("employee_id"));
+				vo.setLastName(rs.getString("last_name"));
 				vo.setSalary(rs.getInt("salary"));
 				
 				list.add(vo);
 			}
-			for (EmployeesVO vo : list) {
+			
+			for(EmployeesVO vo : list) {
 				System.out.printf(
-						"%4d%12s%6d\n", vo.getEmployees_id(), vo.getLast_name(), vo.getSalary());
+					"%4d\t%10s\t%6d\n", vo.getEmployeeId(), vo.getLastName(), vo.getSalary());
 			}
-		} catch (Exception e) {			
+			
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+
 			if (pstmt != null) {
 				try {
 					pstmt.close();
@@ -52,6 +53,7 @@ public class Test04 {
 					e.printStackTrace();
 				}
 			}
+
 			if (con != null) {
 				try {
 					con.close();
@@ -59,6 +61,8 @@ public class Test04 {
 					e.printStackTrace();
 				}
 			}
+
 		}
+
 	}
 }

@@ -17,9 +17,3 @@ insert into tc_setb values(3, 'c');
 insert into tc_setb values(4, 'd');
 insert into tc_setb values(5, 'e');
 insert into tc_setb values(6, 'f');
-
-select *
- from tc_seta;
-
-
- 

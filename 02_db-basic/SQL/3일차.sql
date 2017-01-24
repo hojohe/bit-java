@@ -1,410 +1,350 @@
----------------------------------------------------------------------
-JOIN
----------------------------------------------------------------------
--- Cartesian Product 
-   : ì¦ê±°ì¡°ê±´(ì—°ê²°ì¡°ê±´)ì´ ì˜ëª»ë˜ê±°ë‚˜ ì˜ë„ì ìœ¼ë¡œ ì¡°ê±´ì„ ì£¼ì§€ ì•Šì€ ê²½ìš° M * N ì˜ ê²°ê³¼ê°€ ë°˜í™˜ë˜ëŠ” ì¡°ì¸
-
+----------------------
+--JOIN
+----------------------
+-- cartesian Product : ¿¬°áÁ¶°Ç(Áõ°ÅÁ¶°Ç)ÀÌ Àß¸øµÇ°Å³ª ÀÇµµÀûÀ¸·Î Á¶°ÇÀ»
+-- ÁÖÁö ¾ÊÀº °æ¿ì m * n ÀÇ °á°ú°¡ ¹İÈ¯µÇ´Â Á¶ÀÎ
 select last_name, department_name
-from employees, departments;
+  from employees, departments;
 
-select count(*)
-from employees;     
+-------------
+--EQUIT JOIN
+-------------
+select employees.last_name
+     , departments.department_name
+     , employees.department_id
+  from employees, departments
+ where employees.department_id = departments.department_id;
 
-select count(*)
-from employees, departments;
+----------
+--¿À¸®Áö³Î
+----------
+-- Å×ÀÌºí alias »ç¿ëÇÏ±â
+select e.last_name
+     , d.department_name
+     , e.department_id
+  from employees e, departments d
+ where e.department_id = d.department_id;
 
-select last_name, employees.department_id, department_name
-from employees, departments
-where employees.department_id = departments.department_id; 
--- ì–‘ìª½ì— ë™ì¼í•œ ì´ë¦„ì˜ ì»¬ëŸ¼ì´ ì¡´ì¬í•œë‹¤ë©´ ì–´ëŠ í…Œì´ë¸”ì˜ ì»¬ëŸ¼ì„ ì¶œë ¥í•´ì•¼í•˜ëŠ”ì§€ ì„ íƒí•´ì£¼ì–´ì•¼í•¨
--- í•œìª½ì—ë§Œ ìˆë‹¤ í•˜ë”ë¼ë„ í•­ìƒ ì†Œì†ì„ ì¨ì¤˜
-select employees.last_name, employees.department_id, departments.department_name
-from employees, departments
-where employees.department_id = departments.department_id; 
-
--- Equijoin : ë‘ í…Œì´ë¸” ê°„ì˜ ì»¬ëŸ¼ ê°’ë“¤ì´ ì •í™•í•˜ê²Œ ì¼ì¹˜í•˜ëŠ” ê²½ìš° ì‚¬ìš©
-
--- í…Œì´ë¸”ëª…ì—ë„ alias ì‚¬ìš© ê°€ëŠ¥ (ê³µë°± + ì´ë¦„(ë³´í†µ í•œ ê¸€ì ì‚¬ìš©))
-select e.last_name, 
-       e.department_id, 
-       d.department_name
-from employees e, departments d
-where e.department_id = d.department_id; 
-
--- ë¶€ì„œì˜ ì •ë³´ + ë„ì‹œëª… ì¶œë ¥í•˜ê¸°
-select d.department_id,
-       d.department_name,
-       l.city  
-from departments d, locations l       
-where d.location_id = l.location_id;
-
--- í•˜ë‚˜ì˜ í…Œì´ë¸”ì˜ ëª¨ë“  ì •ë³´ 
-select d.*,
-       l.city  
-from departments d, locations l       
-where d.location_id = l.location_id;
-
--- ë¨¼ì € ì¶œë ¥í•˜ê³  ì‹¶ì€ ì •ë³´ & ë‚˜ë¨¸ì§€ ëª¨ë“  ì •ë³´
--- ë™ì¼í•œ ì»¬ëŸ¼ì´ ë‘ ë²ˆ ë‚˜ì˜¬ ê²½ìš° ë¨¼ì € ì¶œë ¥í•˜ëŠ” ì •ë³´ì˜ ì´ë¦„ì„ aliasë¡œ ì„¤ì • 
-select e.salary as sal, e.*
-from employees e;
-
--- Canadaì— ê·¼ë¬´í•˜ëŠ” ì‚¬ì›ì˜ ì§€ì—­ëª…, ë¶€ì„œëª…, ì‚¬ì›ëª… ì¶œë ¥í•˜ì‹œì˜¤
-select e.last_name, d.department_name, l.city
-from employees e, departments d, locations l, countries c
-where e.department_id = d.department_id
-  and d.location_id = l.location_id
-  and l.country_id = c.country_id 
-  and c.country_name = 'Canada';
-  
--- ê° ì‚¬ì›ì˜ job_idì— í•´ë‹¹í•˜ëŠ” ìµœëŒ€ ë°›ì„ ìˆ˜ ìˆëŠ” ê¸‰ì—¬ì™€ ìµœì†Œ ê¸‰ì—¬ê°€ ì–¼ë§ˆì¸ì§€ ì¶œë ¥í•˜ì‹œì˜¤
-select e.last_name, j.job_title, j.min_salary, j.max_salary
-from jobs j, employees e
-where j.job_id = e.job_id;
-
--- Oracle 9ië¶€í„° ì§€ì› (í˜„ì¬ ì‚¬ìš©í•˜ëŠ” ë°©ì‹)
--- INNER JOIN : ì¦ê±°ì¡°ê±´ì€ onìœ¼ë¡œ ì¼ë°˜ì¡°ê±´ì€ whereì ˆì— 
-
--- í…Œì´ë¸”ëª…ì—ë„ alias ì‚¬ìš© ê°€ëŠ¥ (ê³µë°± + ì´ë¦„(ë³´í†µ í•œ ê¸€ì ì‚¬ìš©))
-select e.last_name, 
-       e.department_id, 
-       d.department_name
-  from employees e
- inner join departments d
-    on e.department_id = d.department_id; 
-
--- Canadaì— ê·¼ë¬´í•˜ëŠ” ì‚¬ì›ì˜ ì§€ì—­ëª…, ë¶€ì„œëª…, ì‚¬ì›ëª… ì¶œë ¥í•˜ì‹œì˜¤
-select e.last_name, d.department_name, l.city
-from employees e
-inner join departments d
-   on e.department_id = d.department_id
-inner join locations l
-   on d.location_id = l.location_id
-inner join countries c
-   on l.country_id = c.country_id 
-where c.country_name = 'Canada';
-  
--- ê° ì‚¬ì›ì˜ job_idì— í•´ë‹¹í•˜ëŠ” ìµœëŒ€ ë°›ì„ ìˆ˜ ìˆëŠ” ê¸‰ì—¬ì™€ ìµœì†Œ ê¸‰ì—¬ê°€ ì–¼ë§ˆì¸ì§€ ì¶œë ¥í•˜ì‹œì˜¤
-select e.last_name, j.job_title, j.min_salary, j.max_salary
-from jobs j 
-inner join employees e
-on j.job_id = e.job_id;
-
--- Non-Equijoin : = ì—°ì‚°ì ì—†ì´ ë‘ í…Œì´ë¸”ì„ ì—°ê²°í•˜ëŠ” ê²½ìš°
--- ì‚¬ì›ì˜ ê¸‰ì—¬ì™€ ê¸‰ì—¬ ë“±ê¸‰ì„ í™”ë©´ì— ì¶œë ¥
-
-select e.last_name, e.salary, s.grade
-from employees e, salgrade s
-where e.salary between s.min_sal and s.max_sal;
-
-select e.last_name, e.salary, s.grade
-from employees e
-inner join salgrade s
- on e.salary between s.min_sal and s.max_sal;
-
+select dep.department_id
+	 , dep.department_name
+	 , loc.city
+  from departments dep, locations loc
+ where dep.location_id = loc.location_id;
  
--- SELF JOIN : ìì‹ ì˜ í…Œì´ë¸”ì„ ì—°ê²°
--- where manager_id = employee_id ë¼ê³  í•˜ë©´ ë¶ˆê°€ëŠ¥. í…Œì´ë¸”ì€ ì¤„ ë³„ë¡œ ë¹„êµí•˜ê¸° ë•Œë¬¸ì— ê°™ì€ ê°’ì´ ì ˆëŒ€ ë‚˜ì˜¬ ìˆ˜ ì—†ë‹¤.
--- ë”°ë¼ì„œ ë³„ë„ì˜ í…Œì´ë¸”ì´ í•„ìš”(ì‚¬ì› í…Œì´ë¸” & ê´€ë¦¬ì í…Œì´ë¸”). ë˜‘ê°™ì€ í…Œì´ë¸”ì„ í•˜ë‚˜ ë” ë³µì‚¬í•´ì„œ aì™€ bë¡œ ë‚˜ëˆ”
--- a.employee_id = b.manager_id 
-select e.last_name ì‚¬ì›ëª…, m.last_name ê´€ë¦¬ìëª…
-from employees e, employees m
-where e.manager_id = m.employee_id;
+-- Canada ¿¡ ±Ù¹«ÇÏ´Â »ç¿øÀÇ Áö¿ª¸í, ºÎ¼­¸í, »ç¿ø¸í Ãâ·ÂÇÏ½Ã¿À
+select emp.last_name
+	 , dep.department_name
+	 , loc.city
+  from employees emp, departments dep, locations loc, countries ctr
+ where ctr.country_id = loc.country_id
+   and loc.location_id = dep.location_id
+   and dep.department_id = emp.department_id
+   and ctr.country_name = 'Canada';
+   
+-- °¢ »ç¿øÀÇ job_id¿¡ ÇØ´çÇÏ´Â ÃÖ´ë ¹ŞÀ» ¼ö ÀÖ´Â ±Ş¿©¿Í
+-- ÃÖ¼Ò ±Ş¿©°¡ ¾ó¸¶ÀÎÁö Ãâ·ÂÇÏ½Ã¿À
+select emp.last_name
+	 , emp.job_id
+	 , job.job_title
+	 , job.min_salary
+	 , job.max_salary 
+  from employees emp, jobs job
+ where emp.job_id = job.job_id;
 
-select e.last_name ì‚¬ì›ëª…, m.last_name ê´€ë¦¬ìëª…
-from employees e
-inner join employees m
-on e.manager_id = m.employee_id;
 
--- OUTER JOIN : ì¡°ì¸ ì¡°ê±´ì— ì¼ì¹˜í•˜ì§€ ì•ŠëŠ”ë°ë„ ë¶ˆêµ¬í•˜ê³  ì¶œë ¥í•˜ê³  ì‹¶ì„ ë•Œ ì‚¬ìš©
--- ë°ì´í„°ì˜ ìˆ˜ê°€ ë¶€ì¡±í•œ ê³³ì— +ë¥¼ ì¤˜ì„œ nullê°’ìœ¼ë¡œ ì±„ì›Œì¤Œ
-select e.last_name ì‚¬ì›ëª…, m.last_name ê´€ë¦¬ìëª…
-from employees e, employees m
-where e.manager_id = m.employee_id(+);
+-- Oracle 9i ºÎÅÍ Áö¿ø 
+-------------
+--INNER JOIN
+------------- 
+-- Å×ÀÌºí ALIAS »ç¿ëÇÏ±â
+select e.last_name
+     , d.department_name
+     , e.department_id
+  from employees e
+inner join departments d
+ on e.department_id = d.department_id;
 
--- ê´€ë¦¬ìê°€ ì—†ëŠ” ì‚¬ì›ì€ "ê´€ë¦¬ì ì—†ìŒ"ì„ ì¶œë ¥í•œë‹¤.
-select e.last_name ì‚¬ì›ëª…, 
-       case when m.last_name is null then 'ê´€ë¦¬ì ì—†ìŒ'
-       		else m.last_name
-       		end as ê´€ë¦¬ìëª…
-from employees e, employees m
-where e.manager_id = m.employee_id(+);
+select dep.department_id
+	 , dep.department_name
+	 , loc.city
+  from departments dep
+inner join locations loc
+ on dep.location_id = loc.location_id;
+ 
+-- Canada ¿¡ ±Ù¹«ÇÏ´Â »ç¿øÀÇ Áö¿ª¸í, ºÎ¼­¸í, »ç¿ø¸í Ãâ·ÂÇÏ½Ã¿À
+select emp.last_name
+	 , dep.department_name
+	 , loc.city
+  from employees emp
+inner join departments dep on dep.department_id = emp.department_id
+inner join locations loc on loc.location_id = dep.location_id
+inner join countries ctr on ctr.country_id = loc.country_id
+ where ctr.country_name = 'Canada';
+   
+-- °¢ »ç¿øÀÇ job_id¿¡ ÇØ´çÇÏ´Â ÃÖ´ë ¹ŞÀ» ¼ö ÀÖ´Â ±Ş¿©¿Í
+-- ÃÖ¼Ò ±Ş¿©°¡ ¾ó¸¶ÀÎÁö Ãâ·ÂÇÏ½Ã¿À
+select emp.last_name
+	 , emp.job_id
+	 , job.job_title
+	 , job.min_salary
+	 , job.max_salary 
+  from employees emp
+inner join jobs job
+ on emp.job_id = job.job_id;
 
-select e.last_name ì‚¬ì›ëª…, 
-       nvl(m.last_name,'ê´€ë¦¬ì ì—†ìŒ') ê´€ë¦¬ìëª…
-from employees e, employees m
-where e.manager_id = m.employee_id(+);
+-- »ç¿øÀÇ ±Ş¿©¿Í ±Ş¿©µî±ŞÀ» È­¸é¿¡ Ãâ·Â
+select emp.last_name, emp.salary, sgd.grade
+  from employees emp, salgrade sgd
+ where emp.salary between sgd.min_sal and sgd.max_sal;
+ 
+select emp.last_name, emp.salary, sgd.grade
+  from employees emp
+inner join salgrade sgd 
+	on emp.salary between sgd.min_sal and sgd.max_sal;
 
--- [full | right | left ] outer join
--- full : ì–‘ìª½ ë‹¤ ì±„ìš°ê¸° (9ië¶€í„° ì§€ì›)
--- right: í…Œì´ë¸” ê¸°ì¤€ leftì˜ ë°ì´í„°ê°€ ëª¨ìë€ ê²½ìš°
--- left : í…Œì´ë¸” ê¸°ì¤€ rightì˜ ë°ì´í„°ê°€ ëª¨ìë€ ê²½ìš°
--- rightì™€ leftëŠ” ëª¨ìë€ ê³³ì˜ ë°˜ëŒ€ìª½ì„ ì ì–´ì¤˜
+-------------
+-- SELF JOIN
+-------------
+select e.last_name as »ç¿ø¸í
+     , m.last_name as °ü¸®ÀÚ¸í
+  from employees e, employees m
+ where e.manager_id = m.employee_id;
+-- self join -> inner join °á°ú°¡ ´Ù¸£´Ù
+select e.last_name as »ç¿ø¸í
+     , m.last_name as °ü¸®ÀÚ¸í
+  from employees e
+inner join employees m on e.employee_id = m.employee_id;
 
-select e.last_name ì‚¬ì›ëª…, 
-       nvl(m.last_name,'ê´€ë¦¬ì ì—†ìŒ') ê´€ë¦¬ìëª…
-from employees e
-left outer join employees m
- on e.manager_id = m.employee_id;
+-------------
+-- OUTER JOIN
+-------------
+select e.last_name as »ç¿ø¸í
+     , m.last_name as °ü¸®ÀÚ¸í
+  from employees e, employees m
+ where e.manager_id = m.employee_id(+);
 
----------------------------------------------------------------------
-SET: ì—¬ëŸ¬ ê°œì˜ sql ì—°ê²° ê°€ëŠ¥
-í˜•ì‹: order byëŠ” ì œì¼ ë§ˆì§€ë§‰ì— í•œ ë²ˆë§Œ
----------------------------------------------------------------------
--- union all : ì •ë ¬ X, ì¤‘ë³µ í—ˆìš© O (í†µê³„ ìª½ì—ì„œ ë§ì´ ì‚¬ìš©í•¨)
+-- °ü¸®ÀÚ°¡ ¾ø´Â »ç¿øÀº "°ü¸®ÀÚ¾øÀ½"À» Ãâ·ÂÇÑ´Ù.
+select e.last_name as »ç¿ø¸í
+     , nvl(m.last_name, '°ü¸®ÀÚ¸í') as °ü¸®ÀÚ¸í
+  from employees e, employees m
+ where e.manager_id = m.employee_id(+);
+
+-------------
+-- OUTER JOIN
+-------------
+-- full (oracle 9ºÎÅÍ Ãß°¡µÊ ¾çÂÊ¿¡ (+)) 
+-- right ¿À¸¥ÂÊ¿¡(+)
+-- left ¿ŞÂÊ¿¡(+)
+select e.last_name as »ç¿ø¸í
+     , nvl(m.last_name, '°ü¸®ÀÚ¾øÀ½') as °ü¸®ÀÚ¸í
+  from employees e
+  left outer join employees m
+ 	on e.manager_id = m.employee_id;
+ 	
+--------------
+-- SET ¿¬»êÀÚ
+--------------
+union -> Á¤·ÄÇÏ°í Áßº¹ Á¦°Å °á°ú¸¦ ÁÜ
+union all -> Á¤·ÄÇÏÁö ¾Ê°í Áßº¹µÇ´Â °á°ú¸¦ ÁÜ
+
+-- ÇÕÁıÇÕ(Áßº¹O). ¸ğµç °á°ú¸¦ Ãâ·ÂÇÑ´Ù(Áßº¹ Æ÷ÇÔ)
 select no, data
-from tc_seta
+  from tc_seta
 union all
 select no, data
-from tc_setb;
-
--- union: ì¤‘ì²©ëœ ë°ì´í„°ëŠ” í•œ ë²ˆë§Œ ì¶œë ¥. ìë™ ì •ë ¬ë¨
+  from tc_setb
+  
+-- ÇÕÁıÇÕ(Áßº¹X). ÁßÃ¸µÈ µ¥ÀÌÅÍ´Â ÇÑ¹ø¸¸ Ãâ·Â, ÀÚµ¿ Á¤·ÄµÊ
 select no, data
-from tc_seta
+  from tc_seta
 union
 select no, data
-from tc_setb;
-
--- intersect : êµì§‘í•©, ê²°ê³¼ì˜ ê³µí†µëœ ë¶€ë¶„ë§Œì„ ì¶œë ¥
+  from tc_setb;
+  
+-- Â÷ÁıÇÕ. ¾ÕÀÇ °á°ú¿¡¼­ µÚÀÇ °á°ú¸¦ »« °á°ú¸¦ Ãâ·Â
 select no, data
-from tc_seta
-intersect
-select no, data
-from tc_setb;
-
--- minus : ì°¨ì§‘í•©, ì•ì—ì„œ ë’¤ë¥¼ ëº€ ê²°ê³¼ë¥¼ ë°˜í™˜
-select no, data
-from tc_seta
+  from tc_seta
 minus
 select no, data
-from tc_setb;
-
--- ì£¼ì˜ 1. ì»¬ëŸ¼ì˜ ê°œìˆ˜ê°€ ë™ì¼í•´ì•¼ í•œë‹¤. (í‹€ë¦¬ë©´ ì¶œë ¥X)
-select last_name, salary
-from employees
-union all
-select department_name
-from departments;
-
--- ì£¼ì˜ 2. ë™ì¼í•œ ì—´(=ì»¬ëŸ¼)ì˜ ìœ„ì¹˜ì—ì„œëŠ” ë°ì´í„° íƒ€ì…ì´ ê°™ì•„ì•¼í•œë‹¤.
-select last_name, salary
-from employees
-union all
-select department_id, department_name
-from departments;
-
--- ì£¼ì˜ 3. order byì ˆì€ ì œì¼ ë§ˆì§€ë§‰ì— ìœ„ì¹˜í•˜ì—¬ ë¬¸ì¥ì„ ëë‚´ëŠ” ì—­í• ì„ í•œë‹¤. (ì‚¬ìš©X)
-select last_name, salary
-from employees
-order by last_name
-union all
-select department_name, department_id
-from departments;
-
--- ì£¼ì˜ 4. ì»¬ëŸ¼ëª…ì€ ì²«ë²ˆì§¸ SQLë¬¸ì˜ ì»¬ëŸ¼ëª…ì´ ì‚¬ìš©ëœë‹¤. 
-select 'data', last_name, salary
-from employees
-union all
-select 'total', department_name, department_id
-from departments;
-
-
----------------------------------------------------------------------
-SubQuery : ì¿¼ë¦¬ ë‚´ì— í¬í•¨ëœ ì¿¼ë¦¬. ()ë¥¼ ë¬¶ì–´ êµ¬ë¶„ì§“ëŠ”ë‹¤.
--- optimizer ìµœì ì˜ ì¿¼ë¦¬ ì‹¤í–‰ ê³„íš. ì‹œê°„ì´ ì˜¤ë˜ ê±¸ë¦¬ëŠ” ë¶€ë¶„ì„ íŠœë‹í•  ìˆ˜ ìˆìŒ
----------------------------------------------------------------------
-select avg(salary)
-from employees
-where department_id = 10;
-
--- Chen ì‚¬ì›ê³¼ ê°™ì€ ë¶€ì„œì— ìˆëŠ” ì‚¬ì›ë“¤ì˜ í‰ê·  ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤
-select avg(salary)
-from employees
-where department_id = Chen ì‚¬ì›ì˜ ë¶€ì„œë²ˆí˜¸;
-
--- Chen ì‚¬ì›ì˜ ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤
-select department_id
-from employees
-where last_name = 'Chen';
-
--- SubQueryì˜ ê²°ê³¼í–‰ì´ í•˜ë‚˜ì¸ ê²½ìš° : ìŠ¤ì¹¼ë¼ ì„œë¸Œì¿¼ë¦¬, Single Row SubQuery
-select avg(salary)
-from employees
-where department_id = (select department_id
-                         from employees
-                         where last_name = 'Chen');
-                         
--- King ì‚¬ì›ê³¼ ê°™ì€ ë¶€ì„œì— ìˆëŠ” ì‚¬ì›ë“¤ì˜ í‰ê·  ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤                       
-select avg(salary)
-from employees
-where department_id = (select department_id
-                         from employees
-                        where last_name = 'King'); 
--- Kingì´ ë‘ ëª…ì´ì–´ì„œ ê²°ê³¼ê°’ì´ ë‘ ê°œê°€ ë°˜í™˜ë˜ì–´ ì˜¤ë¥˜ ë°œìƒ
-
--- SubQueryì˜ ê²°ê³¼í–‰ì´ ì—¬ëŸ¬ê°œì¸ ê²½ìš° : Multi Row SubQuery
--- Multi Row SubQueryì¼ ê²½ìš°ì—ëŠ” ê´€ë ¨ëœ ì—°ì‚°ìë¥¼ ì‚¬ìš©
--- [in | all | any]
-
--- ê²°ê³¼ê°’ì´ í•˜ë‚˜ ì´ìƒì´ë¯€ë¡œ = ì´ ì•„ë‹Œ ì—¬ëŸ¬ ê°œì˜ ê²°ê³¼ë¥¼ ë°›ì„ ìˆ˜ ìˆëŠ” ì—°ì‚°ìì¸ "in"ì„ ì‚¬ìš©
-select avg(salary)
-from employees
-where department_id in (select department_id
-                         from employees
-                        where last_name = 'King');
--- ì¶œë ¥ : ì‚¬ì›ì˜ ì •ë³´ 
--- ì§‘í•© : employees
--- ì¡°ê±´ : 30ë²ˆ ë¶€ì„œì˜ í‰ê·  ê¸‰ì—¬ë³´ë‹¤ ê¸‰ì—¬ë¥¼ ë§ì´ ë°›ëŠ”
-select avg(salary)
-from employees
-where department_id = 30
-
--- 30ë²ˆ ë¶€ì„œì˜ í‰ê·  ê¸‰ì—¬ë³´ë‹¤ ê¸‰ì—¬ë¥¼ ë§ì´ ë°›ëŠ” ì‚¬ì›ì˜ ì •ë³´ë¥¼ ì¶œë ¥
-select *
-from employees
-where salary > (select avg(salary)
-                from employees
-                where department_id = 30);
-
--- 30ë²ˆ ë¶€ì„œì˜ ì‚¬ì›ë“¤ì´ ë°›ëŠ” ê¸‰ì—¬ë³´ë‹¤ ê¸‰ì—¬ë¥¼ ë§ì´ ë°›ëŠ” ì‚¬ì›ì˜ ì •ë³´ë¥¼ ì¶œë ¥
-select *
-from employees
-where salary > (select max(salary)
-                from employees
-                where department_id = 30);
-
--- ALL : subqueryì˜ ëª¨ë“  ê²°ê³¼ë¥¼ ë§Œì¡±
--- max(salary)ì™€ ê°™ì€ ê²°ê³¼ ì¶œë ¥
-select *
-from employees
-where salary > ALL (select salary
-                	from employees
-                	where department_id = 30);
-                	
--- ANY : subqueryì˜ ê²°ê³¼ ì¤‘ í•˜ë‚˜ë§Œ ë§Œì¡±
--- min(salary)ì™€ ê°™ì€ ê²°ê³¼ ì¶œë ¥
-select *
-from employees
-where salary > ANY (select salary
-                	from employees
-                	where department_id = 30);
-                
--- ê° ë¶€ì„œì—ì„œ ê°€ì¥ ì‘ì€ ê¸‰ì—¬ë¥¼ ë°›ëŠ” ì‚¬ì›ì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤
-select department_id, last_name, salary
-from employees
-where salary in (select min(salary)
-                  from employees
-                 group by department_id);
-                 
-
--- ë‚´ê°€ ì†í•œ ë¶€ì„œ ë²ˆí˜¸ê¹Œì§€ ê°™ì´ ë„˜ê²¨ì•¼í•¨             
--- Multi Column SubQuery : ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ê°€ ì—¬ëŸ¬ê°œì˜ ì»¬ëŸ¼ì´ ë°˜í™˜ë¨   
-select department_id, last_name, salary
-from employees
-where (department_id, salary) in (select department_id, min(salary)
-        					        from employees
-                 				group by department_id);
-                 				
-
--- ì„œë¸Œì¿¼ë¦¬ëŠ” sqlë¬¸ ì–´ë””ì—ë‚˜ ì“¸ ìˆ˜ ìˆë‹¤
--- ì„œë¸Œì¿¼ë¦¬ê°€ ì‚¬ìš©ë˜ëŠ” ë‹¤ì–‘í•œ ìœ„ì¹˜
--- insert into ì ˆì—ì„œì˜ SubQuery
-insert into tb_board(
-	no, 
-	title, 
-	writer, 
-	content
-) values (
-	 (select max(no) + 1 from tb_board), 
-	 't', 
-	 'w', 
-	 'c'
-);
-
--- joinì„ subqueryë¡œ ë°”ê¾¸ê¸°
-select e.last_name, 
-       e.department_id, 
-       (select department_name
-          from departments
-         where department_id = e.department_id) as department_name
-  from employees e;
--- subqueryì•ˆì˜ whereì ˆì—ì„œ e.department_idê°€ ê° ì‚¬ì›ì˜ ë¶€ì„œë²ˆí˜¸ì— ë§ê²Œ ìƒìˆ˜ê°’ìœ¼ë¡œ ë°”ë€ë‹¤. 
--- where department_id = 30
-
------------------------------------------------------------------------  
--- rownumì˜ ì´í•´
--- ì˜¤ë¼í´ì—ì„œ ìì²´ì ìœ¼ë¡œ ì œê³µí•´ì£¼ëŠ” ì»¬ëŸ¼. ìë™ìœ¼ë¡œ ìˆ«ìê°’ì„ 1ì”© ì¦ê°€ì‹œí‚¤ë©° ë„˜ê²¨ì¤Œ
------------------------------------------------------------------------  
-select rownum, last_name, salary
-from employees;
-
-select rownum, last_name, salary
-from employees
-where rownum < 5;
-
--- rownumì€ = ì„ ì‚¬ìš©í•  ê²½ìš° 1ë²ˆì„ ì œì™¸í•˜ë©´ ì¶œë ¥ë˜ì§€ ì•ŠëŠ”ë‹¤.
--- ì™œ? rownumì€ ë¹ ì ¸ë‚˜ì™€ì•¼ ì¦ê°€ë˜ë‹ˆê¹Œ! 1ë²ˆì´ ì¶œë ¥ë˜ì§€ ì•Šì•˜ìœ¼ë‹ˆê¹Œ rownumë„ ì¦ê°€í•  ìˆ˜ ì—†ì–´
-
-select rownum, last_name, salary
-from employees
-where rownum = 4;
-
--- ì‚¬ì› ì¤‘ì—ì„œ ê¸‰ì—¬ë¥¼ ë§ì´ ë°›ëŠ” ìƒìœ„ 5ëª…ì„ ì¶œë ¥í•˜ì‹œì˜¤
-
--- ì‹¤í–‰ìˆœì„œê°€ from -> where ê¸° ë•Œë¬¸ì— ê¸‰ì—¬ ìˆœì˜ ìˆœì„œê°€ ì•„ë‹Œ ê·¸ëƒ¥ ìˆœì„œ ìƒì˜ 5ëª…ì´ ì¶œë ¥ëœ ê²ƒì´ê¸° ë•Œë¬¸ì— ì˜¤ë¥˜
--- fromì ˆì—ì„œ ì •ë ¬ì„ ì‹œì¼œì•¼í•´
-select last_name, salary
-from employees
-where rownum < 6
-order by salary desc;
-
--- from ì ˆì—ì„œì˜ SubQuery : Inline View
--- ë¬¼ë¦¬ì ìœ¼ë¡œ ìˆëŠ” ë°ì´í„°ì—ì„œ ì ê¹ ë™ì•ˆ ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ë·°
-select last_name, salary
-from (select *
-        from employees
-       order by salary desc)
-where rownum < 6;
+  from tc_setb;
+  
+-- ±³ÁıÇÕ. °á°úÀÇ °øÅë µ¥ÀÌÅÍ¸¦ Ãâ·Â
+select no, data
+  from tc_seta
+intersect
+select no, data
+  from tc_setb;
 
   
--- Top-N ì„œë¸Œì¿¼ë¦¬
+-- ÁÖÀÇ 1. ÄÃ·³ÀÇ °³¼ö°¡ µ¿ÀÏÇØ¾ß ÇÑ´Ù.
+-- ÁÖÀÇ 2. °°Àº ¿­ µ¥ÀÌÅÍ Å¸ÀÔÀÌ µ¿ÀÏÇØ¾ß ÇÑ´Ù.
+-- ÁÖÀÇ 3. ÀÏ¹İÀûÀ¸·Î order by ÀıÀº ¸¶Áö¸·¿¡ À§Ä¡ÇØ¾ß ÇÑ´Ù.
+-- ÁÖÀÇ 4. ÄÃ·³¸íÀº Ã¹¹øÂ° SQL¹®ÀÇ ÄÃ·³¸íÀÌ »ç¿ëµÈ´Ù.
+select 'data', last_name, salary
+  from employees
+union all
+select 'total', department_name, department_id
+  from departments
+order by last_name;
+  
+  
+------------------
+-- SUBQUERY
+------------------ 
+select avg(salary)
+  from employees
+ where department_id = 10;
+  
+  
+-- Chen »ç¿ø°ú °°Àº ºÎ¼­¿¡ ÀÖ´Â »ç¿øµéÀÇ Æò±Õ ±Ş¿©¸¦ Ãâ·ÂÇÏ½Ã¿À
+select avg(salary)
+  from employees
+ where department_id = chen »ç¿øÀÇ ºÎ¼­¹øÈ£;
+ 
+-- Chen »ç¿øÀÇ ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À
+select department_id
+  from employees
+ where last_name = 'Chen'
 
--- ì „ì²´ ë°ì´í„°ì—ì„œ ì¼ë¶€ë¶„ë§Œ ê°€ì ¸ì˜¤ë ¤ê³  í•˜ëŠ” ì¿¼ë¦¬ : í˜ì´ì§• ì¿¼ë¦¬  - ê²Œì‹œíŒì—ì„œ í™œìš©
--- rownumì˜ ì´ë¦„ì„ ì„ì˜ì˜ ì´ë¦„ìœ¼ë¡œ ë³€ê²½í•œ ë‹¤ìŒ ë¶€ë¶„ë²”ìœ„ ê°€ì ¸ì˜¤ê¸° 
+-- ¼­ºêÄõ¸®ÀÇ °á°úÇàÀÌ ÇÏ³ªÀÎ °Í : ½ºÄ®¶ó ¼­ºêÄõ¸®, Singlt Row SubQuery
+select avg(salary)
+  from employees
+ where department_id = (select department_id
+  						  from employees
+ 						 where last_name = 'Chen');
+ 						 
+-- ¼­ºêÄõ¸®ÀÇ °á°úÇàÀÌ ¿©·¯°³ÀÎ °æ¿ì : Multi Row SubQuery
+-- Multi Row SubQuery ÀÏ °æ¿ì¿¡´Â °ü·ÃµÈ ¿¬»êÀÚ¸¦ ÀÌ¿ë
+-- (in, all, any) 
+select avg(salary)
+  from employees
+ where department_id in (select department_id
+  						   from employees
+ 						  where last_name = 'King');
+ 						  
+-- 30¹ø ºÎ¼­ÀÇ Æò±Õ ±Ş¿©º¸´Ù ±Ş¿©¸¦ ¸¹ÀÌ ¹Ş´Â »ç¿øÀÇ Á¤º¸¸¦ Ãâ·Â
+select last_name, salary
+  from employees
+ where salary > (select avg(salary)
+				   from employees
+ 				  where department_id = 30)
+order by salary desc
 
+
+-- 30¹ø ºÎ¼­ÀÇ »ç¿øµéÀÌ ¹Ş´Â ±Ş¿©º¸´Ù ±Ş¿©¸¦ ¸¹ÀÌ ¹Ş´Â »ç¿øÀÇ Á¤º¸¸¦ Ãâ·Â
+select last_name, salary
+  from employees
+ where salary > (select max(salary)
+				   from employees
+ 				  where department_id = 30)
+order by salary desc
+
+select last_name, salary
+  from employees
+ where salary >ALL (select salary
+				      from employees
+ 				     where department_id = 30)
+order by salary desc
+-----------------------------------------------
+select last_name, salary
+  from employees
+ where salary >ANY (select salary
+				      from employees
+ 				     where department_id = 30)
+order by salary desc
+
+select last_name, salary
+  from employees
+ where salary > (select min(salary)
+				   from employees
+ 				  where department_id = 30)
+order by salary desc
+-----------------------------------------------
+
+-- °¢ ºÎ¼­¿¡¼­ °¡Àå ÀÛÀº ±Ş¿©¸¦ ¹Ş´Â »ç¿øÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏ½Ã¿À
+-- MultiColumn SubQuery : ¼­ºêÄõ¸®ÀÇ °á°ú°¡ ¿©·¯°³ÀÇ ÄÃ·³ÀÌ ¹İÈ¯
+select department_id, last_name, salary
+  from employees
+ where (department_id, salary) in (select department_id, min(salary)
+  									 from employees
+								   group by department_id)
+order by department_id
+
+
+-- ¼­ºêÄõ¸®°¡ »ç¿ëµÇ´Â ´Ù¾çÇÑ À§Ä¡
+-- insert Àı¿¡¼­ÀÇ SubQuery
+insert into tb_board(
+	no
+	, title
+	, writer
+	, content
+) values (
+	(select max(no) + 1 from tb_board)
+	, 't'
+	, 'w'
+	, 'c'
+);
+
+-- select Àı¿¡¼­ÀÇ SubQuery
+select e.last_name
+     , e.department_id
+     , (select department_name 
+          from departments 
+         where department_id = e.department_id) as department_name
+  from employees e
+
+-- rowNum 
+select rownum, last_name, salary
+  from employees;
+
+select rownum, last_name, salary
+  from employees
+ where rownum < 5;
+ 
+-- »ç¿øÁß¿¡¼­ ±Ş¿©¸¦ ¸¹ÀÌ ¹Ş´Â »óÀ§ 5¸íÀ» Ãâ·ÂÇÏ½Ã¿À
+select last_name, salary
+  from employees
+ where rownum < 6
+order by salary desc;
+
+-- »ç¿øÁß¿¡¼­ ±Ş¿©¸¦ ¸¹ÀÌ ¹Ş´Â »óÀ§ 4¹øÂ° »ç¿ø¸íÀ» Ãâ·ÂÇÏ½Ã¿À
+-- rownum °ªÀ» 1ºÎÅÍ ¼øÂ÷ÀûÀ¸·Î ¸Â´ÂÁ¶°ÇÀÏ¶§ ´ÙÀ½ ¹øÈ£·Î ³Ñ¾î°£´Ù.
+-- 1¿¡ ¸Â´Â Á¶°ÇÀÌ ¾ø¾ú±â ¶§¹®¿¡ 4±îÁö °¥ ¼ö ¾ø´Ù.
+select last_name, salary
+  from employees
+ where rownum = 4
+ 
+-- from Àı¿¡¼­ÀÇ SubQuery : inLine View
+-- rownumÀÇ ÀÌ¸§À» ÀÓÀÇÀÇ ÀÌ¸§À¸·Î º¯°æÇÑ ´ÙÀ½ ºÎºĞ¹üÀ§ °¡Á®¿À±â
 select *
-from(select rownum rnum, last_name, salary
-      from (select * 
-             from employees
-            order by salary desc))
-where rnum between 10 and 20;
-        
--- ì„œë¸Œì¿¼ë¦¬ë¥¼ ì´ìš©í•œ í…Œì´ë¸” ìƒì„±
--- ê¸°ì¡´ì˜ employeesì™€ ë™ì¼í•œ í…Œì´ë¸” ë§Œë“¤ê¸°
+  from (select rownum rnum, last_name, salary 
+      	  from employees
+      	order by salary desc)
+ where rnum = 4;
+ 
+-- ÆäÀÌÂ¡ Ã³¸® Äõ¸®
+select *
+  from (select rownum rnum, last_name, salary 
+      	  from employees
+      	order by salary desc)
+ where rnum between 11 and 20
+order by rnum;
+
+-- ¼­ºêÄõ¸®¸¦ ÀÌ¿ëÇÑ Å×ÀÌºí »ı¼º - Å×ÀÌºí ±¸Á¶¿Í µ¥ÀÌÅÍ¸¦ º¹»ç
 create table employees_copy
 as
 select * from employees;
-  
-select *
- from employees_copy;
- 
-drop table employees_copy;
-  
--- ì„œë¸Œì¿¼ë¦¬ë¥¼ ì´ìš©í•œ í…Œì´ë¸” ìƒì„±
--- ê¸°ì¡´ì˜ employeesì™€ ë™ì¼í•œ í…Œì´ë¸” êµ¬ì¡°! ë§Œë“¤ê¸°  
--- whereì ˆì´ falseë©´ selectì ˆì´ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¤ì§€ ì•ŠëŠ”ë‹¤.
--- ë¬´ì¡°ê±´ ì°¸ì„ ë§Œë“œë ¤ë©´ where 1 = 1
+
+-- Å×ÀÌºí ±¸Á¶¸¸ °¡Á®¿À±â. °á°ú°¡ 0ÀÌ¸é µÈ´Ù.
 create table employees_copy
 as
-select * from employees
-where 1 != 1;
+select * from employees where 1 != 1;
 
--- í…Œì´ë¸”ì— ë°ì´í„°ë¥¼ ì„œë¸Œì¿¼ë¦¬ë¥¼ ì´ìš©í•´ì„œ ì…ë ¥í•˜ê¸°
+
+-- Å×ÀÌºí¿¡ µ¥ÀÌÅÍ¸¦ ¼­ºêÄõ¸®¸¦ ÀÌ¿ëÇØ¼­ ÀÔ·ÂÇÏ±â
 insert into employees_copy
-select * from employees
-where last_name = 'King';
-  
-  
-  
-  
+select * from employees_copy;
+
+-- oracle : rownum°ú between A and B
+-- rownum ¾ø´Â °÷ : order by ÈÄ¿¡ limit °Ô½Ã¹° Á¶È¸ÇØ¿Ã Å©±â offset ¾îµğºÎÅÍÀ§Ä¡
 

@@ -1,12 +1,17 @@
 package day07;
 
 public class Member {
-	public String id;
-	public String pw;
-	public String name;
-	public String basicAddr;
-	public String detailAddr;
-	public int postNo;
+	private String name;
+	private String id;
+	private String pw;
+	private String juminNo;
+	private String phoneNo;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getId() {
 		return id;
 	}
@@ -19,30 +24,17 @@ public class Member {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public String getName() {
-		return name;
+	public String getJuminNo() {
+		return juminNo;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setJuminNo(String juminNo) {
+		this.juminNo = juminNo;
 	}
-	public String getBasicAddr() {
-		return basicAddr;
+	public String getPhoneNo() {
+		return phoneNo;
 	}
-	public void setBasicAddr(String basicAddr) {
-		this.basicAddr = basicAddr;
-	}
-	public String getDetailAddr() {
-		return detailAddr;
-	}
-	public void setDetailAddr(String detailAddr) {
-		this.detailAddr = detailAddr;
-	}
-	public int getPostNo() {
-		return postNo;
-	}
-	public void setPostNo(int postNo) {
-		this.postNo = postNo;
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
 	
-
 }

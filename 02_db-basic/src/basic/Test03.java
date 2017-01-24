@@ -7,41 +7,52 @@ import java.sql.SQLException;
 
 public class Test03 {
 	public static void main(String[] args) {
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
 		try {
+
+			// ·Îµù
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
+			// ¿¬°á
 			con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
+					"jdbc:oracle:thin:@localhost:1521:XE","hr","hr");
 			
-			String sql = "delete from tb_board where no = 15";
+			// sql¹®
+			String sql = "delete from tb_board where no = 20 ";
 			
+			// °´Ã¼ »ı¼º
 			pstmt = con.prepareStatement(sql);
 			
+			// ½ÇÇà
 			int cnt = pstmt.executeUpdate();
-			System.out.println(cnt + "ê°œì˜ í–‰ì´ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.");
-					
+			
+			// °á°ú
+			System.out.println(cnt + "°³ÀÇ ÇàÀÌ »èÁ¦µÇ¾ú½À´Ï´Ù.");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (pstmt != null) {
+			
+			if(pstmt != null) {
 				try {
 					pstmt.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 			}
-			if (con != null) {
+			
+			if(con != null) {
 				try {
 					con.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 			}
+			
 		}
+		
 	}
-
 }

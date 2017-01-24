@@ -1,22 +1,25 @@
-package day03.Exam;
+package day03.exam;
 
 import java.util.Scanner;
 
 public class Exam02 {
-   public static void main(String[] args) {
-
-	   
-	Scanner sc = new Scanner(System.in);
-	System.out.print("초를 입력하세요 :");
-	String s = sc.nextLine();
-	System.out.print("초를 입력하세요 :"+s);
-	
-	int num = Integer.parseInt(s);
-	int hrs = num / 3600;
-	int min = (num % 3600) / 60;
-	int sec = (num % 3600 % 60);
-	
-	System.out.printf("\n%d초는 %d시간 %d분 %d초입니다.\n",num,hrs,min,sec);
+	public static void main(String[] args) {
 		
-}
+		//객체 생성
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("초를 입력하세요 : ");
+		
+		//화면에서 입력받아 형변환
+		int inputSecond = Integer.parseInt(sc.nextLine());
+
+		//시간 계산하기
+		int hh = inputSecond / 3600;
+		int mm = inputSecond % 3600 / 60;
+		int ss = inputSecond % 3600 % 60;
+		
+		//결과출력
+		System.out.println(inputSecond + "초는 " + hh + "시간 " + mm + "분 " + ss + "초입니다.");
+	
+	}
 }

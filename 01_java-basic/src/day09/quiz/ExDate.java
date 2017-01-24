@@ -1,46 +1,27 @@
 package day09.quiz;
 
+
 public class ExDate {
-	private int year;
-	private int month;
-	private int date;
-	// 생성자에 받아온 값은 멤버변수에 무조건 선언한다고 생각
 	
-	public ExDate() {
+	private int yyyy;
+	private int mm;
+	private int dd;
+	
+	ExDate() {
 		this(2013, 4, 1);
-		//this.year = year;
-		//this.month = month;
-		//this.date = date;	
-	}
-	public ExDate(int year, int month, int date) {
-		this.year = year;
-		this.month = month;
-		this.date = date;	
-	}
-	void showDate() {
-		System.out.printf("%d년 %d월 %02d일\n", year, month, date);	
+	/*	this.yyyy = 2013;
+		this.mm = 4;
+		this.dd = 01;*/
 	}
 	
-	
-	public int getYear() {
-		return year;
-	}
-	public void setYear(int year) {
-		this.year = year;
-	}
-	public int getMonth() {
-		return month;
-	}
-	public void setMonth(int month) {
-		this.month = month;
-	}
-	public int getDate() {
-		return date;
-	}
-	public void setDate(int date) {
-		this.date = date;
+	ExDate(int yyyy, int mm, int dd) {
+		this.yyyy = yyyy;
+		this.mm = mm;
+		this.dd = dd;
 	}
 	
-	
-	
+	public void showDate() {
+		//System.out.println(yyyy+"년 " + mm + "월 " + dd + "일");
+		System.out.printf("%4d년 %2d월 %02d일 \n", yyyy, mm, dd);
+	}
 }

@@ -1,30 +1,35 @@
-package day03.Exam;
+package day03.exam;
 
 import java.util.Scanner;
 
 public class Exam06 {
-   public static void main(String[] args) {
-	
-	System.out.print("물건값을 입력하세요(만원) : ");
-	Scanner sc = new Scanner(System.in);
-	String s = sc.nextLine();
-	System.out.println("물건값을 입력하세요(만원) : " + s);
-	
-	int mon = Integer.parseInt(s);
-	
-	if (mon <= 10) {
-		int mon2 = mon*9700;
-		System.out.println("할인된 금액은 " + mon2 + " 원입니다.");
-	} else if (mon > 10 && mon <= 20) {
-		int mon3 = mon*9500;
-		System.out.println("할인된 금액은 " + mon3 + " 원입니다.");
-	} else if (mon > 20 && mon <= 30) {
-		int mon4 = mon*9200;
-		System.out.println("할인된 금액은 " + mon4 + " 원입니다.");
-	} else {
-		int mon5 = mon*9000;
-		System.out.println("할인된 금액은 " + mon5 + " 원입니다.");
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//출력예시만큼 반복
+		for(int i=0; i<=1; i++) {
+			
+			System.out.print("물건값을 입력하세요(만원): ");
+			
+			int amt  = Integer.parseInt(sc.nextLine());
+			int amt2 = 0;
+			
+			if(amt <= 10) {
+				amt2 = (int)(amt * 10000 * 0.97);
+				
+			}else if(amt > 10 && amt <=20) {
+				amt2 = (int)(amt * 10000 * 0.95);
+				
+			}else if(amt > 20 && amt <=30) {
+				amt2 = (int)(amt * 10000 * 0.92);
+				
+			}else {
+				amt2 = (int)(amt * 10000 * 0.9);
+			}
+			
+			System.out.println("할인된 금액은 " + amt2 + "원 입니다.");
+			
+		}
 	}
-   	
-}
 }

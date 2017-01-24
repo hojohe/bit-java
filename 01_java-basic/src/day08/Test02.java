@@ -2,40 +2,47 @@ package day08;
 
 public class Test02 {
 	public static void main(String[] args) {
+
 		System.out.println("시간 측정 시작");
+		// 값이 바뀔때마다 자기공간을 계속 새로 만듬 (공간 확장)
 		String s1 = "a";
-		// String은 메모리를 계속해서 생성하며 문자열을 만듦
-		// 자기 자신의 공간 값을 지속적으로 바꾸는 StringBuffer와 StringBuilder 
-		// StringBuffer(동기화)- 동시작업 불가능, 속도가 느리지만 안전
-		// StringBuilder(비동기화) - 동시작업 가능, 속도가 빠르지만 충돌 위험 有
-		
+
+		// StringBuffer, StringBuilder는 자기 자신의 공간 값을 변경
+		// 차이점 : StringBuffer(동기화 - 안전), StringBuiler(비동기화 - 위험)
+		// 비동기화 안에서 위험한 요소는 동기화 해주면서 코딩
+		// 공간 확장이 매번 일어나지 않는다. 꽉찼을때만 (현재크기 *2 + 2)? 확장해줌
 		StringBuffer s2 = new StringBuffer("a");
-		// " "을 쓸 수 있는 건 오직 String class만 가능.
-		// StingBuffer는 생성자메소드. 클래스와 이름이 같은 메소드니까!
-		
-		// 1.5이후부터 사용 가능
+		// 1.5부터
 		StringBuilder s3 = new StringBuilder("a");
-		
-		
+
+		// currentTimeMillis초기값 1970년 1월 1일 0시 0분 1초
+		// 1000 = 1초
 		long s = System.currentTimeMillis();
-		// 기준점 1970년 1월 1일 0시 0분 0초 기준
-		// 만약 1000이 나오면 1970년 1월 1일 0시 0분 1초라는 뜻
-		for (int i = 0; i < 50000; i++) {
+		for (int i = 0; i < 100000; i++) {
 			s1 += i;
 		}
 		long e = System.currentTimeMillis();
 		double time = (e - s) / 1000.0;
+		
 		System.out.println("String : " + time);
 		
+		
 		s = System.currentTimeMillis();
-		for (int i = 0; i < 50000; i++) {
-			s2.append(i); // 문자열 추가
+		for (int i = 0; i < 100000; i++) {
+			s2.append(i);
 		}
 		e = System.currentTimeMillis();
 		time = (e - s) / 1000.0;
+		
 		System.out.println("StringBuffer : " + time);
-	
+		
+		s = System.currentTimeMillis();
+		for (int i = 0; i < 100000; i++) {
+			s3.append(i);
+		}
+		e = System.currentTimeMillis();
+		time = (e - s) / 1000.0;
+		
+		System.out.println("StringBuilder : " + time);
 	}
-
-
 }

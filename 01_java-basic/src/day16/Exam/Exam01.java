@@ -11,13 +11,13 @@
 	 최고점 : ...
 	 최저점 : ...
  */
-package day16.Exam;
-
-import java.io.File;
+package day16.exam;
 
 public class Exam01 {
 	public static void main(String[] args) {
-		File f = new File("day16.Exam/exam01.txt");
+		
+		Exam01Test e01 = new Exam01Test();
+		e01.execute();
 		
 	}
 }

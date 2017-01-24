@@ -1,54 +1,65 @@
 package day15.quiz;
 
-public class StudentVO {
+public class StudentVO implements Comparable<StudentVO> {
+
 	private String name;
-	private int score1;
-	private int score2;
-	private int score3;
+	private int jumsu1;
+	private int jumsu2;
+	private int jumsu3;
 	
-	public StudentVO() {
-	}
-	
-	public StudentVO(String name, int score1, int score2, int score3) {
-		this.name = name;
-		this.score1 = score1;
-		this.score2 = score2;
-		this.score3 = score3;
+	public StudentVO(){
+		
 	}
 
+	public StudentVO(String name, int jumsu1, int jumsu2, int jumsu3) {
+		this.name   = name;
+		this.jumsu1 = jumsu1;
+		this.jumsu2 = jumsu2;
+		this.jumsu3 = jumsu3;
+	}
+	
+	
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getScore1() {
-		return score1;
+
+	public int getJumsu1() {
+		return jumsu1;
 	}
-	public void setScore1(int score1) {
-		this.score1 = score1;
+
+	public void setJumsu1(int jumsu1) {
+		this.jumsu1 = jumsu1;
 	}
-	public int getScore2() {
-		return score2;
+
+	public int getJumsu2() {
+		return jumsu2;
 	}
-	public void setScore2(int score2) {
-		this.score2 = score2;
+
+	public void setJumsu2(int jumsu2) {
+		this.jumsu2 = jumsu2;
 	}
-	public int getScore3() {
-		return score3;
+
+	public int getJumsu3() {
+		return jumsu3;
 	}
-	public void setScore3(int score3) {
-		this.score3 = score3;
+
+	public void setJumsu3(int jumsu3) {
+		this.jumsu3 = jumsu3;
 	}
+
 	public int getSum() {
-		return score1 + score2 + score3;
+		return jumsu1 + jumsu2 + jumsu3;
 	}
+
+	@Override
 	public int compareTo(StudentVO o) {
-		if (this.getSum() == o.getSum()) return 0;
+		if (this.getSum() == o.getSum())
+			return 0;
 		return this.getSum() > o.getSum() ? -1 : 1;
 	}
+
 }
-
-
-	
-

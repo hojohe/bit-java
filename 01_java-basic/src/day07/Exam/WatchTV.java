@@ -1,4 +1,4 @@
-package day07.Exam;
+package day07.exam;
 
 /*
 메인메서드를 실행했을 때 아래와 같이 출력될 수 있도록 코드 작성

@@ -20,35 +20,12 @@
  *   이기수 : 자바(수료), SQL(미수료), Jdbc(수료)
  *   박수리 : 자바(수료), SQL(수료), Jdbc(미수료)
  */
-package day16.Exam;
-
-import java.io.FileReader;
+package day16.exam;
 
 public class Exam02 {
 	public static void main(String[] args) {
-		FileReader fr = null;
-		
-		try {
-			fr = new FileReader("data/exam02.txt");
-			while(true) {
-				int ch = fr.read();
-				if(ch == -1) break;
-				System.out.println((char)ch);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if(fr != null) {
-				try {
-					fr.close();
-			}
-			    catch (Exception e) {
-			    	e.printStackTrace();
-			    }
-			}
-			
-		}
-	
+		Exam02Test e02 = new Exam02Test();
+		e02.execute();
 	}
 }
 
