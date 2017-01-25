@@ -9,13 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import kr.co.mlec.board.dao.BoardDAO;
-import kr.co.mlec.board.dao.CommentDAO;
+import kr.co.mlec.board.vo.BoardCommentVO;
 import kr.co.mlec.board.vo.BoardFileVO;
 import kr.co.mlec.board.vo.BoardVO;
-import kr.co.mlec.board.vo.CommentVO;
 
 @WebServlet("/board/detail")
 public class DetailServlet extends HttpServlet {
@@ -28,9 +26,6 @@ public class DetailServlet extends HttpServlet {
 	public void service(
 			HttpServletRequest request, HttpServletResponse response) 
 					throws ServletException, IOException {
-
-		String modYn = request.getParameter("modYn");
-		
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		// 게시물 정보 추출
@@ -41,11 +36,17 @@ public class DetailServlet extends HttpServlet {
 		BoardFileVO fileVO = dao.selectBoardFileByNo(no);
 		request.setAttribute("file", fileVO);
 		
-		CommentDAO dao = new CommentDAO();
-		List<CommentVO> comment = dao.selectComment(no);
-		request.setAttribute("comment", comment);
-
-		request.setAttribute("modYn", modYn);
+		// 게시물 댓글과 연관된 정보 추출
+		// 댓글 수정폼 처리부분
+		String commentNo = request.getParameter("commentNo");
+		if (commentNo != null) {
+			request.setAttribute("commentNo", commentNo);			
+		}
+		
+		// 댓글 목록 정보 공유
+		List<BoardCommentVO> commentList = dao.selectBoardCommentByNo(no);
+		request.setAttribute("commentList", commentList);
+				
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/board/detail.jsp");
 		rd.forward(request, response);
 	}

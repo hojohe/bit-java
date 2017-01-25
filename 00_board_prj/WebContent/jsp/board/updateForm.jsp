@@ -27,7 +27,7 @@
 			<br> <input type="submit" value="수정" />
 		</form>
 	
-		<a href="list">목록</a>
+		<a href="list.jsp">목록</a>
 	</div>
 	
 	<div class="bottom">

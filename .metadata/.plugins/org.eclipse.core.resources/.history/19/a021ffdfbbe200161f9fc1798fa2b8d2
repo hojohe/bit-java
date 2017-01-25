@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style>
+	div {
+		width: 200px;
+		height: 200px;
+		border: 1px solid
+	}
+
+</style>
+
+</head>
+<body>
+	<div id="pic1"></div>
+	<div id="pic2"></div>
+	<div id="pic3"></div>
+	<div id="pic4"></div>
+</body>
+</html>

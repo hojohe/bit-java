@@ -12,8 +12,8 @@
 	<typeAliases>
 		<typeAlias alias="board" type="kr.co.mlec.board.vo.BoardVO" />
 		<typeAlias alias="boardFile" type="kr.co.mlec.board.vo.BoardFileVO" />
+		<typeAlias alias="boardComment" type="kr.co.mlec.board.vo.BoardCommentVO" />
 		<typeAlias alias="login" type="kr.co.mlec.board.vo.MemberVO" />
-		<typeAlias alias="comment" type="kr.co.mlec.board.vo.CommentVO" />
 		<!-- naming rule: 도메인명+프로젝트명 or 프로젝트 구성단위(사용자,관리자 등)+기능명 -->
 	</typeAliases>
 	
@@ -33,6 +33,5 @@
 	<mappers>
 		<mapper resource="config/sqlmap/oracle/board.xml"/>
 		<mapper resource="config/sqlmap/oracle/login.xml"/>
-		<mapper resource="config/sqlmap/oracle/comment.xml"/>
 	</mappers>
 </configuration>

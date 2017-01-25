@@ -12,7 +12,7 @@
 <div class="container">
 
 	<div class="header">
-		<c:import url="/jsp/include/topMenu.jsp" />
+		<c:import url="/jsp/include/topMenu.jsp"	/>
 	</div>
 
 	<div class="content">
@@ -32,14 +32,7 @@
 			<c:forEach var="board" items="${list}">
 				<tr>
 					<td><c:out value="${board.no}" /></td>
-					<c:choose>
-						<c:when test="${empty user.userId}">
-							<td><c:out value="${board.title}" /></td>
-						</c:when>
-						<c:otherwise>
-							<td><a href='detail?no=<c:out value="${board.no}"/>'><c:out value="${board.title}" /></a></td>
-						</c:otherwise>
-					</c:choose>
+					<td><a href='detail?no=<c:out value="${board.no}"/>'><c:out value="${board.title}" /></a></td>
 					<td><c:out value="${board.writer}" /></td>
 					<td><fmt:formatDate value="${board.regDate}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
 				</tr>
@@ -51,12 +44,7 @@
 				</tr>
 			</c:if>
 		</table>
-		
-		<c:choose>
-			<c:when test="${not empty user.userId}">
-				<a href='${pageContext.request.contextPath}/board/writeForm'>글쓰기</a>
-			</c:when>
-		</c:choose>
+		<a href='${pageContext.request.contextPath}/board/writeForm'>글쓰기</a>
 	</div>		
 	
 	<div class="bottom">

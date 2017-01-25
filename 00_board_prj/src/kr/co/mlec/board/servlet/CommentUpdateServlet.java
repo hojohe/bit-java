@@ -1,41 +1,50 @@
 package kr.co.mlec.board.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.co.mlec.board.dao.CommentDAO;
-import kr.co.mlec.board.vo.CommentVO;
+import kr.co.mlec.board.dao.BoardDAO;
+import kr.co.mlec.board.vo.BoardCommentVO;
 
-@WebServlet("/board/comment/update")
+@WebServlet("/board/commentUpdate")
 public class CommentUpdateServlet extends HttpServlet {
 
+	private BoardDAO dao;
+	public CommentUpdateServlet() {
+		this.dao = new BoardDAO();
+	}
+	
 	@Override
-	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	public void service(
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
 		int commentNo = Integer.parseInt(request.getParameter("commentNo"));
 		int no = Integer.parseInt(request.getParameter("no"));
-		String comments = request.getParameter("comments");
 		
-		CommentVO vo = new CommentVO();
-		vo.setCommentNo(commentNo);
-		vo.setComments(comments);
+		// 게시판과 파일 테이블에 저장할 글번호를 조회
+		BoardCommentVO comment = new BoardCommentVO();
+		comment.setContent(request.getParameter("content"));
+		comment.setCommentNo(commentNo);
 		
-		CommentDAO dao = new CommentDAO();
-		dao.updateComment(vo);
+		dao.updateBoardComment(comment);
 		
-		request.setAttribute("no", no);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/board/detail");
-		rd.forward(request, response);
+		response.sendRedirect("detail?no=" + no);
 	}
-	
 }
+
+
+
+
+
+
+
+
+
+
+

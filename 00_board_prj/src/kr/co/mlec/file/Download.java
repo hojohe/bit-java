@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/file/download")
+@WebServlet("/jsp/file/download")
 public class Download extends HttpServlet {
 
 	@Override
@@ -22,33 +22,32 @@ public class Download extends HttpServlet {
 		// path : 파일이 실제 저장된 서버의 경로
 		// systemName : 경로에 저장된 실제 파일명
 		// downName : 사용자 컴퓨터에 다운로드 시킬 원본 파일명
-
+		
 		/*
-		 * 다운로드 요청시 : http://localhost:9090/프로젝트명/jsp/file/download
-		 * ?path=/2017/01/20&systemName=abcd.jpg&downName=국화.jpg
-		 * 
-		 * 이미지 그리기 요청시 : http://localhost:9090/프로젝트명/jsp/file/download
-		 * ?path=/2017/01/20&systemName=abcd.jpg
-		 * 
+		 *  다운로드 요청시 :
+		 *  /프로젝트명/jsp/file/download?path=/2017/01/20&systemName=abcd.jpg&downName=국화.jpg
+		 *  
+		 *  이미지 그리기 요청시 : 
+		 *  /프로젝트명/jsp/file/download?path=/2017/01/20&systemName=abcd.jpg
 		 */
 		String path = request.getParameter("path");
 		String systemName = request.getParameter("systemName");
 		String downName = request.getParameter("downName");
 		
-		String uploadPath = "C:/java90/tomcat-work/wtpwebapps/00_board_prj/upload";
-		
+		String uploadPath = "C:/java90/tomcat-work/wtpwebapps/06_servletjsp/upload";
 		File f = new File(uploadPath + path, systemName);
 		
 		// 이미지일 경우 화면에 직접 그린다.
 		if (downName == null) {
 			response.setHeader("Content-Type", "image/jpg");
-		} 
+		}
 		// 무조건 다운로드 한다.
 		else {
 			response.setHeader("Content-Type", "application/octet-stream");
 			// 다운로드 파일 이름 헤더 설정
-			downName = new String(downName.getBytes("utf-8"), "8859_1"); // 8859_1 브라우저가 가지고있는 기본 인코딩
-			response.setHeader("Content-Disposition", "attachment;filename=" + downName);
+			downName = new String(downName.getBytes("UTF-8"), "8859_1");
+			response.setHeader(
+					"Content-Disposition", "attachment;filename=" + downName);
 			response.setHeader("Content-Transfer-Encoding", "binary");
 			response.setHeader("Content-Length", String.valueOf(f.length()));
 		}
@@ -61,17 +60,13 @@ public class Download extends HttpServlet {
 		
 		while (true) {
 			int ch = bis.read();
-			if(ch == -1) break;
+			if (ch == -1) break;
 			
 			bos.write(ch);
 		}
-		
 		bis.close();
 		fis.close();
 		bos.close();
 		out.close();
-		
-
 	}
-
 }

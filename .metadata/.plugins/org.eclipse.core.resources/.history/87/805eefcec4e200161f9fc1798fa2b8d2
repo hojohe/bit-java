@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" style="text/css" href="exam03.css" />
+</head>
+<body>
+
+	<div class="header">
+		<ul class="headerLnb">
+			<li>
+				<a>홈</a>
+			</li>
+			<li>
+				<a>오시는길</a>
+			</li>
+			<li>
+				<a>로그인</a>
+			</li>
+		</ul>
+	</div>
+	<div class="container">
+	
+		<ul class="mainLnb">
+			<li><a>GREETING</a>
+				<ul>
+					<li><a>인사말</a></li>
+					<li><a>주변풍경</a></li>
+				</ul>
+			</li>
+			<li><a>ROOMS</a>
+				<ul>
+					<li><a>은하수</a></li>
+					<li><a>별똥별</a></li>
+				</ul>
+			</li>
+			<li><a>SPECIAL</a>
+				<ul>
+					<li><a>스파즐기기</a></li>
+					<li><a>바베큐파티</a></li>
+				</ul>
+			</li>
+			<li><a>TRAVEL</a>
+				<ul>
+					<li><a>아침고요수목원</a></li>
+					<li><a>소인국</a></li>
+				</ul>
+			</li>
+			<li><a>PROMISE</a>
+				<ul>
+					<li><a>예약/객실요</a></li>
+					<li><a>실시간예약하기</a></li>
+				</ul>
+			</li>
+			<li><a>MEET</a>
+				<ul>
+					<li><a>교통정보</a></li>
+					<li><a>약도</a></li>
+				</ul>
+			</li>
+			<li><a>TALK</a>
+				<ul>
+					<li><a>공지사항</a></li>
+					<li><a>여행후기</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

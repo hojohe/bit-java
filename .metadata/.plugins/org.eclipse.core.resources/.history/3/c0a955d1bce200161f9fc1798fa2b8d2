@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style>
+	div {
+		width: 200px;
+		height: 200px;
+		border: 3px solid skyblue;
+		float: left;
+		margin: 3px 3px;
+	}
+	
+	div.pic1 {
+		background-color: #FAD21E;
+		font: bold italic 30px 굴림;
+		color: white;
+	}
+	
+	div.pic3 {
+		clear: both;
+	}
+	
+</style>
+
+</head>
+<body>
+	<div class="pic1">연예인 누구</div>
+	<div class="pic2"></div>
+	<div class="pic3"></div>
+	<div class="pic4"></div>
+</body>
+</html>

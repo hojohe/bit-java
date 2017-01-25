@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import kr.co.mlec.board.vo.BoardCommentVO;
 import kr.co.mlec.board.vo.BoardFileVO;
 import kr.co.mlec.board.vo.BoardVO;
 import kr.co.mlec.common.db.MyAppSqlConfig;
@@ -55,6 +56,26 @@ public class BoardDAO {
 	
 	public BoardFileVO selectBoardFileByNo(int no) {
 		return sqlMapper.selectOne("kr.co.mlec.board.dao.BoardMapper.selectBoardFileByNo", no);
+	}
+	
+	
+	/* =================================================== */
+	/* 댓글 관련                                             */
+	/* =================================================== */
+	public void insertBoardComment(BoardCommentVO comment) {
+		sqlMapper.insert("kr.co.mlec.board.dao.BoardMapper.insertBoardComment", comment);
+		sqlMapper.commit();
+	}
+	public List<BoardCommentVO> selectBoardCommentByNo(int no) {
+		return sqlMapper.selectList("kr.co.mlec.board.dao.BoardMapper.selectBoardCommentByNo", no);
+	}
+	public void deleteBoardComment(int commentNo) {
+		sqlMapper.delete("kr.co.mlec.board.dao.BoardMapper.deleteBoardComment", commentNo);
+		sqlMapper.commit();
+	}
+	public void updateBoardComment(BoardCommentVO comment) {
+		sqlMapper.update("kr.co.mlec.board.dao.BoardMapper.updateBoardComment", comment);
+		sqlMapper.commit();
 	}
 }
 

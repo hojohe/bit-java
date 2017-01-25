@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
 			login.setEmail(member.getEmail());
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("user", login);
+			session.setAttribute("user", member);
 			
 			response.sendRedirect(request.getContextPath() + "/main/main");
 		}

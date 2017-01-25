@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style>
+	div {
+		width: 200px;
+		height: 200px;
+		border: 3px solid #438C94;
+		float: left;
+		margin: 3px 3px;
+	}
+	
+	div.pic1 {
+		background-color: #FFC9C4;
+		font: bold 30px 굴림;
+		font-weight: 700;
+		text-align: center;
+		color: #4F1775;
+	}
+	
+	div > span {
+		width: 200px; height: 50px;
+		display: block;
+		margin-top: 50px;
+	}
+	
+	div.pic2 {
+		background-image: url("00_exam/images/01/공유1.jpg");
+	}
+	div.pic3 {
+		clear: both;
+		background-image: url("00_exam/images/01/공유2.jpg");
+	}
+	div.pic4 {
+		background-image: url("../01/images/공유3.jpg");
+	}
+	
+</style>
+
+</head>
+<body>
+	<div class="pic1"><span>연예인 누구</span></div>
+	<div class="pic2"></div>
+	<div class="pic3"></div>
+	<div class="pic4"></div>
+</body>
+</html>
