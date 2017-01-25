@@ -1,0 +1,48 @@
+
+1월 25, 2017 16:07:10.22 NEW SESSION
+1월 25, 2017 16:07:10.22 [11636:15084:0125/160710:ERROR:socket_stream.cc(210)] Closing stream with result -101
+1월 25, 2017 16:07:12.69 [11636:15084:0125/160712:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 16:08:06.74 [11636:15084:0125/160806:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 16:08:50.98 [11636:22140:0125/160850:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+1월 25, 2017 16:09:20.86 [11636:22140:0125/160920:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+1월 25, 2017 16:09:33.39 [11636:15084:0125/160933:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 16:10:00.43 [11636:15084:0125/161000:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -105
+1월 25, 2017 16:10:17.40 [11636:22140:0125/161017:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+1월 25, 2017 16:10:25.60 [11636:15084:0125/161025:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -105
+1월 25, 2017 16:11:46.80 [11636:22140:0125/161146:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+1월 25, 2017 16:15:25.17 [11636:22140:0125/161525:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+1월 25, 2017 16:20:25.61 [11636:15084:0125/162025:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -105
+1월 25, 2017 16:22:52.52 [11636:22140:0125/162252:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+1월 25, 2017 16:26:03.93 [11636:15084:0125/162603:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 16:55:49.42 [11636:15084:0125/165549:ERROR:socket_stream.cc(210)] Closing stream with result -101
+1월 25, 2017 16:55:49.42 [11636:15084:0125/165549:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 16:55:51.57 [11636:15084:0125/165551:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 16:55:57.92 [11636:15084:0125/165557:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 16:59:19.23 [11636:15084:0125/165919:ERROR:socket_stream.cc(210)] Closing stream with result -101
+1월 25, 2017 16:59:19.24 [11636:15084:0125/165919:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 16:59:21.35 [11636:15084:0125/165921:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 16:59:27.91 [11636:15084:0125/165927:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:14:46.40 [11636:15084:0125/171446:ERROR:socket_stream.cc(210)] Closing stream with result -101
+1월 25, 2017 17:14:46.42 [11636:15084:0125/171446:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:14:48.53 [11636:15084:0125/171448:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 17:14:55.43 [11636:15084:0125/171455:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:16:52.19 [11636:15084:0125/171652:ERROR:socket_stream.cc(210)] Closing stream with result -101
+1월 25, 2017 17:16:52.20 [11636:15084:0125/171652:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:16:54.33 [11636:15084:0125/171654:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 17:17:00.57 [11636:15084:0125/171700:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:21:06.55 [11636:15084:0125/172106:ERROR:socket_stream.cc(210)] Closing stream with result -101
+1월 25, 2017 17:21:08.64 [11636:15084:0125/172108:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 17:21:19.53 [11636:15084:0125/172119:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:21:34.15 [11636:15084:0125/172134:ERROR:socket_stream.cc(210)] Closing stream with result -101
+1월 25, 2017 17:21:36.34 [11636:15084:0125/172136:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 17:22:00.18 [11636:15084:0125/172200:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 17:22:58.48 [11636:15084:0125/172258:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 17:23:26.44 [11636:15084:0125/172326:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:23:34.77 Vector smash protection is enabled.
+1월 25, 2017 17:24:57.34 [11636:15084:0125/172457:ERROR:ssl_client_socket_impl.cc(1146)] handshake failed; returned -1, SSL error code 1, net_error -107
+1월 25, 2017 17:25:56.34 [11636:15084:0125/172556:ERROR:socket_stream.cc(210)] Closing stream with result -101
+1월 25, 2017 17:25:56.36 [11636:15084:0125/172556:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:25:58.47 [11636:15084:0125/172558:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -106
+1월 25, 2017 17:26:05.00 [11636:15084:0125/172605:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
+1월 25, 2017 17:36:02.11 [11636:15084:0125/173602:ERROR:ssl_client_socket_impl.cc(1146)] handshake failed; returned -1, SSL error code 1, net_error -107
+1월 25, 2017 17:53:44.91 [11636:15084:0125/175344:ERROR:ssl_client_socket_impl.cc(1146)] handshake failed; returned -1, SSL error code 1, net_error -107

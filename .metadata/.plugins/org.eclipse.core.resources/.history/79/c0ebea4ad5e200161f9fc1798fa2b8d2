@@ -1,0 +1,12 @@
+package kr.co.mlec.board.vo;
+
+import java.sql.Date;
+
+public class BoardVO {
+	int no;
+	String title;
+	String writer;
+	String content;
+	Date regDate;
+	
+}
