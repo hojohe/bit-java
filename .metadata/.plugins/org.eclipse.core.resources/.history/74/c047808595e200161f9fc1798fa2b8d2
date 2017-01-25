@@ -1,0 +1,28 @@
+<html>
+<head>
+<title> transition  </title>
+<meta charset="utf-8" />
+<style>
+	#outer > div {
+		width: 100px; height: 100px;
+		text-align: center;
+		padding: 5px;
+		margin: 5px 10px;
+		color: white;
+		background: black;
+		font-size: 30px;
+		font-weight: 
+	}
+</style>
+</head>
+
+<body>
+<div id="outer">
+    <div class="ease"> ease </div>
+    <div class="linear"> linear </div>
+    <div class="ease-in"> ease-in </div>
+    <div class="ease-out"> ease-out </div>
+    <div class="ease-in-out"> ease-in-out </div>
+</div>
+</body>
+</html>

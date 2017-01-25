@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	#outer > div {
+		width: 200px; height: 200px;
+		background-color: red;
+		
+		/*
+		animation-name: ani;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: reverse;
+		animation-direction: alternate;
+		*/
+		animation: ani 3s infinite alternate;
+		
+	}
+	
+	@keyframes ani {
+		from { background-color: red; border-radius: 0px; }
+		to { background-color: blue; border-radius: 100px; }
+	}
+</style>
+</head>
+<body>
+
+</body>
+</html>

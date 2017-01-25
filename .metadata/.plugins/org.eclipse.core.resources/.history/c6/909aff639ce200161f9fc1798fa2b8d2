@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	/* #outer > div {
+		width: 100px; height: 100px;
+		display:block;
+		
+		animation: ani 3s infinite alternate;
+	} */
+	
+	@keyframes ani {
+		0% {
+			 background-color: red;
+			 padding-top: 0px;
+			 padding-left: 0px;
+		}
+		20% {
+			 background-color: orange;
+ 			 padding-top: 0px;
+			 padding-left: 300px;
+		}
+		40% {
+			 background-color: yello;
+			 padding-top: 150px;
+			 padding-left: 150px;
+		}
+		60% {
+			 background-color: green;
+			  			 padding-top: 300px;
+			 padding-left: 300px;
+			  background-position: 300px 0px;  
+		}
+		80% {
+			 background-color: blue;
+			  background-position: 300px 300px;  
+		}
+		100% {
+			 background-color: purple;
+			  background-position: 0px 0px;  
+		}
+	}
+</style>
+</head>
+<body>
+<div id="outer">
+    <div>dfdf</div>
+</div>
+</body>
+</html>

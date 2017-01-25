@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	#outer > div {
+		width: 100px; height: 100px;
+		
+		animation: ani 3s infinite alternate;
+		
+	}
+	
+	@keyframes ani {
+		0% {
+			 background-color: red;
+			 background-position: 100px 0px; 
+		}
+		20% {
+			 background-color: orange;
+			 padding-left: 300px;
+		}
+		40% {
+			 background-color: yello;
+			 top:150px; right:150px;
+		}
+		60% {
+			 background-color: green;
+			 top:300px; right:0px;
+		}
+		80% {
+			 background-color: blue;
+			 top:300px; right:300px;
+		}
+		100% {
+			 background-color: purple;
+			 top:0px; right:0px;
+		}
+	}
+</style>
+</head>
+<body>
+<div id="outer">
+    <div></div>
+</div>
+</body>
+</html>

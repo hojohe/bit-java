@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>큐브만들기</title>
+
+<style>
+	
+	#wheel {
+		position: absolute;
+		width: 200px;height: 200px;
+		left: 100px; top: 100px;
+
+		animation: cube 10s linear 0s infinite;
+		/* 자식 요소의 3차원 속성 사용 */		
+		transform-style: preserve-3d;
+		perspective: 900px;
+	}
+	
+	.item {
+		position: absolute;
+		width: 200px;height: 200px;
+		left: 0px; top: 0px;
+		border: 1px solid white;
+		
+		font-size: 40px;
+		text-align: center;
+		line-height: 200px;
+		
+	}
+	
+	.item:nth-child(1) { 
+		background: olive; 
+		transform: rotateY(0deg) translateZ(100px);
+	}
+	.item:nth-child(2) { 
+		background: skyblue; 
+		transform: rotateY(90deg) translateZ(100px);
+	}
+	.item:nth-child(3) { 
+		background: pink; 
+		transform: rotateY(180deg) translateZ(100px);
+	}
+	.item:nth-child(4) { 
+		background: orange; 
+		transform: rotateY(270deg) translateZ(100px);
+	}
+	.item:nth-child(5) { 
+		background: yellow; 
+		transform: rotateX(90deg) translateZ(100px);
+	}
+	.item:nth-child(6) { 
+		background: purple; 
+		transform: rotateX(270deg) translateZ(100px);
+	}
+	
+	@keyframes cube {
+		from { transform: rotateX(0deg) }
+		to { transform: rotateY(360deg) }
+	}
+	
+	@keyframes cube {
+		from { transform: rotateX(0deg) rotateY(0deg)}
+		to { transform: rotateX(360deg) rotateY(360deg)}
+	}
+	
+</style>
+
+
+
+</head>
+<body>
+	<h1>큐브</h1>
+	<div id="wheel">
+    	<div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+	</div>
+<!-- 	 <div id="wheel">
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+            <div class="item"><img src="../images/pic1.jpg" /></div>
+	</div> -->
+</body>
+</html>
