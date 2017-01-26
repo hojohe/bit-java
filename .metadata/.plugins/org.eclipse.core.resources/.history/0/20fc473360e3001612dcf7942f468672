@@ -1,0 +1,23 @@
+package kr.co.mlec.board.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import kr.co.mlec.board.vo.BoardVO;
+import kr.co.mlec.common.db.MyAppSqlConfig;
+
+public class BoardDAO {
+	
+	static SqlSession sqlMapper = MyAppSqlConfig.getSqlSessionInstance();
+	
+	
+	public List<BoardVO> selectBoardList() {
+		List<BoardVO> board = sqlMapper.selectList(
+				"kr.co.mlec.board.dao.BoardMapper.selectBoardList");
+		return board;
+	}
+	
+	public 
+
+}

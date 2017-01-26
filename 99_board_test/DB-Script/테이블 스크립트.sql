@@ -15,6 +15,8 @@ create table tb_board_file (
 	file_size number not null
 );
 
+alter table tb_board_file modify(file_path varchar2(200));
+
 create sequence s_board_file_no;
 
 select * from tb_board_file;
@@ -30,7 +32,7 @@ create table tb_board_comment (
 create sequence s_board_comment_no;
 
 
-
+s_board_no
 
 select * from tb_board
 select no, 
@@ -40,3 +42,15 @@ select no,
 	   reg_date
   from tb_board
  order by reg_date desc
+ 
+ 
+ select * from tb_board_comment
+ 
+ 
+ delete 
+		  from tb_board_comment
+		 where comment_no = 88
+		 
+		 
+		 select to_char(reg_date, 'yyyy-mm-dd hh:mm:ss') from tb_board
+		 order by no desc

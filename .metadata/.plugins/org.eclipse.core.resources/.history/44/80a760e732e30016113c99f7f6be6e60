@@ -1,0 +1,39 @@
+package kr.co.mlec.board.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.co.mlec.board.dao.BoardDAO;
+import kr.co.mlec.board.vo.BoardCommentVO;
+
+@WebServlet("/comment/update")
+public class CommentUpdateServlet extends HttpServlet {
+
+	@Override
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setCharacterEncoding("utf-8");
+		int no = Integer.parseInt(request.getParameter("no"));
+		int commentNo = Integer.parseInt(request.getParameter("commentNo"));
+		
+		BoardCommentVO vo = new BoardCommentVO();
+		vo.setNo(no);
+		vo.setCommentNo(commentNo);
+		
+		BoardDAO dao = new BoardDAO();
+		dao.updateComment(vo);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/board/detail?no="+ no + "&commentNo=" + );
+		
+		
+	}
+	
+	
+
+}

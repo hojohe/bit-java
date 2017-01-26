@@ -46,3 +46,7 @@
 1월 25, 2017 17:26:05.00 [11636:15084:0125/172605:ERROR:connection_factory_impl.cc(367)] Failed to connect to MCS endpoint with error -21
 1월 25, 2017 17:36:02.11 [11636:15084:0125/173602:ERROR:ssl_client_socket_impl.cc(1146)] handshake failed; returned -1, SSL error code 1, net_error -107
 1월 25, 2017 17:53:44.91 [11636:15084:0125/175344:ERROR:ssl_client_socket_impl.cc(1146)] handshake failed; returned -1, SSL error code 1, net_error -107
+
+1월 26, 2017 11:15:25.22 NEW SESSION
+1월 26, 2017 11:15:25.22 
+1월 26, 2017 11:15:25.22 KLIB_SelfTest return : KLR_OK

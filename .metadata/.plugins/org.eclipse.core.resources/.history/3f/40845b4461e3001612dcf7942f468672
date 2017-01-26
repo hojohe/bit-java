@@ -1,0 +1,8 @@
+package kr.co.mlec.board.servlet;
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("")
+public class ListServlet {
+
+}

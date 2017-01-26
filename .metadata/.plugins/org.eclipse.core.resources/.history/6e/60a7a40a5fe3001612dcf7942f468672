@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kr.co.mlec.board.dao.BoardMapper">
+	<resultMap id="" type="" >
+	
+	</resultMap>
+	
+	
+	
+	<select id="" resultMap="">
+		select no, 
+			   title, 
+			   writer, 
+			   content, 
+			   reg_date
+		  from tb_board
+		 order by reg_date desc
+	</select>
+	
+</mapper>

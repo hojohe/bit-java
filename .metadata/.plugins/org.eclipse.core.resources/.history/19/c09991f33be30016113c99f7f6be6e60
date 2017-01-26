@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kr.co.mlec.board.dao.BoardMapper">
+	
+	<resultMap id="boardMap" type="board">
+		<result property="no" column="no" />
+		<result property="title" column="title" />
+		<result property="writer" column="writer" />
+		<result property="content" column="content" />
+		<result property="regDate" column="reg_date" />
+	</resultMap>
+	
+	<select id="selectBoardList" resultMap="boardMap">
+		select no, 
+			   title, 
+			   writer, 
+			   content, 
+			   reg_date
+		  from tb_board
+		 order by reg_date desc
+	</select>
+	
+	<select id="selectOneBoard" parameterType="int" resultMap="boardMap">
+		select no, 
+			   title, 
+			   writer, 
+			   content, 
+			   reg_date
+		  from tb_board
+		 where no = #{no}
+	</select>
+	
+	<insert id="insertBoard" parameterType="board">
+		insert into tb_board(
+			no, 
+			title, 
+			writer, 
+			content, 
+			reg_date
+		)values(
+			s_board_no.nextVal, 
+			#{title}, 
+			#{writer}, 
+			#{content}, 
+			sysdate
+		)
+	</insert>
+	
+	<update id="updateBoard" parameterType="board">
+		update tb_board
+		   set title = #{title},
+		   	   content = #{content} 
+		 where no = #{no}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete 
+		  from tb_board
+		 where no = #{no}
+	</delete>
+	
+	
+	<!-- 댓글관련 -->
+	
+	<resultMap id="boardCommentMap" type="boardComment">
+		<result property="commentNo" column="comment_no" />
+		<result property="no" column="no" />
+		<result property="content" column="content" />
+		<result property="userId" column="user_id" />
+		<result property="regDate" column="reg_date" />
+	</resultMap>	
+	
+	<select id="selectCommitList" parameterType="int" resultMap="boardCommentMap" >
+		select comment_no,
+			   no,
+			   content,
+			   user_id,
+			   reg_date
+		  from tb_board_comment
+		 where no = #{no}
+		 order by reg_date desc
+	</select>	
+	
+	
+	<insert id="insertComment" parameterType="boardComment">
+		insert into tb_board_comment(
+			comment_no, 
+			no, 
+			content, 
+			user_id, 
+			reg_date
+		) values(
+			s_board_comment_no.nextVal,
+			#{no}, 
+			#{content}, 
+			#{userId}, 
+			sysdate
+		)	
+	</insert>
+	
+	<select id="selectCommentByNo" parameterType="int" resultMap="boardCommentMap" >
+		select comment_no,
+			   no,
+			   content,
+			   user_id,
+			   reg_date
+		  from tb_board_comment
+		 where comment_no = #{commentNo}
+	</select>
+	
+	<update id="updateComment" parameterType="boardComment">
+		update tb_board_comment
+	       set content = #{content}
+	     where comment_no = #{commentNo}
+	</update>
+	
+	<delete id="deleteComment" parameterType="int">
+		delete 
+		  from tb_board_comment
+		 where comment_no = #{commentNo}
+	</delete>
+	
+	
+	<resultMap id="boardFileMap" type="boardFile">
+		<result property="fileNo" column="file_no" />
+		<result property="no" column="no" />
+		<result property="oriName" column="ori_name" />
+		<result property="systemName" column="system_name" />
+		<result property="filePath" column="file_path" />
+		<result property="fileSize" column="file_size" />
+	</resultMap>
+	
+	<select id="selectFile" parameterType="int" >
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

@@ -2,19 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="updateForm" key="selection"/>
+		<item value="/" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="updateForm"/>
-			<item value="euc-kr"/>
-			<item value="BoardCommentVO"/>
-			<item value="container"/>
-			<item value="headerLnb"/>
+			<item value="\"/>
+			<item value="path"/>
+			<item value="insertBoard"/>
+			<item value="insertFile"/>
+			<item value="selectFile"/>
+			<item value="boardFile"/>
+			<item value="boardFileMap"/>
+			<item value="fileSize"/>
 		</list>
 		<list key="replacehistory">
+			<item value="/"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

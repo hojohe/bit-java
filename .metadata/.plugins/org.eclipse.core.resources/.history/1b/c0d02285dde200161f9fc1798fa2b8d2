@@ -1,9 +1,0 @@
-package kr.co.mlec.board.servlet;
-
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-
-@WebServletvlet("/board/write")
-public class WriteServlet extends HttpServlet {
-
-}

@@ -18,7 +18,7 @@ public class ListServlet extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+
 		BoardDAO dao = new BoardDAO();
 		List<BoardVO> board = dao.selectBoardList();
 		
@@ -26,5 +26,10 @@ public class ListServlet extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/board/list.jsp");
 		rd.forward(request, response);
+	
+	
 	}
+	
+	
+
 }

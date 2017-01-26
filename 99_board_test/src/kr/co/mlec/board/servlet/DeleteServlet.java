@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.co.mlec.board.dao.BoardDAO;
+import kr.co.mlec.board.vo.BoardVO;
 
 @WebServlet("/board/delete")
 public class DeleteServlet extends HttpServlet {
 
-	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		BoardDAO dao = new BoardDAO();
@@ -24,9 +24,8 @@ public class DeleteServlet extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/board/delete.jsp");
 		rd.forward(request, response);
-
+	
 	}
-	
-	
 
+	
 }

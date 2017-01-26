@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/jsp/file/download")
+@WebServlet("/file/download")
 public class Download extends HttpServlet {
 
 	@Override
@@ -34,7 +34,7 @@ public class Download extends HttpServlet {
 		String systemName = request.getParameter("systemName");
 		String downName = request.getParameter("downName");
 		
-		String uploadPath = "C:/java90/tomcat-work/wtpwebapps/06_servletjsp/upload";
+		String uploadPath = "C:/java90/tocat-work/wtpwebapps/99_board_test/upload";
 		File f = new File(uploadPath + path, systemName);
 		
 		// 이미지일 경우 화면에 직접 그린다.

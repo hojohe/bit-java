@@ -1,0 +1,8 @@
+package kr.co.mlec.board.servlet;
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/comment/delete")
+public class CommentDeleteServlet extends {
+
+}
