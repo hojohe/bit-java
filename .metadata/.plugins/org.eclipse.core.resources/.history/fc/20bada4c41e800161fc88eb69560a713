@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button type="button" onclick="showTime('start')">시작</button>
+<button type="button" onclick="showTime('end')">정지</button>
+<h1 id="time"></h1>
+
+<script>
+	function showTime(val) {
+		
+		// 시간 정보를 id가 time인 엘리먼트에 표시하기
+		var h1Obj = document.querySelector("#time");
+
+		// 자바스크립트 Date 내장객체
+		var date = new Date();
+		
+		h1Obj.innerHTML = date.toLocaleTimeString();
+		
+		
+		if(val=="start") {
+			var id = setTimeout(showTime, 1000);
+		}else {
+			clearTimeout(id);
+		}
+	}	
+	
+</script>
+</body>
+</html>

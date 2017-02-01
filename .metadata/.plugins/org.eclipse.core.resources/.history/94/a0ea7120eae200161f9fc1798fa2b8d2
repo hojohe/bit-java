@@ -1,5 +1,0 @@
-package kr.co.mlec.board.servlet;
-
-public class DeleteServlet extends{
-
-}

@@ -1,8 +1,0 @@
-package kr.co.mlec.board.vo;
-
-public class BoardCommentVO {
-	int commentNo;
-	int no;
-	String content;
-	String userId;
-}

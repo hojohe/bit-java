@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var tot = 0;
+	var num = 0;
+
+	function cal(val) {
+		
+		var result = document.querySelector("#result");
+		
+		if(isNaN(val)){
+			switch(val) {
+				case "/" : 
+					result.value = result.value + "/";
+					break;
+				case "*" :
+					result.value = result.value + "*";
+					break;
+				case "-" :
+					result.value = result.value + "-";
+					break;
+				case "." :
+					result.value = result.value + ".";
+					break;
+				case "+" :
+					result.value = result.value + "+";
+					break;
+				case "%" :
+					result.value = result.value + "%";
+					break;
+				case "=" :
+					result.value = eval(result.value);
+					return false;
+				case "clear" :
+					result.value = "";
+					return false;
+			}
+		
+		} else {
+			result.value = result.value + val;
+			num = val;
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<input type="text" readonly id="result" />
+	<br>
+	<input type="button" id="num7" value="7" onclick="cal(7)"/>
+	<input type="button" id="num8" value="8" onclick="cal(8)"/>
+	<input type="button" id="num9" value="9" onclick="cal(9)"/>
+	<input type="button" id="opr4" value="/" onclick="cal('/')"/>
+	<br>
+	<input type="button" id="num4" value="4" onclick="cal(4)"/>
+	<input type="button" id="num5" value="5" onclick="cal(5)"/>
+	<input type="button" id="num6" value="6" onclick="cal(6)"/>
+	<input type="button" id="opr3" value="*" onclick="cal('*')"/>
+	<br>
+	<input type="button" id="num1" value="1" onclick="cal(1)"/>
+	<input type="button" id="num2" value="2" onclick="cal(2)"/>
+	<input type="button" id="num3" value="3" onclick="cal(3)"/>
+	<input type="button" id="opr2" value="-" onclick="cal('-')"/>
+	<br>
+	<input type="button" id="num0" value="0" onclick="cal(0)"/>
+	<input type="button" id="opr6" value="." onclick="cal('.')"/>
+	<input type="button" id="opr5" value="+" onclick="cal('+')"/>
+	<input type="button" id="opr1" value="%" onclick="cal('%')"/>
+	<br>
+	<input type="button" id="opr" value="=" onclick="cal('=')"/>
+	<input type="button" id="clear" value="clear" onclick="cal('clear')"/>
+	
+</body>
+</html>

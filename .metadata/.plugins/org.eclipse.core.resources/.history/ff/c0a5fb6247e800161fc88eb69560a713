@@ -1,0 +1,19 @@
+<!-- 
+	isNaN(값)
+	- 입력된 값이 숫자가 아닌 경우
+	
+	NaN : Not a Number
+	
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+</body>
+</html>

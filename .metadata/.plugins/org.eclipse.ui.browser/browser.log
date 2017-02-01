@@ -54,3 +54,16 @@
 1월 31, 2017 23:52:17.58 NEW SESSION
 1월 31, 2017 23:52:17.58 Vector smash protection is enabled.
 1월 31, 2017 23:52:59.11 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+
+2월 01, 2017 12:01:38.07 NEW SESSION
+2월 01, 2017 12:01:38.07 Vector smash protection is enabled.
+2월 01, 2017 12:02:09.68 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 01, 2017 13:52:36.95 [3996:13592:0201/135236:ERROR:socket_stream.cc(210)] Closing stream with result -101
+2월 01, 2017 18:04:43.67 Vector smash protection is enabled.
+2월 01, 2017 18:05:13.73 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 01, 2017 18:18:14.49 [3996:11048:0201/181814:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+2월 01, 2017 18:49:23.44 [3996:11048:0201/184923:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+2월 01, 2017 19:16:24.85 [3996:11048:0201/191624:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+2월 01, 2017 19:31:29.44 [3996:11048:0201/193129:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+2월 01, 2017 19:40:59.75 [3996:11048:0201/194059:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+2월 01, 2017 19:44:49.48 [3996:11048:0201/194449:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)

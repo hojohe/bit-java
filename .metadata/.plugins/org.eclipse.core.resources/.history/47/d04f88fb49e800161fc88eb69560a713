@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function func() {
+		var num1 = document.querySelector("#num1");
+		var num1 = document.querySelector("#num1");
+		isNaN()
+		
+	}
+</script>
+</head>
+<body>
+숫자1: <input type="text" id="num1" /> + 
+숫자2: <input type="text" id="num2" /> =
+<input type="text" id="result" />
+<button onclick="func()">확인</button>
+</body>
+</html>

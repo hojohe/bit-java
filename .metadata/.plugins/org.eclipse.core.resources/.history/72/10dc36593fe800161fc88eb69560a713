@@ -1,0 +1,26 @@
+<!-- 
+	DOM
+	
+	특정 엘리먼트 접근하기
+	var ele = document.querySelector("css selector");
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button type="button" onclick="showTime()">시작</button>
+<h1 id="time"></h1>
+
+<script>
+	function showTime() {
+		var h1Obj = document.querySelector("#time");
+		
+		
+	}	
+</script>
+</body>
+</html>
