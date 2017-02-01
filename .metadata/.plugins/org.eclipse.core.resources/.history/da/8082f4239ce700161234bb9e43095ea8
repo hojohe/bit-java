@@ -1,0 +1,11 @@
+package kr.co.mlec.login;
+
+
+@WebServlet("/login/login")
+public class Login extends HttpServlet {
+
+	@Override
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+}

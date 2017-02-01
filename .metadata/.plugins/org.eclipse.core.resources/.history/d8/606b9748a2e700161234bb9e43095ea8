@@ -1,0 +1,4 @@
+package kr.co.mini5.detail.sevlet;
+
+public class ListServlet {
+}

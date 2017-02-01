@@ -1,0 +1,19 @@
+<!-- 
+	콜백함수
+	
+	- 함수는 데이터 타입의 일종(객체)
+	- function 타입 - 일급 객체 (기능을 가지고 있는 객체)
+	- 함수를 매개변수 또는 결과로 리턴 하는 것
+	
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

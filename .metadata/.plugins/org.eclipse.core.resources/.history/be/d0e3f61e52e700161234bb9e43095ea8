@@ -1,0 +1,24 @@
+<!-- 
+	자바스크립트 호이스팅
+	자바스크립트 엔진이 스크립트를 해석하는 단계는
+	컴파일과 실행 단계로 나뉜다.(메모리상에서)
+	
+	컴파일시 변수와 함수에 대한 정보를 먼저 설정한다.
+	따라서, 변수 또는 함수를 선언하기 전에 사용이 가능하다.
+			
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	var id="테스터";
+	console.log(id);
+</script>
+</head>
+<body>
+
+</body>
+</html>

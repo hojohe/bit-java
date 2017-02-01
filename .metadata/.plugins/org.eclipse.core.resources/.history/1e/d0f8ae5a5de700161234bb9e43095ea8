@@ -1,0 +1,27 @@
+<!-- 
+	일치 연산자 (===, !==) : 값과 타입 체크
+	
+	==, !=    : 값만 체크
+	
+	3 == "3"  : 먼저 양쪽의 타입을 같게 변경시킨다. ("3"을 숫자로 변경)
+			  : 값을 비교
+			 
+	3 === "3" : 타입 비교시 같지 않은 경우 false 반환
+			  : 타입이 같은 경우 값을 비교
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var a = 100;
+		var b = "100";
+		
+		console.log()l
+	</script>
+</body>
+</html>

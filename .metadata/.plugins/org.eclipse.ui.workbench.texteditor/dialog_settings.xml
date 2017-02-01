@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="/" key="selection"/>
+		<item value="container-fluid" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="\"/>
-			<item value="path"/>
-			<item value="insertBoard"/>
-			<item value="insertFile"/>
-			<item value="selectFile"/>
-			<item value="boardFile"/>
-			<item value="boardFileMap"/>
-			<item value="fileSize"/>
+			<item value="container-fluid"/>
+			<item value="navbar-brand"/>
+			<item value="arr"/>
+			<item value="obj2"/>
+			<item value="obj1"/>
+			<item value="a"/>
+			<item value="sum"/>
+			<item value="or"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&quot;"/>
 			<item value="/"/>
 		</list>
 	</section>

@@ -1,0 +1,18 @@
+<!-- 
+	클로저
+	
+	- 함수내의 지역변수를 함수 외부에서 사용할 수 있게 만드는 기술
+	- 로컬변수를 참조하는 함수내의 함수
+	- 생명주기가 끝난 외부 함수의 변수를 참조하는 함수
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- 
+	alert   : 알림창(확인 버튼) 
+	confirm : 확인창(확인, 취소 버튼)
+	prompt  : 입력창, 사용자 입력(확인, 취소 버튼)
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var msg = "경고창";
+		alert(msg);
+		
+		var msg = "삭제하시겠습니까?";
+		var result = confirm(msg);
+		console.log("result", result);
+		
+		if(confirm(msg)) {
+			alert("삭제 처리 진행");			
+		}
+		else {
+			alert("아무 작업 안함");
+		}
+		
+		var result = prompt("자신있는 언어", "당신이 자신있는 언어를 입력하세요");
+		console.log("자신있는 언어",result);		
+	</script>
+</body>
+</html>

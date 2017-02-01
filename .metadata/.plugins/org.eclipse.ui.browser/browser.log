@@ -50,3 +50,7 @@
 1월 26, 2017 11:15:25.22 NEW SESSION
 1월 26, 2017 11:15:25.22 
 1월 26, 2017 11:15:25.22 KLIB_SelfTest return : KLR_OK
+
+1월 31, 2017 23:52:17.58 NEW SESSION
+1월 31, 2017 23:52:17.58 Vector smash protection is enabled.
+1월 31, 2017 23:52:59.11 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED

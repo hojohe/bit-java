@@ -1,0 +1,9 @@
+package kr.co.mlec.login;
+
+public class LoginForm extends HttpServlet {
+	@Override
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/jsp/login/loginForm.jsp")
+		       .forward(request, response);
+	}
+}

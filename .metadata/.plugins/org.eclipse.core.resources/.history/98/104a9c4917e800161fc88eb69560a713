@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+	function call(cb) {
+		cb();
+	}
+	
+	function func() {
+		console.log("함수 실행됨");
+	}
+	
+	console.log(func);
+	func();
+	
+	call(func);
+	*/
+	
+	/*
+	function call() {
+		function callback() {
+			console.log("콜백 호출됨");
+		}
+		return callback;
+	}
+	var func = call();
+	func();
+	*/
+	
+	function
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

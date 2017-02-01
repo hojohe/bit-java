@@ -1,0 +1,15 @@
+package kr.co.mini5.feed.dao;
+
+
+public class FeedDAO {
+	
+	private static SqlSession sqlMapper = MyAppSqlConfig.getSqlSessionInstance();
+	
+	public List<FeedVO> selectFeed() {
+		List<FeedVO> feedList = sqlMapper.selectList("kr.co.mlec.board.dao..getFeedList");
+		return feedList;
+	}
+	
+	
+
+}

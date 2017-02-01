@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function call(cb) {
+	}
+	
+	function func() {
+		console.log("함수 실행됨");
+	}
+	
+	console.log(func)
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

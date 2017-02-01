@@ -1,0 +1,19 @@
+<!-- 
+	*** false 인 상황 ***
+	
+	null, undefined, 0, '', NaN
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		console.log("",!0);
+	</script>
+</body>
+</html>

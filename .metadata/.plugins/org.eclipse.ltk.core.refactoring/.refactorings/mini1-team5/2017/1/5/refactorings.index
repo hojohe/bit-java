@@ -1,0 +1,57 @@
+1485852269499	Copy file
+1485852278567	Copy file
+1485856317287	Copy file
+1485856332502	Copy file
+1485856341790	Copy file
+1485856355347	Copy file
+1485856370900	Copy file
+1485856395905	Copy files
+1485856406717	Copy files
+1485856543937	Copy compilation unit
+1485856660297	Delete element
+1485856886342	Delete element
+1485857311015	Rename type 'CommentRegistServlet'
+1485857349171	Delete element
+1485859367430	Copy compilation units
+1485859397396	Rename type 'CommentDeleteServlet'
+1485859406383	Rename type 'CommentWriteServlet'
+1485859414221	Rename type 'CommentUpdateServlet'
+1485859477219	Copy compilation unit
+1485859487039	Rename type 'ListServlet'
+1485859508425	Copy compilation unit
+1485859515533	Rename type 'ListServlet'
+1485859532435	Copy compilation unit
+1485859540977	Rename type 'ListServlet'
+1485859577071	Copy compilation unit
+1485859588409	Rename type 'CommentDAO'
+1485859673884	Copy compilation unit
+1485868838339	Copy file
+1485868840897	Copy file
+1485868853194	Copy file
+1485868855582	Copy file
+1485868857305	Copy file
+1485868861493	Copy files
+1485868876509	Rename resource 'list.jsp'
+1485868888094	Rename resource 'write.jsp'
+1485868899706	Rename resource 'updateForm.jsp'
+1485868911622	Rename resource 'update.jsp'
+1485868920680	Rename resource 'writeForm.jsp'
+1485868944291	Copy file
+1485868957759	Rename resource 'delete.jsp'
+1485868965457	Rename resource 'list.jsp'
+1485868974512	Rename resource 'update.jsp'
+1485868981297	Rename resource 'updateForm.jsp'
+1485868988071	Rename resource 'write.jsp'
+1485868995941	Rename resource 'writeForm.jsp'
+1485869010145	Rename resource 'list.jsp'
+1485869017428	Rename resource 'update.jsp'
+1485869026577	Rename resource 'updateForm.jsp'
+1485869158752	Rename resource 'write.jsp'
+1485869167062	Rename resource 'writeForm.jsp'
+1485869177430	Rename resource 'list.jsp'
+1485869195142	Rename resource 'update.jsp'
+1485869212546	Rename resource 'write.jsp'
+1485873502704	Move 'view' to 'mini5'
+1485873505338	Move 'include' to 'mini5'
+1485873507989	Move 'main' to 'mini5'
+1485873936439	Rename resource 'mini5'

@@ -1,0 +1,22 @@
+<!-- 
+	문자열과 숫자 타입의 + 연산의 결과는 문자열
+	문자열과 숫자 타입의 + 이외의 연산의 결과는 숫자타입
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body> 
+	<script>
+		console.log(1 + "20");		// 120
+		console.log("1" + "20");	// 120
+		console.log("1" + 20);		// 120
+		console.log(100 + 20);	// 12
+		console.log("100" - 20);	// 80
+	</script>
+</body>
+</html>

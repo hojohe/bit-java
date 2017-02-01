@@ -1,0 +1,44 @@
+<!-- 
+	자바스크립트 데이터 타입
+	
+	자바, C, C++ -> strong type(엄격 타입), statical type(정적 타입)
+	
+	6가지 데이터 타입
+	---------------------
+	기본 데이터 타입
+	---------------------
+	1. string
+	2. number
+	3. boolean
+	4. null
+	5. undefined
+	---------------------
+	객체 데이터 타입
+	---------------------
+	6. object	
+	---------------------
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		
+		var i = 10;
+		
+		var msg = "hi";
+		
+		var bool = true;
+		
+		var nullVal = null;
+		
+		var unVal;
+		
+		var obj = {};
+		
+	</script>	
+</body>
+</html>

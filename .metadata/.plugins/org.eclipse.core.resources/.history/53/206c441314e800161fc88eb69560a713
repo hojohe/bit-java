@@ -1,0 +1,25 @@
+<!-- 
+	내부함수
+	
+	- 함수내에 포함된 함수
+	- 선언된 외부함수 내에서만 호출이 가능
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function outerFunc() {
+		function innerFunc() {
+			
+		}
+		innerFunc();
+		
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

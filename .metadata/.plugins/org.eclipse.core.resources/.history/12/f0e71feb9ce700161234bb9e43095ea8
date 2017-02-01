@@ -1,0 +1,15 @@
+package kr.co.mini5.comment.servlet;
+
+public class CommentUpdateServlet extends HttpServlet {
+}
+
+
+
+
+
+
+
+
+
+
+

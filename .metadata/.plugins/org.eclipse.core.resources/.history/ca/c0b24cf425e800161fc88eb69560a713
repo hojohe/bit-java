@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var msg = "최상위 컨텍스트 영역";
+	function nextVal() {
+		console.log(msg)
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

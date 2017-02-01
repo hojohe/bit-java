@@ -1,0 +1,37 @@
+<%@ page contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>작심365일</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<c:import url="/jsp/include/topMenu.jsp" />
+
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+  	<div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h1>Welcome</h1>
+      <p>메인페이지</p>
+      <hr>
+      <h3>Test</h3>
+      <p>ㅎㅎㅎ</p>
+    </div>
+    <div class="col-sm-2 sidenav">
+    </div>
+  </div>
+</div>
+
+<c:import url="/jsp/include/bottom.jsp" />
+</body>
+</html>

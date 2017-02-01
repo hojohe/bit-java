@@ -1,7 +1,0 @@
-package kr.co.mlec.board.servlet;
-
-import javax.servlet.http.HttpServlet;
-
-public class UpdateServlet extends HttpServlet {
-
-}

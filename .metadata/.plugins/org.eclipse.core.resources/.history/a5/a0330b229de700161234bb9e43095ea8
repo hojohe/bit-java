@@ -1,0 +1,5 @@
+package kr.co.mini5.user.servlet;
+
+public class Login {
+
+}

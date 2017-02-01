@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function cal(opr) {
+		
+		if(opr == "+") {
+			
+		}
+		
+		
+	}
+
+	var cal = calClosure(10, 5);
+	console.log(cal("+"));	// 15
+	console.log(cal("-"));	// 5
+	console.log(cal("*"));	// 50
+	console.log(cal("/"));	// 2
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
