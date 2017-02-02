@@ -1,0 +1,4 @@
+package kr.co.mini5.feed.servlet;
+
+public class FeedWriteServlet {
+}

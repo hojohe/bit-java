@@ -1,0 +1,28 @@
+package kr.co.mini5.detail.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import kr.co.mini5.common.db.MyAppSqlConfig;
+import kr.co.mini5.vo.DetailVO;
+import kr.co.mini5.vo.FeedVO;
+
+public class DetailDAO {
+	static SqlSession sqlMapper = MyAppSqlConfig.getSqlSessionInstance();
+	
+	
+	public FeedVO selectFeed(int userNo) {
+		
+		return sqlMapper.selectOne(
+				"kr.co.mini5.detail.dao.DetailDAO.selectFeed", userNo);
+	}
+	
+	public List<DetailVO> selectDetail(DetailVO detail) {
+		
+		List<DetailVO> list = sqlMapper.selectList(
+				"kr.co.mini5.detail.dao.DetailDAO.selectDetail", detail);
+		return list;
+	}
+	
+}

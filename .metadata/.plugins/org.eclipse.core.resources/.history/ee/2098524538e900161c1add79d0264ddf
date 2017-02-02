@@ -1,0 +1,24 @@
+package kr.co.mini5.detail.servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.co.mini5.detail.dao.DetailDAO;
+import kr.co.mini5.vo.DetailVO;
+
+@WebServlet("/detail/detailList")
+public class DetailListServlet extends HttpServlet {
+			
+	@Override
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect(request.getContextPath() + "/jsp/view/detail/detailList.jsp");
+	}
+	
+	
+}

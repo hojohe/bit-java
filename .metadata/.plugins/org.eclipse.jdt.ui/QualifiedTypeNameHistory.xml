@@ -5,17 +5,22 @@
 <fullyQualifiedTypeName name="kr.co.mlec.board.dao.BoardDAO"/>
 <fullyQualifiedTypeName name="com.sun.javafx.geom.transform.GeneralTransform3D"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
 <fullyQualifiedTypeName name="kr.co.mlec.common.db.MyAppSqlConfig"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="kr.co.mlec.board.vo.BoardCommentVO"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
 <fullyQualifiedTypeName name="kr.co.mlec.file.MlecFileRenamePolicy"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="kr.co.mlec.board.vo.BoardFileVO"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.PageContext"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="kr.co.mini5.common.db.MyAppSqlConfig"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="kr.co.mini5.vo.DetailVO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="kr.co.mini5.detail.dao.DetailDAO"/>
+<fullyQualifiedTypeName name="kr.co.mini5.vo.FeedVO"/>
 </qualifiedTypeNameHistroy>

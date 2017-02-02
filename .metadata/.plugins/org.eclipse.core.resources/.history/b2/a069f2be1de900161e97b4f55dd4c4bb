@@ -1,0 +1,8 @@
+package kr.co.mini5.main.servlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServletet("/main/main")
+public class MainServlet extends HttpServlet {
+}

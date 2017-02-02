@@ -1,6 +1,0 @@
-package kr.co.mlec.board.servlet;
-
-@WebServlet
-public class ListServlet {
-
-}

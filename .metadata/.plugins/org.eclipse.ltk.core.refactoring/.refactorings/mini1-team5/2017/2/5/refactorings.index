@@ -3,3 +3,7 @@
 1485945338818	Delete element
 1485945367308	Rename resource 'detailList.js'
 1485945552302	Move 'topMenu.css' to 'include'
+1486021792043	Copy compilation unit
+1486021803090	Rename type 'FeedWriteServlet'
+1486021846125	Rename package 'kr.co.mini5.bullet.sevlet'
+1486022397843	Rename package 'kr.co.mini5.detail.sevlet'

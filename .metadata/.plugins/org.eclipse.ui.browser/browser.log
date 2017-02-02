@@ -87,3 +87,12 @@
 2월 02, 2017 11:58:56.58 NEW SESSION
 2월 02, 2017 11:58:56.58 Vector smash protection is enabled.
 2월 02, 2017 14:30:15.32 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 02, 2017 15:54:17.45 Vector smash protection is enabled.
+2월 02, 2017 15:54:47.52 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 02, 2017 16:29:58.53 [17128:17780:0202/162958:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+2월 02, 2017 16:46:22.01 Vector smash protection is enabled.
+2월 02, 2017 16:47:51.99 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 02, 2017 19:21:43.01 Vector smash protection is enabled.
+2월 02, 2017 19:22:13.04 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 02, 2017 19:35:54.87 [9024:10340:0202/193554:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+2월 02, 2017 19:37:53.40 [9024:10340:0202/193753:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)

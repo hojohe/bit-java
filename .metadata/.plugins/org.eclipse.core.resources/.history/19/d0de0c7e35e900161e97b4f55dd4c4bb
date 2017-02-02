@@ -1,0 +1,11 @@
+package kr.co.mini5.detail.dao;
+
+import org.apache.ibatis.session.SqlSession;
+
+import kr.co.mini5.common.db.MyAppSqlConfig;
+
+public class DetailDAO {
+	static SqlSession sqlMapper = MyAppSqlConfig.getSqlSessionInstance();
+	
+	public List<DetailVO>  list = sqlMapper.selectList(arg0)
+}
