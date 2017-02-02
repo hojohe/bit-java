@@ -1,0 +1,47 @@
+<!-- 
+	생성된 객체의 프로퍼티 값 설정과 추출
+	
+	var obj = {
+		"이름" : "값",
+		"이름" : "값" (자바스크립트는 "" 생략가능)
+	};
+	설정과 변경
+	obj.프로퍼티명 = 값;
+	obj["프로퍼티명"] = 값;
+	
+	추출
+	obj.프로퍼티명
+	obj["프로퍼티명"]
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {
+			"id": "hong",
+			email: "hong@a.com",
+			"home-page": "www.naver.com"
+	};
+	//console.log("obj.home-page", obj.home-page); // 에러 발생
+	console.log("obj.home-page", obj['home-page']);
+	
+	console.log("obj.id", obj.id);
+	console.log("obj['email']", obj['email']);
+	
+	obj.id = "kang";
+	obj["email"] = "kang@a.com";
+	
+	console.log("obj.id", obj.id);
+	console.log("obj['email']", obj['email']);
+	
+	for(var key in obj) {
+				
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

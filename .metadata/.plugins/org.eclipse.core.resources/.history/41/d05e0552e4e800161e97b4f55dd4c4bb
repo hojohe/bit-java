@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {
+		id: "hong",
+		name: "홍길동",
+		email: "hong@a.com",
+		info: function(){
+			console.log(this.id, this.name, this.email);
+		},
+		info: function(){
+			console.log(this.id, this.name, this.email);
+		}
+	};
+	
+	obj.info();
+	console.log("name 프로퍼티 제거");
+	delete obj.name;
+	obj.info();
+	
+	console.log("obj 제거 시도");
+	delete obj;
+	obj.info();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

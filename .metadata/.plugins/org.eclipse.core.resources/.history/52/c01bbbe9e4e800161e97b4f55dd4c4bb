@@ -1,0 +1,22 @@
+<!-- 
+	this
+	
+	객체의 프로퍼티 함수 호출 시 함수 안에서의 this는 
+	함수를 호출한 객체에 바인딩된다.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function msg() {
+		
+		
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

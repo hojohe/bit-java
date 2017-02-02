@@ -1,0 +1,25 @@
+<!-- 
+	객체 생성하는 방법 (2가지)
+	
+	1. 리터럴 생성 방식
+		- {}
+	2. 생성자 생성 방식
+		- Object()
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {};
+	var obj2 = new Object();
+	
+	console.log(typeof(obj));
+	console.log(typeof(obj));
+</script>
+</head>
+<body>
+
+</body>
+</html>

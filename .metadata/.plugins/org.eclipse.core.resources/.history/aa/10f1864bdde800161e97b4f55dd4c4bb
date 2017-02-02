@@ -1,0 +1,21 @@
+<!-- 
+	생성된 객체의 프로퍼티 값 설정과 추출
+	
+	var obj = {};
+	설정과 변경
+	obj.프로퍼티명 = 값;
+	obj["프로퍼티명"] = 값;
+	
+	추출
+	obj.프로퍼티명
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

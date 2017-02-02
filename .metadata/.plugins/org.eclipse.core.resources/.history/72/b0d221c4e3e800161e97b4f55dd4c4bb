@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {
+		id: "hong",
+		name: "홍길동",
+		email: "hong@a.com",
+		info: function(){
+			console.log(this.id, this.name, this.email);
+			
+		}
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

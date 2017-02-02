@@ -1,0 +1,24 @@
+<!-- 
+	with (객체) {
+		
+	}
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var member = {
+		id: "hong",
+		setId: function (id) {
+			this.id = id;
+		},
+		
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

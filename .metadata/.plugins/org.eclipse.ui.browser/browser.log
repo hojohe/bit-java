@@ -67,3 +67,23 @@
 2월 01, 2017 19:31:29.44 [3996:11048:0201/193129:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
 2월 01, 2017 19:40:59.75 [3996:11048:0201/194059:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
 2월 01, 2017 19:44:49.48 [3996:11048:0201/194449:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+
+2월 01, 2017 22:32:26.23 NEW SESSION
+2월 01, 2017 22:32:26.23 [13736:7152:0201/223226:ERROR:CONSOLE(73)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: devtools_compatibility.js (73)
+2월 02, 2017 24:31:16.02 Vector smash protection is enabled.
+2월 02, 2017 24:32:03.22 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 02, 2017 24:32:11.54 Vector smash protection is enabled.
+2월 02, 2017 24:33:48.97 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 02, 2017 24:40:18.49 [13736:7152:0202/004018:ERROR:CONSOLE(5414)] "Uncaught (in promise) Error: Style not editable", source: chrome-devtools://devtools/bundled/inspector.js (5414)
+2월 02, 2017 24:47:04.95 [13736:7152:0202/004704:ERROR:CONSOLE(1613)] "Uncaught (in promise) Error: Could not resolve node to reveal.", source: chrome-devtools://devtools/bundled/elements/elements_module.js (1613)
+2월 02, 2017 24:54:39.15 [13736:7152:0202/005439:ERROR:CONSOLE(5314)] "Failed to get text for stylesheet 21744.284: No style sheet with given id found", source: chrome-devtools://devtools/bundled/inspector.js (5314)
+2월 02, 2017 24:55:15.39 [13736:7152:0202/005515:ERROR:CONSOLE(5314)] "Failed to get text for stylesheet 21744.296: No style sheet with given id found", source: chrome-devtools://devtools/bundled/inspector.js (5314)
+2월 02, 2017 24:55:15.70 [13736:7152:0202/005515:ERROR:CONSOLE(5314)] "Failed to get text for stylesheet 21744.299: No style sheet with given id found", source: chrome-devtools://devtools/bundled/inspector.js (5314)
+2월 02, 2017 24:56:04.28 [13736:7152:0202/005604:ERROR:CONSOLE(5314)] "Failed to get text for stylesheet 21744.332: No style sheet with given id found", source: chrome-devtools://devtools/bundled/inspector.js (5314)
+2월 02, 2017 24:56:04.58 [13736:7152:0202/005604:ERROR:CONSOLE(5314)] "Failed to get text for stylesheet 21744.335: No style sheet with given id found", source: chrome-devtools://devtools/bundled/inspector.js (5314)
+2월 02, 2017 01:42:57.02 
+2월 02, 2017 01:42:57.02 KLIB_SelfTest return : KLR_OK
+
+2월 02, 2017 11:58:56.58 NEW SESSION
+2월 02, 2017 11:58:56.58 Vector smash protection is enabled.
+2월 02, 2017 14:30:15.32 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Member(id) {
+		this.id = id;
+	}
+	
+	Member.prototype = {
+		info: function() {
+			console.log()
+		}
+			
+	}
+	var m = new Member("hong");
+	console.log(m);
+</script>
+</head>
+<body>
+
+</body>
+</html>
