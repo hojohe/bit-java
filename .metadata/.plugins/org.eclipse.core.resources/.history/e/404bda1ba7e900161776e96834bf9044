@@ -1,0 +1,47 @@
+<!-- 
+	팝업 창 띄우기
+	window.open(url, target, options)
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function openPop(type) {
+		
+		switch(type) {
+			case 1:
+				window.open("http://www.naver.com", "pop1", "width=400, height=300");
+				break; 
+		
+			case 2:
+				window.open("http://www.naver.com", "", "width=400, height=300");
+				break;
+			
+			case 3: 
+				console.log(screen.width, screen.height);
+				
+				var left = (screen.width - 400) / 2;
+				var top = (screen.height - 200) / 2;
+				
+				window.open(
+						"http://www.naver.com", 
+						"", 
+						"top=" + top + ", right=" + left + ", width=400, height=300"
+				);
+				break;
+		}		
+		
+	}
+</script>
+</head>
+<body>
+	<button onclick="openPop(1);">팝업창1</button>
+	<button onclick="openPop(2);">팝업창2</button>
+	<button onclick="openPop(3);">팝업창3(중앙)</button>
+	<button onclick="openPop(4);">팝업창4(자식창)</button>
+	<h1></h1>
+</body>
+</html>

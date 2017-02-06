@@ -1,0 +1,17 @@
+<!-- 
+	설정된 속성 확인하기
+	
+	- 객체.속성명
+	- 객체["속성명"]
+	- 객체.getAttribute("속성명")
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

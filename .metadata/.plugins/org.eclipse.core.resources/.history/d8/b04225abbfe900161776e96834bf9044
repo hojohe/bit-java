@@ -1,0 +1,39 @@
+<!-- 
+	엘리먼트에 속성을 추가하기
+	
+	<img src="" msg="test" />
+	
+	// <img />
+	var imgObj = document.createElement("img");
+	
+	엘리먼트.속성 = 값;
+	사용자가 정의하는 속성은 추가할 수 없다.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd();">추가</button>
+	<div id="list"></div>
+	<script>
+		function doAdd() {
+			// img 엘리먼트를 생성 후 id가 list인 엘리먼트에 자식으로 추가
+			// img 엘리먼트의 src 속성으로 a.png
+			// 넓이(200), 높이(150)으로 설정한다.
+			
+			var list = document.querySelector("#list");
+			// <img>
+			var imgObj = document.createElement("img");
+			
+			// <img src="a.png">
+			imgObj.src = "a.png";
+			imgObj.width = "a.png";
+			imgObj.heigth = 150;
+			
+		}
+	</script>
+</body>
+</html>

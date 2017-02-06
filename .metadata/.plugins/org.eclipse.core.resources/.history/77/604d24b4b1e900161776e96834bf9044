@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="시작" onclick="start()" />
+	<input type="button" value="중지" onclick="stop()" />
+	<script>
+		function start() {
+			window.open();
+			
+		}
+	</script>
+</body>
+</html>

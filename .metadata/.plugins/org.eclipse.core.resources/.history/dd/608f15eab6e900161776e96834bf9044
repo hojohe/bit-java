@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button>계산</button>
+	<h1 id="result"></h1>
+	<script>
+		function doResult() {
+			var h1Obj = document.querySelector("#result");
+			h1Obj.innerHTML = msg;			
+		}
+	</script>
+</body>
+</html>

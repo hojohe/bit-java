@@ -1,0 +1,22 @@
+<!-- 
+	특정 엘리먼트 삭제하기
+	parentNode.removeChild("삭제대상");
+	
+	현재 엘리먼트의 부모 노드
+	객체.parentNode
+
+	현재 엘리먼트 노드의 자식 노드
+	firstNode, lastChild
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function doResult() {
+			var h1Obj = document.querySelector("#result");
+			h1Obj.innerHTML = msg;			
+		}
+	</script>
+</body>
+</html>

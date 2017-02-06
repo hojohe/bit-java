@@ -1,0 +1,16 @@
+<!-- 
+	특정 엘리먼트 삭제하기
+	parentNode.removeChild();
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

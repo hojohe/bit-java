@@ -1,0 +1,8 @@
+select feed_no as feedNo
+		from ( 
+	 		select feed_no
+	   		  from t_feed_detail
+	  		 where user_no = #{userNo}
+			order by days
+		)
+		where rownum = 1

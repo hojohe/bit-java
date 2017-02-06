@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd();">추가</button>
+	
+	<div id="div"></div>
+	
+	
+	<script>
+	
+		function doAdd() {
+			var div = document.createElement("div");
+
+			var seq = Number(divObj.getAttribute("data-seq")) + 1;
+			div.setAttribute("data-seq", seq );
+			div.innerHTML += "추가된 DIV id : child_" + seq
+							+ "<button onclick=\"doDel(seq);\">삭제</button><br>";
+		}
+		
+		function doDel(seq) {
+			document.querySelectorAll("div");
+			for(int i=0; i < ; i++) {
+				var div = document.querySelector("div");
+				if(seq == div.getAttribute("data-seq")) {
+					div.parentNode.removeChild();
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>

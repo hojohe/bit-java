@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+
+window.onload = function() {	
+	var ratingNum = $("#ratingNum").val();
+
+	switch(ratingNum)
+	if(ratingNum == "0") {
+		
+	}
+	
+	for(var i = 0; i < $(".rating > input"); i++) {
+		if(this.value == ratingNum) {
+			this.checked = true;
+		} 
+	}
+};
+	
+
+var rating = document.querySelectorAll("input[name=rating]");
+$("input[name=rating]").change(function() {
+	
+	for(i=0; i<rating.length; i++) {
+	    if(rating[i].checked == true) {
+	        ratingValue = rating[i].value;
+	        break;
+	    }
+	}
+	
+	document.querySelector("#ratingNum").value = ratingValue;
+	document.querySelector("#frm").submit();
+});
+
+

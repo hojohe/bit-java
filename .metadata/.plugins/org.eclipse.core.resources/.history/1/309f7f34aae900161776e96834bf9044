@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var pop;
+	function createPop() {
+		pop = window.open("","","width=400, height=400");
+	}
+	function movePop() {
+		// 상태좌표 이동 : 현재 위치를 기준으로 창을 옮긴다. 
+		pop.moveBy(50, 50);
+		// 절대좌표 이동 : 스크린 기준으로 이동
+	}
+	function fullPop() {
+		
+	}
+</script>
+</head>
+<body>
+	<button onclick="createPop();">생성</button>
+	<button onclick="movePop();">이동</button>
+	<button onclick="fullPop();">사이즈</button>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function 
+</script>
+</head>
+<body>
+	메세지 : <input type="text" id="msg" />
+	<button onclick="winClose();">닫기</button>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+
+window.onload = function() {	
+	var percent = $("#ratingNum").val();
+	var ratingNum = 0;
+	switch(percent) {
+		case 20:
+			ratingNum = 1;
+			break;
+		case 40:
+			ratingNum = 2;
+			break;
+		case 60:
+			ratingNum = 3;
+			break;
+		case 80:
+			ratingNum = 4;
+			break;
+		case 100:
+			break;
+	
+	}
+	
+	for(var i = 0; i < $(".rating > input"); i++) {
+		if(this.value == ratingNum) {
+			this.checked = true;
+		} 
+	}
+};
+	
+
+var rating = document.querySelectorAll("input[name=rating]");
+$("input[name=rating]").change(function() {
+	
+	for(i=0; i<rating.length; i++) {
+	    if(rating[i].checked == true) {
+	        ratingValue = rating[i].value;
+	        break;
+	    }
+	}
+	
+	document.querySelector("#ratingNum").value = ratingValue;
+	document.querySelector("#frm").submit();
+});
+
+

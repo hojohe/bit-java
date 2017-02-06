@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAction();">크게</button>
+	<button onclick="doAction();">작게</button>
+	<img src="ball41.gif" />
+	
+	<script>
+	
+	</script>	
+</body>
+</html>

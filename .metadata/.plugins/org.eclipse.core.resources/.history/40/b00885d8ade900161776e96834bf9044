@@ -1,0 +1,21 @@
+<!-- 
+	location
+	
+	location.href = "url";
+	
+	
+	location.reload();
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		alert("3초뒤에 페이지를 이동합니닫,");
+	</script>
+</body>
+</html>

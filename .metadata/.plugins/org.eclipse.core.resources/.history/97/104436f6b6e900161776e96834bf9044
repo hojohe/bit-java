@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="openPop();">계산</button>
+	<h1 id="result"></h1>
+	<script>
+		function doResult() {
+			var h1Obj = document.querySelector("#result");
+			h1Obj.innerHTML = msg;			
+		}
+		function openPop() {
+			window.open("","pop1", );
+			
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var pop;
+	function createPop() {
+		pop = window.open("","","width=400, height=400");
+		
+		pop.onunload = function() {
+			
+		}
+		
+	}
+	function movePop() {
+		// 상대좌표 이동 : 현재 위치를 기준으로 창을 옮긴다. 
+		//pop.moveBy(50, 50);
+		// 절대좌표 이동 : 스크린 기준으로 이동
+		pop.moveTo(200, 200);
+	}
+	function fullPop() {
+		// 상대적 변경 : 현재 창의 크기 기준으로
+		//pop.resizeBy(20, 20);
+		pop.resizeBy(screen.width, screen.height);
+		// 절대값 변경
+		//pop.resizeTo(600, 600);
+	}
+</script>
+</head>
+<body>
+	<button onclick="createPop();">생성</button>
+	<button onclick="movePop();">이동</button>
+	<button onclick="fullPop();">사이즈</button>
+</body>
+</html>

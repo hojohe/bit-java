@@ -1,0 +1,50 @@
+package kr.co.mini5.detail.servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.co.mini5.common.util.DateUtil;
+import kr.co.mini5.detail.dao.DetailDAO;
+import kr.co.mini5.vo.DetailVO;
+import kr.co.mini5.vo.FeedVO;
+
+@WebServlet("/detail/detailList")
+public class DetailListServlet extends HttpServlet {
+			
+	@Override
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		DetailDAO dao = new DetailDAO();
+		DateUtil calculator = new DateUtil();
+		
+		DetailVO detail = dao.selectOneDetail(1, );
+		request.setAttribute("detail", detail);
+		
+		DetailVO detailVo = new DetailVO();
+		detailVo.setFeedNo(detail.getFeedNo());
+		detailVo.setUserNo(1);
+		
+		List<DetailVO> detailList = dao.selectDetail(detailVo);
+		request.setAttribute("detailList", detailList);
+
+		String dday = calculator.getDday(detail.getEndDate());
+		int todayDday = detail.getFeedDday() - Integer.parseInt(dday);
+		
+		request.setAttribute("dday", dday);
+		request.setAttribute("todayDday", todayDday);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/view/detail/detailList.jsp");
+		rd.forward(request, response);
+		
+	}
+	
+	
+}
+

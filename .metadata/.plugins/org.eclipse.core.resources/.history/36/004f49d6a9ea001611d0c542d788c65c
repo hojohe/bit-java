@@ -1,0 +1,22 @@
+select feed_no as feedNo
+		from ( 
+	 		select feed_no
+	   		  from t_feed_detail
+	  		 where user_no = 1
+			order by days
+		)
+		where rownum = 1
+		
+select * from T_FEED_DETAIL
+update t_feed_detail set percent = 80 
+
+
+
+	select detail_no,
+			   feed_no,
+			   user_no,
+			   days,
+			   percent
+		  from t_feed_detail
+		 where feed_no = 4
+		   and user_no = 1

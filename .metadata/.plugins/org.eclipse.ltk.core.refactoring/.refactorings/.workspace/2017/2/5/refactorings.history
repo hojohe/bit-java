@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;jquery-1.12.1.min&apos;" deleteContents="false" description="Delete resource &apos;jquery-1.12.1.min&apos;" element1="/jquery-1.12.1.min" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1486219884242"/>
+</session>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="시작" onclick="start()" />
+	<input type="button" value="중지" onclick="stop()" />
+	<script>
+		var timer;
+		function start() {
+			
+			var pop = window.open("","","width=200, height=200");
+			timer = setInterval(function() {
+				pop.moveBy(
+						Math.floor(Math.random() * 100 + 1), 
+						Math.floor(Math.random() * 100 + 1)
+				);
+			}, 1000);
+		}
+		function stop() {
+			clearInterval(timer);
+		}
+	</script>
+</body>
+</html>

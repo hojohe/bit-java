@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	function doAction() {
+		var obj = document.querySelector("#result");
+		for(var i = 0; i<100; i++) {
+			
+			
+		}
+		
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
