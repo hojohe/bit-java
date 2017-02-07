@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+function isEmpty(obj, msg) {
+	
+	if(obj.value == "") {
+		alert(msg);
+		obj.focus();
+		return true;
+	}
+	return false;
+	
+}
+
+function validLengChk(obj, msg) {
+	
+	
+	switch(obj) {
+		case id : 
+			if(obj.value.length <4 || obj.value.length > 8) {
+				alert(msg); 
+				return true;
+			}
+			
+	
+	}
+	
+}

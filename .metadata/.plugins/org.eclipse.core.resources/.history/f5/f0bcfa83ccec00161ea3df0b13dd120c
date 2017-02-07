@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="show('d1')">마술사</button>
+	<button onclick="show('d2')">갓오브하이스쿨</button>
+	<div id="d1">
+		<p>
+			마술사<br>		
+		</p>
+	</div>
+</body>
+</html>

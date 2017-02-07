@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p {
+		font-size: 20px;
+		font-wdight: bold;
+		height: 40px;
+		background: tomato;
+		color: white;
+		text-align: center;
+		line-height: 40px;
+	}
+	div {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background-color: tomato;
+		font-size: 20px;
+	}
+</style>
+</head>
+<body>
+	<p>이벤트 연습</p>
+	<div></div>
+	
+	<script>
+		document.addEventListener("mousemove", function(e) {
+			
+			var obj = e.target;
+			var left = obj.clientX;
+			var left = obj.clientY;
+			
+		});
+	
+	</script>
+
+</body>
+</html>

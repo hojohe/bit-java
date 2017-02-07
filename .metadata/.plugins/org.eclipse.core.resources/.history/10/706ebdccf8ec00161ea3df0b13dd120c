@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	div, h1{
+		border: 3px solid black;
+		margin: 30px;
+	
+	}
+</style>
+</head>
+<body>
+	<div id="outerDiv">
+		<div id="innerDiv">
+			<h1 id="h1Obj">이벤트 전파 확인</h1>
+		</div>
+	</div>
+	
+	<div id="debug"></div>
+	<script>
+		var outerDiv = document.querySelector("#outerDiv");
+		var innerDiv = document.querySelector("#innerDiv");
+		var h1Obj = document.querySelector("#h1Obj");
+		
+		outerDiv.addEventListener("click", function () {
+			
+		});
+		innerDiv.addEventListener("click", function () {
+			
+		});
+		h1Obj.addEventListener("click", function () {});
+		
+	</script>
+</body>
+</html>

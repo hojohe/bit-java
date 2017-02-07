@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="detail." key="selection"/>
+		<item value="form-control" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="detail."/>
-			<item value="detail"/>
-			<item value=" dao."/>
-			<item value="percent"/>
-			<item value="#content.product .option ul l"/>
-			<item value="#content.product .option ul li{float: left;width: 130px;background: url(&apos;/img/product/list_bar.gif&apos;) no-repeat 0 50%;"/>
-			<item value="selectOneDetail"/>
-			<item value="updateDetail"/>
+			<item value="form-control"/>
+			<item value="checkbox"/>
+			<item value="label"/>
+			<item value="request"/>
+			<item value=".btn"/>
+			<item value="printList"/>
+			<item value="loc"/>
+			<item value=".change("/>
 		</list>
 		<list key="replacehistory">
 			<item value="url(&apos;/mini1-team5"/>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+		background-color: #ccffff;
+	}
+	button {
+		background-color: #ffff99;
+	}
+	
+	div {
+		height: 700px;
+		background: yellow;
+		font-size: 20px;
+		overflow: auto;
+	}
+	
+</style>
+</head>
+<body>
+	<button>메모추가</button>
+
+
+<script>
+
+	var btn = document.querySelector("button");
+	btn.addEventListener("click", function() {
+		
+		console.log("클릭들어옴");
+		/* var divObj = document.createElement("div");
+		divObj.innerHTML = "";
+						 + ""; 
+						 */
+		
+		
+		
+	});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

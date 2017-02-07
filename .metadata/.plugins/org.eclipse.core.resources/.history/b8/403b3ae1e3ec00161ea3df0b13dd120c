@@ -1,0 +1,54 @@
+<!-- 
+	-----------------------------------------
+	고전 이벤트 방식
+	-----------------------------------------
+	1. <button onclick="test();">클릭</button>
+	-----------------------------------------
+	권장 방식
+	-----------------------------------------
+	1. 
+	<button>클릭</button>
+	var btn = document.querySelector("button");
+	btn.onclick = test;
+	function test() {}
+	2. 
+	<button>클릭</button>
+	var btn = document.querySelector("button");
+	btn.onclick = function test() {}
+	-----------------------------------------	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button {
+		width: 200px;
+		height: 100px;
+		color: white;
+		background: tomato;
+		border: 2px solid black;
+		font-size: 25px;
+	}
+</style>
+</head>
+<body>
+	<button id="btn1">시작</button>
+	<button id="btn2">종료</button>
+	
+	<script>
+	var btn1 = document.querySelector("#btn1");
+	var btn2 = document.querySelector("#btn2");
+	
+	/*
+		var btns = document.querySelectorAll("button");
+		for(var i = 0; i < btns.length; i++) {
+			btns[i].onclick = function () {
+				alert(this.innerHTML);
+			}
+		}
+	*/
+	</script>
+</body>
+</html>

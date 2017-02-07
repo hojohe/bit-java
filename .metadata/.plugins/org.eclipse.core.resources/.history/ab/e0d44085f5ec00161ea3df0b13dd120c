@@ -1,0 +1,30 @@
+<!-- 
+
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button {
+		width: 200px;
+		height: 100px;
+		color: white;
+		background: tomato;
+		border: 2px solid black;
+		font-size: 25px;
+	}
+	div {
+		font-size: 25px;
+	}
+</style>
+
+</head>
+<body>
+	<button>클릭</button>
+	<div>0</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+alert("validUtil.js 로딩됨...");
+
+function isEmpty(obj, msg) {
+	
+	if(obj.value == "") {
+		alert(msg);
+		obj.focus();
+		return true;
+	}
+	return false;
+	
+}

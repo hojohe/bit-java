@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 onclick="changeCss();"style="border: 1px solid red">CSS 적용하기</h1>
+	
+	<script>
+		function changeCss() {
+			var h1Obj = document.querySelector();
+			
+		}
+	</script>
+</body>
+</html>

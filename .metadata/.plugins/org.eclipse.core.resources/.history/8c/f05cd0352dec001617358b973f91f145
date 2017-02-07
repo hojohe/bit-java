@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+function isEmpty(obj, msg) {
+	
+	if(obj.value == "") {
+		alert(msg);
+		obj.focus();
+		return true;
+	}
+	return false;
+	
+}
+
+function validLengChk(obj, msg) {
+	
+	
+	/*switch(obj) {
+		case id : 
+			if(obj.)
+			
+			alert(msg); 
+	
+	}*/
+	
+}

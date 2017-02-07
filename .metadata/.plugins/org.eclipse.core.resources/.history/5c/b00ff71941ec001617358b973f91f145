@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div style="display:inline-block;width:200px;border:1px solid;float:left;">
+	<input type="checkbox" id="java" name="chk" value="java" onclick="funcChk(this);" /> JAVA<br>
+	<input type="checkbox" id="sql" name="chk" value="sql" onclick="funcChk(this);" /> SQL<br>
+	<input type="checkbox" id="html" name="chk" value="html" onclick="funcChk(this);" /> HTML<br>
+	<input type="checkbox" id="css" name="chk" value="css" onclick="funcChk(this);" /> CSS<br>
+	<input type="checkbox" id="javascipt" name="chk" value="javascipt" onclick="funcChk(this);" /> JAVASCRIPT<br>
+</div>
+<div style="height:300px;border:1px solid;margin-left: 250px;" id="divBlock"></div>
+
+<script>
+	function funcChk(chkObj) {
+		
+		switch(chkObj.value) {
+		
+			case "java" :
+				
+				if(chkObj.checked == true) {
+					divBlock.innerHTML += "<span>JAVA<input type='button' id='java' value='X' onclick='funcDel(this);' /></span>";
+				}
+				else {
+					
+				} 
+				break;
+			case "sql" :
+				divBlock.innerHTML += "<span>SQL<input type='button' id='sql' value='X' onclick='funcDel(this);' /></span>";
+				break;
+			case "html" :
+				divBlock.innerHTML += "<span>HTML<input type='button' id='html' value='X' onclick='funcDel(this);' /></span>";
+				break;
+			case "css" :
+				divBlock.innerHTML += "<span>CSS<input type='button' id='css' value='X' onclick='funcDel(this);' /></span>";
+				break;
+			case "javascipt" :
+				divBlock.innerHTML += "<span>JAVASCRIPT<input type='button' id='javascipt' value='X' onclick='funcDel(this);' /></span>";
+				break;
+		
+		}
+		
+	}
+	
+	function funcDel(delObj) {
+		
+		delObj.parentNode.parentNode.removeChild(delObj.parentNode);
+		
+		arrChk = document.querySelectorAll("input[name=chk]");
+		
+		for(var i = 0; i < arrChk.length; i++) {
+			
+			if(arrChk[i].value == delObj.id) {
+				arrChk[i].checked = false;
+			}
+			
+		}
+	}
+	
+var divBlock = document.querySelector("#divBlock");
+		
+</script>
+</body>
+</html>

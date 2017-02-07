@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p {
+		font-size: 20px;
+		font-weight: bold;
+		height: 40px;
+		background-color: tomato;
+		color: white;
+		text-align: center;
+		line-height: 40px;
+	}
+	div {
+		height: 700px;
+		background: yellow;
+		font-size: 20px;
+		overflow: auto;
+		
+	}
+</style>
+</head>
+<body>
+	<p>마우스 이벤트 연습</p>
+	<div></div>
+	
+	<script>
+		var pObj = document.querySelector("p");
+		var dObj = document.querySelector("div");
+		
+		pObj.addEventListener("mouseenter", function(){});
+		pObj.addEventListener("mouseleave", function(){});
+		pObj.addEventListener("mousedown", function(){});
+		pObj.addEventListener("mouseup", function(){});
+		pObj.addEventListener("mousemove", function(){});
+		
+	
+	</script>
+</body>
+</html>

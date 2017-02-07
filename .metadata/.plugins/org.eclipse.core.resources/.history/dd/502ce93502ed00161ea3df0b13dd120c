@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+		background-color: #ccffff;
+	}
+	button {
+		background-color: #ffff99;
+	}
+	
+</style>
+</head>
+<body>
+<button>메모추가</button>
+
+
+<script>
+
+	var btn = document.querySelector("button");
+	
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

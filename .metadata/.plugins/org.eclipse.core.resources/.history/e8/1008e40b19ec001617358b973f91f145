@@ -1,0 +1,61 @@
+<!-- 
+	select
+	
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../00_common/validUtil.js"></script>
+</head>
+<body>
+	<form name="mForm" action="" onsubmit="return chkForm();">
+		<select name="searchType">
+			<option value="">선택하세요</option>
+			<option value="writer">글쓴이</option>
+			<option value="title">제목</option>
+		</select>
+		
+		<input type="text" name="searchWord" id="searchWord"/>
+		<button>검색</button>
+		<button type="button" onclick="changeDisabled(false);">활성화</button>
+		<button type="button" onclick="changeDisabled(true);">비활성화</button>
+	</form>
+	<script>
+	
+		function changeDisabled(disalbedVal) {
+			
+			var sObj = document.mForm.searchType;
+			
+			sObj.disabled = disalbedVal;
+			
+		}
+		function chkForm() {
+			// select box 객체 얻기
+			var sObj = document.mForm.searchType;
+// 			console.dir(sObj);								//선택 박스 객체
+// 			console.log(sObj.options.length);				// 옵션항목의 개수
+// 			console.log(sObj.selectedIndex);				// 선택된 항목의 인덱스 위치
+// 			console.log(sObj.options[sObj.selectedIndex]); // 선택된 옵션 항목 객체
+			console.log(sObj.options[sObj.selectedIndex].value);
+			
+			// 선택박스의 옵션 항목이 글쓴이나 또는 제목을 선택하고
+			// searchWord 에 값을 입력하지 않고 검색 버튼을 누를 경우
+			// "검색어를 입력하세요" 경고창을 띄운다.
+			var searchOption = sObj.options[sObj.selectedIndex].value;
+			var searchWord = document.querySelector("#searchWord");
+			
+			if(searchOption != "") {
+				if(isEmpty(document.mForm.searchWord, "검색어를 입력하세요")) {
+					return false;
+				}
+			}
+			
+			
+			return false;
+		}
+	</script>
+</body>
+</html>

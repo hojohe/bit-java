@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../00_common/validUtil.js"></script>
+</head>
+<body>
+
+<form name="frm" onsubmit="return doValid();">
+	이름 <input type="text" id="name" name="name"/><br>
+	아이디 <input type="text" id="id" name="id" /><br>
+	비밀번호 <input type="password" id="pass" name="pass"/><br>
+	비밀번호확인 <input type="password" id="passConf" name="passConf" /><br>
+	경력여부 <input type="checkbox" id="workChk1" name="workChk" value="신입" />
+		<label for="workChk1">신입</label>
+		<input type="checkbox" id="workChk2" name="workChk" value="경력" checked/>
+		<label for="workChk2">경력</label>
+	<select name="work">
+		<option value="0">선택</option>
+		<option value="1">3개월미만</option>
+		<option value="2">3개월이상</option>
+		<option value="3">6개월이상</option>
+		<option value="4">1년이상</option>
+		<option value="5">2년이상</option>
+		<option value="6">3년이상</option>
+	</select><br>
+	이메일 <input type="text" id="mail" name="mail"/>
+	<input type="checkbox" id="mailChk" name="mailChk" checked/>메일수신<br>
+	<input type="button" onclick="doValid();" value="확인">
+</form>
+
+
+<script>
+
+	function doValid() {
+		
+		// 이름체크
+		if(isEmpty(document.frm.name, "이름을 입력하세요")) return false;	
+		
+		// id체크
+		if(isEmpty(document.frm.id, "ID를 입력하세요")) {
+			return false;	
+		} else {
+			if(validLengChk(document.frm.id)) {
+				return false;
+			}
+		}
+		
+		// 비밀번호 체크
+		if(isEmpty(document.frm.pass, "비밀번호를 입력하세요")) {
+			return false;
+		} 
+		
+		// 비밀번호확인 체크
+		if(isEmpty(document.frm.passConf, "비밀번호 확인을 입력하세요")) {
+			return false;
+		}
+		
+		// 경력 체크
+		for(var i = 0; i < arrWorkChk.length; i++) {
+			if(arrWorkChk[i].value== "경력" && arrWorkChk[i].checked == true) {
+				if(sObj.selectedIndex == "0") {
+					alert("경력 체크 시 경력을 선택하세요");
+					return false;
+				}
+			}
+		}
+		
+		// 이메일체크
+		if(mailChk.checked == true) {
+			
+			
+			if(isEmpth) {
+				alert("메일 수신 체크 시 이메일을 입력하세요");
+				return false;
+			}
+		}
+		
+		alert("모두성공");
+		
+	}
+	
+	
+	var arrWorkChk = document.frm.workChk;
+	var mailChk = document.frm.mailChk;
+	var sObj = document.frm.work;
+</script>
+</body>
+</html>

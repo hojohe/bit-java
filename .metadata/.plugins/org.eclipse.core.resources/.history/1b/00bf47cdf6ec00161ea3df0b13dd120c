@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<form id="f1" onsubmit="return chkForm();">
+		<button>확인</button>
+	</form>
+	
+	<script>
+	
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		background: #000;
+		color: #fff;
+		padding: 20px;
+		font-size: 40px;
+		position: absolute;
+		width: 600px;
+		height: 400px;
+		top: -440px;
+		left: 20px;
+	}
+
+	#div1{ background: #123456; }
+	#div2{ background: #456789; }
+	#div3{ background: #16789ab; }
+	#div4{ background: #89abcd; }
+	#div5{ background: #ababab; }
+	
+</style>
+</head>
+<body>
+	<p>
+		<a id="" onclick="funcSild();">슬라이드</a>
+	</p>
+
+	<div id="div1">슬라이드 1번</div>
+	<div id="div2">슬라이드 2번</div>
+	<div id="div3">슬라이드 3번</div>
+	<div id="div4">슬라이드 4번</div>
+	<div id="div5">슬라이드 3번</div>
+
+	<script>
+		var bottom = 160;
+		var divObj = document.querySelector("div");
+		
+		function funcSild() {
+			
+			
+			
+		}
+	</script>
+</body>
+
+</html>

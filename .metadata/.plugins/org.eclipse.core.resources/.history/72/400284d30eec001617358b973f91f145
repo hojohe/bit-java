@@ -1,0 +1,81 @@
+<!--
+	체크박스의 체크 상태 확인 및 설정
+	
+	체크박스객체.checked : true(체크), false(해제)
+	
+	설정 : 
+	체크박스객체.checked = true; // 설정
+	체크박스객체.checked = false; // 해제
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="mForm">
+		<input type="checkbox" id="all" name="all" value="all" onclick="changeCheck();"/>
+		<label for="all">전체</label>
+	
+		<div>체크 여부 : <span id="allCkStatus"></span></div>
+		<div>
+			당신의 오늘 점심 메뉴는? <br>
+			<input type="checkbox" id="todayLunch1" name="todayLunch" value="1" />
+			<label for="todayLunch1">한식</label>
+			<input type="checkbox" id="todayLunch2" name="todayLunch" value="2" />
+			<label for="todayLunch2">양식</label>
+			<input type="checkbox" id="todayLunch3" name="todayLunch" value="3" />
+			<label for="todayLunch3">중식</label>
+		</div>
+	</form>
+		
+	<script>
+	
+		function changeCheck() {
+			
+			displayAllCheck();
+			
+			var todayCks = document.mForm.todayLunch;
+			console.log(todayCks);
+			
+			if(todayCks.length) {
+				for(var i = 0; i < todayCks.length; i++) {
+					
+				}
+			} else {
+							
+			}
+			
+			
+			// 체크박스 객체
+			/*
+			var todayCk1 = document.querySelector("#todayLunch1");
+			var todayCk2 = document.querySelector("#todayLunch2");
+			var todayCk3 = document.querySelector("#todayLunch3");
+			
+			todayCk1.checked = allEle.checked;
+			todayCk2.checked = allEle.checked;
+			todayCk3.checked = allEle.checked;
+			*/
+		}
+		
+		function displayAllCheck() {
+			// true 일 경우 span 엘리먼트의 html을 체크로
+			if(allEle.checked) {
+				spanEle.innerHTML = "체크";			
+			} else {
+				spanEle.innerHTML = "해제";
+			}
+		}
+	
+		var allEle = document.querySelector("#all");
+		var spanEle = document.querySelector("#allCkStatus");
+		
+		// true 일 경우 span 엘리먼트의 html을 체크로
+		displayAllCheck();
+		
+	</script>	
+	
+</body>
+</html> 

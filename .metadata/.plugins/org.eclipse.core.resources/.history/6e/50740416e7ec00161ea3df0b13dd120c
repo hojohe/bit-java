@@ -1,0 +1,39 @@
+<!-- 
+	이벤트가 발생 했을 때 발생된 이벤트의 내용 추출
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button {
+		width: 200px;
+		height: 100px;
+		color: white;
+		background: tomato;
+		border: 2px solid black;
+		font-size: 25px;
+	}
+</style>
+</head>
+<body>
+	<button id="btn1">시작</button>
+	<button id="btn2">종료</button>
+	
+	<script>
+		var btns = document.querySelectorAll("button");
+		
+		for(var i = 0; i< btns.length; i++) {
+			btns[i].onclick = function (e) {
+
+// 				console.dir(e);
+				// 이벤트 대상 객체 얻기
+				var obj = e.target;
+// 				console.log(obj.innerHTML);
+				
+			};
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<%@ page contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<c:import url="/jsp/header.jsp" />
+<style>
+	div>label.btn {
+ 		background-color: white !important;
+ 		color: black !important;
+ 		border-color:darkgray !important;
+ 	}
+ 	
+ 	.btn-primary.active,
+ 	.btn-primary:active,
+    .open>.dropdown-toggle.btn-primary,
+    .btn-primary:hover,
+    .btn-primary.active.focus, 
+    .btn-primary.active:focus,
+    .btn-primary.active:hover, 
+    .btn-primary:active.focus,  
+    .btn-primary:active:focus, 
+    .btn-primary:active:hover,
+    .open>.dropdown-toggle.btn-primary.focus, 
+    .open>.dropdown-toggle.btn-primary:focus, 
+    .open>.dropdown-toggle.btn-primary:hover {
+		background-color: darkgray !important;
+ 		border-color: darkgray !important;
+ 		color: black !important;
+ 		outline-color: black !important;
+ 	}
+ 	
+ 	th {
+ 		padding-left: 10%;
+ 	}
+ 	
+ 	td {
+ 		padding-right: 10%;
+ 	}
+ 	 
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<c:import url="/jsp/include/topMenu2.jsp" />
+
+		<div id="content" class="product">
+			<div class="proList">
+				<div class="option">
+
+				    <form action='${pageContext.request.contextPath}/feed/feedWrite' method='post' name='feedForm' id='feedForm'>
+				    	<input type="hidden" id="bulletChk"  name="bulletChk" value="1" />
+				    	<input type="hidden" id="userNo"  name="userNo" value="1" />
+				    	<input type="hidden" id="feedTypeChk"  name="feedTypeChk" value="1" />
+				    	<input type="hidden" id="alertScheduleChk"  name="alertScheduleChk" value="1" />
+				    	<table>
+				   			<colgroup>
+				   				<col width="20%">
+				   				<col width="80%">
+				   			</colgroup>
+							<caption></caption>	
+				    		<tr>
+								<th>Bullet</th>
+								<td>
+								  <div class="btn-group btn-group" data-toggle="buttons" id="bullet" > 
+				     					<label class="btn btn-primary active" > 
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="1" ><img src="${pageContext.request.contextPath}/img/bullet/1.png" width="15px" height="15px" align="middle" /> 
+				     					</label> 
+				     					<label class="btn btn-primary" > 
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="2" ><img src="${pageContext.request.contextPath}/img/bullet/2.png" width="15px" height="15px" align="middle" />
+				     					</label> 
+				     					<label class="btn btn-primary">
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="3"  ><img src="${pageContext.request.contextPath}/img/bullet/3.png" width="15px" height="15px" align="middle" />
+				     					</label>
+				     					<label class="btn btn-primary">
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="4" ><img src="${pageContext.request.contextPath}/img/bullet/4.png" width="15px" height="15px" align="middle" />
+				     					</label>
+				     					<label class="btn btn-primary">
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="5" ><img src="${pageContext.request.contextPath}/img/bullet/5.png" width="15px" height="15px" align="middle" />
+				     					</label>
+				     					<label class="btn btn-primary">
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="6"  ><img src="${pageContext.request.contextPath}/img/bullet/6.png" width="15px" height="15px" align="middle" />
+				     					</label>
+				     					<label class="btn btn-primary">
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="7"  ><img src="${pageContext.request.contextPath}/img/bullet/7.png" width="15px" height="15px" align="middle" />
+				     					</label>
+				     					<label class="btn btn-primary">
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="8"  ><img src="${pageContext.request.contextPath}/img/bullet/8.png" width="15px" height="15px" align="middle" />
+				     					</label>
+				     					<label class="btn btn-primary">
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="9"><img src="${pageContext.request.contextPath}/img/bullet/9.png" width="15px" height="15px" align="middle" />
+				     					</label>
+				     					<label class="btn btn-primary">
+				     						<input type="radio" autocomplete="off" name="bulletNo" value="10"><img src="${pageContext.request.contextPath}/img/bullet/10.png" width="15px" height="15px" align="middle" />
+				     					</label>
+				     				</div>
+								</td>
+							</tr>
+							<tr>
+					 			<th>To do</th>
+					 			<td><input type="text" class="form-control" name="feedTitle" placeholder="할 일을 입력하세요(0/30)"></td>
+				    		</tr>
+				    		<tr>
+				     			<th>종류</th>
+				     			<td> 
+				     				<div class="btn-group btn-group-xs" data-toggle="buttons"> 
+				     					<label class="btn btn-primary active"> 
+				     						<input type="radio" name="feedType" class="" value="1" autocomplete="off" id="feed"> 피드 
+				     					</label> 
+				     					<label class="btn btn-primary"> 
+				     						<input type="radio" name="feedType" value="2" autocomplete="off" id="story"> 스토리 
+				     					</label> 
+				     				</div>
+				    		    </td>
+				    		</tr>
+				    		<tr id="trDate" >
+				    			<th>일자</th>
+						 		<td><input type='date' name="startDate" /></td>
+				    		</tr>
+				    		<tr id="trAlram">
+				    			<th>알림</th>
+						  		<td><input type="date" name="alertDate"/></td>
+				    		</tr>
+				    		<tr>
+				     			<th>설명</th> 
+				     			<td><textarea class="form-control" rows ="10" cols="100" name="feedContent"  placeholder="다짐이나 상세 목표를 입력하세요"></textarea></td>
+				    		</tr>
+						</table>
+				     			<input class="btn btn-default" type="button" value="저장" onclick="save();" style="margin-left: 10%;"/>
+					</form>
+			    </div>
+			  </div>
+			</div>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/feed/feedWriteForm.js"></script>
+		<c:import url="/jsp/include/bottom.jsp" />
+	</div>
+</body>
+</html>

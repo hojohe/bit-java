@@ -1,0 +1,29 @@
+<!-- 
+	고전 이벤트 방식
+	<button onclick="test();">클릭</button>
+	
+	var btn = document.querySelector("button");
+		
+		
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button {
+		width: 200px;
+		height: 100px;
+		color: white;
+		background: tomato;
+		border: 2px solid black;
+		font-size: 25px;
+	}
+</style>
+</head>
+<body>
+	<button>1번 버튼</button>
+	<button>2번 버튼</button>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p>
+		<a onclick="showSlide();">슬라이드</a>
+	</p>
+
+	<div id="div1">슬라이드 1번</div>
+	<div id="div2">슬라이드 2번</div>
+	<div id="div3">슬라이드 3번</div>
+	<div id="div4">슬라이드 4번</div>
+	<div id="div5">슬라이드 5번</div>
+	
+	
+	<script>
+		var i = 1;
+		var x = -440;
+		function showSlide() {
+			x += 30;
+			
+			var obj = document.querySelector("#div" + i);
+			obj.style.top = x + "px";
+			
+			if(i > 5) alert("마지막 슬라이드입니다");
+			
+			if (x < 200) {
+				setTimeout(showSlide, 100);
+			} else {
+				x = -440;
+				i++;
+			}
+		}
+	</script>
+
+
+</body>
+</html>
