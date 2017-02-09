@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../framework.js"></script>
+<style>
+	h5 {
+		float: left;
+    	margin-top: 0px;
+	}
+	
+	input {
+		float:left;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+</style>
+</head>
+<body>
+	<h1>AJAX - 연습</h1>
+	<br>
+	<h5>아이디</h5>
+	<input type="text" id="id" />
+	<div id="result">Ajax 실행 결과 표시</div>
+	<br>
+	
+	<script>
+	
+		$("#id").on("keyup",function(){
+			console.log("keyup 이벤트 시작");
+			
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function() {
+				if(xhr.readyState == 4) {
+					if(xhr.status == 200) {
+						console.log("성공");
+						$("#result").val(xhr.responseText);											
+					}
+				}
+			}
+			
+			xhr.open("POST", "exam01", true);
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			var value = "id="+$("#id").val();
+			xhr.send();
+			
+		});
+	</script>
+
+</body>
+</html>

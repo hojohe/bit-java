@@ -1,0 +1,38 @@
+
+window.onload = function(){
+	if($("#msg").val() != "") {
+		$('#myModal').modal('show');
+		$("#msg").val("");
+	}
+};
+
+
+/* 로그인 버튼 클릭시 */
+$("#btnLogin").on("click", function() {
+	console.log("ajax시작");
+	
+	$("#frm").attr("action", "/mini1-team5/user/login");
+	$("#frm").attr("method", "post");
+	$("#frm").submit();
+	
+console.log("ajax끝");	
+});
+
+
+/* 로그인상태유지 체크박스 클릭시 */
+$("#autoType").on("click", function() {
+
+console.log("dochk들어옴");
+	if($(this).attr("checked")) {
+		$(this).attr("checked", false);
+		$("#autoType").val("N");
+	} else {
+		$(this).attr("checked", true);
+		$("#autoType").val("Y");
+	}
+	if($(this).attr("checked")) {
+	
+	} 
+console.log("value = " + $("#autoType").val());
+});
+

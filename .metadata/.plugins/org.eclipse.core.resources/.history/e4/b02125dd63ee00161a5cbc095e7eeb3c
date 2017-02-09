@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../framework.js"></script>
+</head>
+<body>
+	<h1>Ajax 통신으로 서버에서 받은 메세지</h1>
+	<br>
+	<button>Ajax 호출</button>
+	<script>
+		$("button").on("click", function() {
+			// ajax 통신을 담당하는 객체 생성			
+			var xhr = new XMLHttpRequest();
+			
+			// 응답을 처리할 수 있는 콜백함수 등록하기
+			xhr.onreadystatechange()
+			
+		});
+	</script>
+</body>
+</html>

@@ -14,3 +14,38 @@
 1486400667972	Rename resource 'userSignupForm.jsp'
 1486427312639	Copy file
 1486427315723	Delete element
+1486465095302	Rename type 'UserServlet'
+1486465110093	Rename type 'UserFormServlet'
+1486465195106	Rename resource 'userForm.jsp'
+1486466554091	Rename type 'UserSignInFormServlet'
+1486466566354	Rename type 'UserSignInServlet'
+1486466602840	Rename resource 'userSignInForm.jsp'
+1486466630380	Rename resource 'userSignInForm.js'
+1486466636040	Rename resource 'userloginForm.js'
+1486469473049	Rename type 'UserloginServlet'
+1486469478656	Rename type 'UserloginFormServlet'
+1486550586079	Delete element
+1486550607854	Copy files
+1486550741608	Copy files
+1486550757076	Delete elements
+1486550779676	Copy files
+1486550784625	Delete elements
+1486550810622	Copy files
+1486550814821	Delete elements
+1486550909366	Delete elements
+1486550927084	Delete element
+1486550930423	Delete elements
+1486550947943	Copy file
+1486550950689	Delete element
+1486551259203	Copy files
+1486551298040	Delete elements
+1486551300575	Delete element
+1486551318979	Copy files
+1486551323126	Delete elements
+1486551403812	Copy files
+1486551407852	Delete elements
+1486563349318	Copy compilation unit
+1486563357926	Rename type 'UserLogOutServlet'
+1486564281473	Rename resource 'userDefaultImg.png'
+1486564324908	Move 'user_default_img.png' to 'layout'
+1486573430547	Copy compilation unit

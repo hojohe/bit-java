@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="form-control" key="selection"/>
+		<item value="autoType" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="form-control"/>
-			<item value="checkbox"/>
-			<item value="label"/>
-			<item value="request"/>
-			<item value=".btn"/>
-			<item value="printList"/>
-			<item value="loc"/>
-			<item value=".change("/>
+			<item value="autoType"/>
+			<item value="naver_id_login"/>
+			<item value="btnLogin"/>
+			<item value="modalBody"/>
+			<item value="elements"/>
+			<item value="Msg"/>
+			<item value="msg"/>
+			<item value="key"/>
 		</list>
 		<list key="replacehistory">
 			<item value="url(&apos;/mini1-team5"/>

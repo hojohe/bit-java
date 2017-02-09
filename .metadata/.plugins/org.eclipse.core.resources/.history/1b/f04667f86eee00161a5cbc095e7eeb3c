@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../framework.js"></script>
+</head>
+<body>
+<h1>Ajax 통신으로 서버에서 받은 메세지</h1>
+	
+	<div id="result"></div>
+	<br>
+	<button>Ajax 호출</button>
+	<script>
+		$("button").on("click", function() {
+			
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				
+				switch (xhr.readyState) {
+				case 1:
+					console.log("1번 들어옴");
+					break;
+				case 2:
+					console.log("2번 들어옴");
+					break;
+				case 3:
+					console.log("3번 들어옴");
+					break;
+				case 4:
+					console.log("4번 들어옴");
+					
+					if(xhr.status == 200) {
+						console.log("정상 수행");	
+					}
+					else {
+						console.log("정상 수행");
+					}
+					break;
+				
+				}
+			};
+			
+			xhr.open("GET", "exam02", true);
+			
+		});
+	</script>
+</body>
+</html>

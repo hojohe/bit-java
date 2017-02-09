@@ -1,0 +1,6 @@
+package ajax;
+
+@Webservlet("/11_ajax/exam01")
+public class Exam02 {
+
+}

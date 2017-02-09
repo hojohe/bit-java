@@ -1,0 +1,51 @@
+package kr.co.mini5.user.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.co.mini5.user.dao.UserDAO;
+import kr.co.mini5.vo.UserVO;
+
+@WebServlet("/userSignUp/userSignUp")
+public class UserSignUpServlet extends HttpServlet{
+	
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setCharacterEncoding("utf-8");
+
+		UserDAO dao = new UserDAO();
+		UserVO param = new UserVO();
+		
+		/* UserSingUp.jsp 파일에서 <form> 태그로 넘겨준 값들 (id, pass, nickName)*/
+		String id = request.getParameter("id");
+		String pass = request.getParameter("pass");
+		String nickName = request.getParameter("nickName");
+	
+		/**/
+		String dbUserId = dao.selectUserIdList(id);
+		
+		if(id.equals(dbUserId)) {
+			request.setAttribute("msg", "아이디가 중복됩니다.");
+			
+		} else {
+		
+			/* dao.selectUserIdList */
+			param.setId(id);
+			param.setPass(pass);
+			param.setNickName(nickName);
+			
+			dao.insertSignUp(param);
+		}
+		
+		response.sendRedirect(request.getContextPath()+"/main/main");
+		
+	}
+		
+}

@@ -1390,3 +1390,29 @@
 2월 07, 2017 19:15:49.57 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
 2월 07, 2017 19:15:49.62 
 2월 07, 2017 19:15:49.62 KLIB_SelfTest return : KLR_OK
+
+2월 07, 2017 20:13:17.45 NEW SESSION
+2월 07, 2017 20:13:17.45 
+2월 07, 2017 20:13:17.45 KLIB_SelfTest return : KLR_OK
+2월 07, 2017 20:14:15.47 [6096:12756:0207/201415.471:ERROR:CONSOLE(57)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: chrome-devtools://devtools/bundled/devtools_compatibility.js (57)
+2월 07, 2017 20:20:05.47 
+2월 07, 2017 20:20:05.47 KLIB_SelfTest return : KLR_OK
+2월 07, 2017 21:15:48.26 
+2월 07, 2017 21:15:48.26 KLIB_SelfTest return : KLR_OK
+2월 07, 2017 21:44:47.32 [25048:19168:0207/214447.325:ERROR:CONSOLE(57)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: chrome-devtools://devtools/bundled/devtools_compatibility.js (57)
+2월 07, 2017 21:45:11.82 [25048:19168:0207/214511.820:ERROR:CONSOLE(57)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: chrome-devtools://devtools/bundled/devtools_compatibility.js (57)
+2월 07, 2017 21:46:43.14 
+2월 07, 2017 21:46:43.14 KLIB_SelfTest return : KLR_OK
+
+2월 08, 2017 13:30:06.17 NEW SESSION
+2월 08, 2017 13:30:06.17 [22904:16652:0208/133006.173:ERROR:CONSOLE(57)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: chrome-devtools://devtools/bundled/devtools_compatibility.js (57)
+2월 08, 2017 13:32:18.33 [22904:16652:0208/133218.331:ERROR:CONSOLE(1020)] "Uncaught TypeError: Cannot read property 'name' of null", source: chrome-devtools://devtools/bundled/elements/elements_module.js (1020)
+2월 08, 2017 13:32:29.93 [22904:16652:0208/133229.932:ERROR:CONSOLE(1020)] "Uncaught TypeError: Cannot read property 'name' of null", source: chrome-devtools://devtools/bundled/elements/elements_module.js (1020)
+2월 08, 2017 16:49:44.89 Vector smash protection is enabled.
+2월 08, 2017 16:50:15.05 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 08, 2017 17:35:28.95 
+2월 08, 2017 17:35:28.95 KLIB_SelfTest return : KLR_OK
+2월 08, 2017 17:39:09.68 
+2월 08, 2017 17:39:09.68 KLIB_SelfTest return : KLR_OK
+2월 08, 2017 17:39:37.77 
+2월 08, 2017 17:39:37.77 KLIB_SelfTest return : KLR_OK

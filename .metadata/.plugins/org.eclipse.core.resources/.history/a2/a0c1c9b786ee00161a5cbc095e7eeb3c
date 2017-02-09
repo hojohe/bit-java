@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>AJAX - 연습</h1>
+	<hr>
+	<h5>아이디</h5>
+	<input type="text" id="" /> 
+	<div id="result">Ajax 실행 결과 표시</div>
+	<hr>
+	<button id="clearBtn">초기화</button>
+	<button id="send">호출</button>
+	
+	
+	<script>
+
+</body>
+</html>

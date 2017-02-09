@@ -1,0 +1,8 @@
+package ajax;
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/11_ajax/exam02")
+public class Exam02 extends {
+
+}
