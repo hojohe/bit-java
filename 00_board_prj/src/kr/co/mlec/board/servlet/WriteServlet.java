@@ -52,7 +52,6 @@ public class WriteServlet extends HttpServlet {
 		);
 		
 		// 게시판과 파일 테이블에 저장할 글번호를 조회
-		
 		BoardVO board = new BoardVO();
 		board.setTitle(mRequest.getParameter("title"));
 		board.setWriter(mRequest.getParameter("writer"));

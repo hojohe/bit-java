@@ -1,0 +1,175 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<head>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/layout.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/dist/sweetalert.css">
+	<c:import url="/jsp/header.jsp" />
+
+	<style>
+		img.logo {
+			width: 44px !important;
+		}
+		
+		#header .logOutBtn {
+			position: absolute;
+		    right: 25px;
+		    top: 11px;
+		    width: 46px;
+		    height: 24px;
+		    padding: 31px 0 0 1px;
+		    color: #000;
+		    font-size: 12px;
+		}
+		
+		#header .logInBtn {
+			position: absolute; 
+			right: 80px; 
+			top: 11px; 
+			width: 36px; 
+			height: 24px; 
+			padding: 15px 0 0 1px; 
+			color: #000; 
+			font-size: 12px;
+		}
+		.bar {
+			position: absolute; 
+			right: 37px; 
+			top: 11px; 
+			width: 36px; 
+			height: 24px; 
+			padding: 15px 0 0 1px; 
+			color: #000; 
+			font-size: 12px;
+		}
+		#header .signUpBtn { 
+			position: absolute; 
+			right: 10px; 
+			top: 11px; 
+			width: 47px; 
+			height: 24px; 
+			padding: 15px 0 0 1px; 
+			color: #000; 
+			font-size: 12px;
+		}
+	</style>
+	
+</head>
+
+<div id="header">
+	<a href="javascript:;" class="lnbBtn">메뉴</a>
+	<!--s: lnb -->
+	<div id="lnb">
+		<a href="javascript:;">LNB 닫기</a>
+		<ul class="lnb01">
+			<li class="sub"><a href="javascript: ;">피드</a>
+				<ul>
+					<li><a id="feedMenuAll">전체</a></li>
+					<li><a id="feedMenu1">일반 피드</a></li>
+					<li><a id="feedMenu2">스토리 피드</a></li>
+				</ul></li>
+			<li class="store"><a id="userMenu" href="javascript:;">마이페이지</a></li>
+			<li class="store"><a id="detailMenu" href="#">스토리 별점</a></li>
+				<!-- <ul>
+					<li><a id="detailMenu">마이스타</a></li>
+				</ul></li> -->
+			<li class="store"><a id="confMenu" href="#">스토리 인증</a></li>
+			<li class="store"><a id="storyMenu" href="#">스토리 공유</a></li>
+		</ul>
+		<div>
+			<fieldset>
+				<legend>검색하기</legend>
+				<div>
+					<input type="text" id="searchkey" onkeypress="if (event.keyCode == 13) { goSearchResult(); event.returnValue = false }" />
+					<label for="searchkey">검색어 입력</label> 
+					<a href="javascript:goSearchResult();">검색버튼</a>
+				</div>
+			</fieldset>
+		</div>
+		<ul class="lnbSns">
+			<li class="sns01"><a href="javascript:;" ></a></li>
+			<li class="sns02"><a href="javascript:;" onclick="main.pagelink(14,0)"></a></li>
+		</ul>
+	</div>
+	<!--e: lnb -->
+	<h1>
+		<a href="${pageContext.request.contextPath}/main/main"><img class="logo" src="${pageContext.request.contextPath}/img/layout/header_logo.png" alt="작심 365" style="width: 46;" /></a>
+	</h1>
+	
+	<c:choose>
+		<c:when test="${empty user}">
+			<a href="${pageContext.request.contextPath}/user/loginForm" class="logInBtn">로그인</a> 
+			<span class="bar"> | </span> 
+			<a href="${pageContext.request.contextPath}/user/userSignUpForm" class="signUpBtn">회원가입	</a>
+		</c:when>
+		<c:otherwise>
+				<a href="${pageContext.request.contextPath}/user/logout" class="logOutBtn" style="padding-top: 0px;">
+					<c:choose>
+						<c:when test="${empty user.profImgPath}">
+							<img class="img-responsive img-circle logo" alt="Responsive image" src="${pageContext.request.contextPath}/img/layout/user_default_img.png" style="width: 34px !important;margin-left: 5px;"/>로그아웃
+						</c:when>
+						<c:otherwise>
+							<img class="img-responsive img-circle logo" alt="Responsive image" src="${pageContext.request.contextPath}/upload${user.profImgPath}" style="width: 34px !important;margin-left: 5px;"/>로그아웃
+						</c:otherwise>
+					</c:choose>
+				</a>
+		</c:otherwise>
+	</c:choose>
+</div>
+<!--s: content -->
+<script src="${pageContext.request.contextPath}/js/script.js"></script>
+<script src="${pageContext.request.contextPath}/js/dist/sweetalert.min.js"></script>
+<script>
+
+$("#userMenu").on("click", function() {
+	if('${empty user}' == 'true') {
+		swal("로그인 후 사용 가능한 메뉴입니다.");
+		return false;
+	}
+	location.href = '${pageContext.request.contextPath}/user/userDetail?userNo=${user.no}';
+
+});
+
+$("#detailMenu").on("click", function() {
+	if('${empty user}' == 'true') {
+		swal("로그인 후 사용 가능한 메뉴입니다.");
+		return false;
+	} 
+	location.href = '${pageContext.request.contextPath}/detail/detail?userNo=${user.no}';
+});
+$("#feedMenuAll").on("click", function() {
+	if('${empty user}' == 'true') {
+		swal("로그인 후 사용 가능한 메뉴입니다.");
+		return false;
+	} 
+	location.href = '${pageContext.request.contextPath}/feed/feedList?userNo=${user.no}&feedType=0';
+});
+$("#feedMenu1").on("click", function() {
+	if('${empty user}' == 'true') {
+		swal("로그인 후 사용 가능한 메뉴입니다.");
+		return false;
+	} 
+	location.href = '${pageContext.request.contextPath}/feed/feedList?userNo=${user.no}&feedType=1';
+});
+$("#feedMenu2").on("click", function() {
+	if('${empty user}' == 'true') {
+		swal("로그인 후 사용 가능한 메뉴입니다.");
+		return false;
+	} 
+	location.href = '${pageContext.request.contextPath}/feed/feedList?userNo=${user.no}&feedType=2';
+});
+$("#confMenu").on("click", function() {
+	if('${empty user}' == 'true') {
+		swal("로그인 후 사용 가능한 메뉴입니다.");
+		return false;
+	} 
+	location.href = '${pageContext.request.contextPath}/feed/feedConfWriteForm?userNo=${user.no}&feedType=2';
+});
+$("#storyMenu").on("click", function() {
+	swal("서비스 준비 중입니다.");
+});
+</script>
+
+
+
+

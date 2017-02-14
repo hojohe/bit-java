@@ -1,0 +1,64 @@
+<!-- 
+	:disabled
+	:checked   -> checkbox, select, radio
+	:selected  -> select
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<input type="text" name="name" value="name" /><br />
+	<input type="text" name="id" disabled="disabled" value="id" /><br />
+	
+	<input type="radio" name="gender" value="male" />남
+	<input type="radio" name="gender" value="female" checked="checked" />여
+	
+	<input type="checkbox" name="hobby" value="movie" />영화
+	<input type="checkbox" name="hobby" value="book" />책
+	<input type="checkbox" name="hobby" value="music" checked="checked" />음악
+	
+	<select name="selBox">
+		<option value="1">1번</option>
+		<option value="2" selected="selected">2번</option>
+		<option value="3">3번</option>
+	</select>
+	
+	<button>확인</button>	
+	<script>
+		$("button").on("click", function() {
+			console.log(":disabled 항목의 값 : " + $(":disabled").val());
+			
+			console.log(":checked 항목의 값 : " + $(":checked").val());
+			
+			// 선택된 것들을 반복한다.. : .each(function)
+			$(":checked").each(function () {
+					console.log("each : ",  $(this).val());
+			});
+			
+			// :checked 된 것 중에 selectbox 빼고싶음
+			$("input:checked").each(function () {
+					console.log("select 제외 : ",  $(this).val());
+			});
+			
+			console.log("selected : "$(":selected").val());
+			
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

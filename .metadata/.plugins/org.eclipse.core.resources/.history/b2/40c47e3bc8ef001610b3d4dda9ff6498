@@ -1,0 +1,7 @@
+
+$($("input[type=radio]")).on("click", function() {
+	if($("input[type=radio]").is(":checked")) {
+		alert("1");
+		
+	}
+});

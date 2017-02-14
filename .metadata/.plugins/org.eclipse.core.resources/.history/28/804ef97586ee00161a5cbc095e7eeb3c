@@ -1,9 +1,0 @@
-package ajax.quiz;
-
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-
-@WebServlett("/11_ajax/quiz/exam01")
-public class Exam01 extends HttpServlet {
-
-}

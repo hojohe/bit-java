@@ -1,7 +1,0 @@
-package ajax.quiz;
-
-import javax.servlet.http.HttpServlet;
-
-public class Exam01 extends HttpServlet{
-
-}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kr.co.mini5.detail.dao.DetailDAO">
+
+	<resultMap type="detail" id="detailMap">
+		<result column="detail_no" property="detailNo" />
+		<result column="feed_no" property="feedNo" />
+		<result column="user_no" property="userNo" />
+		<result column="days" property="days" />
+		<result column="percent" property="percent" />
+		<result column="end_date" property="endDate" />
+		<result column="feed_dday" property="feedDday" />
+		<result column="reg_date" property="regDate" />
+	</resultMap>
+	
+	<select id="selectDetail" parameterType="detail" resultMap="detailMap">
+		select detail_no,
+			   feed_no,
+			   user_no,
+			   days,
+			   percent
+		  from t_feed_detail
+		 where feed_no = #{feedNo}
+		   and user_no = #{userNo}
+		 order by days desc
+	</select>
+		
+	<select id="selectOneDetail" parameterType="int" resultMap="detailMap">
+		select feed_no, user_no, end_date, feed_dday, reg_date
+		  from (
+		  		select d.feed_no, d.user_no, f.end_date, f.feed_dday, f.reg_date
+		  		  from t_feed f, t_feed_detail d
+		  		 where 1=1
+		  		   and f.feed_no = d.feed_no
+		  		   and f.user_no = d.user_no
+		  		   and f.feed_type = 2
+		  		   and d.user_no = #{userNo}
+		  		   group by d.feed_no, d.user_no, f.end_date, f.feed_dday, f.reg_date
+				   order by f.reg_date desc
+		  	   ) a
+		 where 1=1
+		   and rownum = 1
+	</select>
+	
+	<select id="selectTodayDetail" parameterType="detail" resultType="int">
+		select percent
+		  from t_feed_detail
+		 where 1=1
+		   and user_no = #{userNo}
+		   and feed_no = #{feedNo}
+		   and days = #{days}
+	</select>
+	
+	<update id="updateDetail" parameterType="detail">
+		update t_feed_detail
+		   set percent = #{percent}
+		 where feed_no = #{feedNo}
+           and user_no = #{userNo}
+           and days = #{days}		  
+	</update>
+	
+	<select id="selectFeed" parameterType="int" resultType="feed">
+		select *
+		  from t_feed
+		 where user_no = #{userNo}
+		   and feed_type = 2
+	</select>
+
+</mapper> 
+
+
+
+
+
+
+
+
+

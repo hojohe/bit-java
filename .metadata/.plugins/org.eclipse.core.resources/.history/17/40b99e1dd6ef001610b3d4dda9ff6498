@@ -1,0 +1,73 @@
+/**
+ * 
+ */
+/*function doAction(){
+		
+		var h = document.hForm;
+		
+		if(isEmpty(h.id, "아이디를 입력해주세요."))
+ 			return false;
+ 		if(isEmpty(h.pass, "패스워드를 입력해주세요."))
+ 			return false;
+ 		if((h.pass.value.length < 4) || (h.pass.value.length > 16)){
+ 			alert("패스워드는 4자이상 16자 이하 이어야합니다.")
+ 			return false;
+ 		}
+		if(isEmpty(h.passok, "패스워드를 확인해주세요."))
+ 			return false;	
+ 		if(h.pass.value!= h.passok.value){
+			alert("패스워드를 확인해주세요.");
+			pass.focus();
+			pass.select();
+			return false;
+		}
+ 		if(isEmpty(h.nickName, "별명을 입력해주세요."))
+ 			return false;
+ 		
+ 		return true;
+}
+
+
+$("#id").on("keyup", function() {
+	
+	console.log("keyup 이벤트 시작");
+	
+	var xhr = new XMLHttpRequest();
+	
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			if(xhr.status == 200) {
+				console.log("성공 ");
+				$("#result").html(xhr.responseText);											
+			}
+		}
+	}
+	
+	xhr.open("GET", "/mini1/userSignUp/userSignUp?id="+$("#id").val(), true);
+	xhr.send(null);
+	
+});*/
+if("${idChk}" == "Y") {
+	
+	swal('${msg}');
+}
+
+$("#chkAll").on("click", function() {
+	if($(this).is(":checked")) {
+		$("#chk1").attr("checked", true);
+		$("#chk2").attr("checked", true);
+	} else {
+		$("input[name=chkbox]").attr("checked", false);
+	}
+});
+
+
+$("#btnSignUp").on("click", function() {
+	
+	if(!$("input[name=chkbox]").is(":checked")) {
+		swal("약관에 동의를 해주시기 바랍니다. ");
+		return false;
+	}
+	
+});
+

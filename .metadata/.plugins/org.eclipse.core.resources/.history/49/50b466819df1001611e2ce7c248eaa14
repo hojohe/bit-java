@@ -1,0 +1,85 @@
+<%@ page contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:useBean id="now" class="java.util.Date" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/feed/feedList.js"></script>
+<style>
+	#today {
+		margin-right: 520px; 
+		margin-top: 50px; 
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<c:import url="/jsp/include/topMenu2.jsp" />
+
+		<div id="content" class="product">
+			<div class="proList">
+
+				<c:if test="${not empty user.covrImgPath}" >	
+				<div id="covrImgDiv" style="display:none;">
+					<img src="${pageContext.request.contextPath}/upload${user.covrImgPath}" style="width: 1600px; height: 250px;"/>
+				</div>		
+				</c:if>
+  
+    	
+		
+		<div class="option">	
+		<a href="${pageContext.request.contextPath}/feed/feedWriteForm"><img src="${pageContext.request.contextPath}/img/feed/calendar.png" width="40px" height="40px" style="margin-left: 650px;"/></a>
+    	<form name="dForm" onsubmit="return delChk();">
+    		<input type="hidden" name="delFeedNo" id="delFeedNo"/>
+	    	<table class="table table-hover" style="width: 70%; margin-top: 50px; margin-left: 150px; ">
+	    	<c:choose>
+					<c:when test="${empty feedList}">
+						<p style="font-color:#ccc;">등록된 일정이 없습니다. 일정을 등록해주세요.</p>
+					</c:when>
+					<c:otherwise>
+	    	
+	    				<div id="today">
+					    	<h2><fmt:formatDate value="${now}" pattern="yyyy.MM.dd" /></h2>
+					    </div>
+				    	<c:forEach var="feed" items="${feedList}">
+				    	<input type="hidden" name="statusFeedNo" id="statusFeedNo"/>
+				    	<input type="hidden" name="deleteChk" id="deleteChk"/>
+			    		<input type="hidden" name="delYn" class="delYn" value="${feed.deleteYn}"/>
+						
+				    		<tr>
+				    			<td>
+				    				<img src="${pageContext.request.contextPath}${feed.bulletImgPath}" width="20px" height="20px" align="left" style="background-color: transparent;"/>
+				    			</td>
+				    			<td>
+				    				<a href='feedUpdateForm?feedNo=${feed.feedNo}'><span class="delChange" data-no="${feed.feedNo}"><c:out value="${feed.feedTitle}" /></span></a>
+				    			</td>
+				    			<td>
+				    				<img src="${pageContext.request.contextPath}/img/feed/trash.png" width="20px" height="20px" align="right" id="" onclick="delChk(${feed.feedNo});"/>
+				    			</td>
+				    		</tr>
+				    	</c:forEach>
+				    </c:otherwise>
+			</c:choose>
+	    	
+	    	
+	    	</table>
+    	</form>
+    				
+  	</div>
+		</div>
+				</div>
+<script>
+	if('${empty user.covrImgPath}') {
+		$("#covrImgDiv").attr("style", "display:block");
+	}
+
+	if ('${msg}') {
+		swal ('${msg}');		
+	}
+</script>
+		<c:import url="/jsp/include/bottom2.jsp" />
+	</div>
+</body>
+</html>
+

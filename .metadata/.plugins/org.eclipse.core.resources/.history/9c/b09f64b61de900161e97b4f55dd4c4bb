@@ -1,5 +1,0 @@
-package kr.co.mini5.main.servlet;
-
-@WebServlet("/main/main")
-public class MainServlet {
-}

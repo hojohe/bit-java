@@ -1,0 +1,130 @@
+/**
+ * feedWriteForm.jsp에 연결되는 js 파일 (1번 피드냐 2번 스토리냐에 따라 화면 달라져)
+ */
+
+
+	$('.type').on('click', function(){
+		
+		$(".type").attr("checked", false);
+		$(this).attr("checked", true);
+		$(".type").attr("style", "background-color: #fff;");
+		
+		if($(this).attr("checked")) {
+			$("#feedTypeChk").val($(this).val());
+			$(this).attr("style", "background-color: #ccc;");
+		}
+		
+		if($(this).attr("checked")
+				&& $(this).attr("id") ==  "feed") {
+			$("#date2").attr("style", "display:none;");
+			$("#alram2").attr("style", "display:none;");
+			
+			$("#date1").attr("style", "display:block;");
+			$("#alram1").attr("style", "display:block;");
+			
+		}
+		else {
+			$("#date1").attr("style", "display:none;");;
+			$("#alram1").attr("style", "display:none;");
+
+			$("#date2").attr("style", "display:block;");
+			$("#alram2").attr("style", "display:block;");
+			
+		} 
+	});
+	
+	$(".bullet").click(function() {
+		
+		$(".bullet").attr("checked", false);
+		$(".bullet").attr("style", "background-color: #fff;");
+		
+		$(this).attr("checked", true);
+		
+		if($(this).attr("checked")) {
+			$("#bulletChk").val($(this).val());
+			$(this).attr("style", "background-color: #ccc;");
+		}
+	});
+	$(".schedule").click(function() {
+		
+		$(".schedule").prop("checked", false);
+		$(".schedule").removeAttr("style");
+		
+		$(this).prop("checked", true);
+		
+		if($(this).attr("checked")) {
+			$("#alertScheduleChk").val($(this).val());
+			$(this).attr("style", "background-color: #ccc;");
+		}
+	});
+	
+		
+	/*
+	$(".startDate").click(function() {
+		
+		$(this).attr("value", );
+	});
+	*/
+	
+/*	$("#dDay").val().change(function() { 
+		if (this.checked) {
+			document.querySelector("#dDay").value = this.value;
+		}
+	});
+*/	
+
+
+	$("#wButton").on("click", function() {
+		
+	/*	if($("#feedTitle").val()== "") {
+			alert("To do를 입력하세요");
+			$("#feedTitle").focus();
+			return;
+		}
+
+		if($("#startDate").val() == "") {
+			alert("일자를 선택하세요");
+			$("#startDate").focus();
+			return;
+		}
+		
+		if($("#alertDate").val() == "") {
+			alert("알림을 선택하세요");
+			$("#alertDate").focus();
+			return;
+		}
+		
+		if($("#feedContent").val() == "") {
+			alert("내용을 입력하세요");
+			$("#feedContent").focus();
+			return;
+		}*/
+		
+		$("#dDay").val($("#dDay option:selected").val());
+		alert("D-day" + $("#dDay option:selected").val());
+		
+		
+	});
+
+	// var value = $("#startDate' input").datepicker("getDate");
+	
+
+	// 폼 저장 
+	function save(){
+		var feedForm = document.querySelector("#feedForm");
+		
+		console.log("name " + document.querySelector("input[name=startDate]"));		
+		alert($("#startDate2").val());
+		feedForm.target="_self";
+		feedForm.submit();
+		
+	}
+
+
+
+
+/*
+ *전체 삭제 왜 안돼? 
+ *function resetAll() {
+	document.form.reset();
+}*/

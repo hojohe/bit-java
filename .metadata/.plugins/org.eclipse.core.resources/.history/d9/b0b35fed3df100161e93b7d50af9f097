@@ -1,0 +1,49 @@
+package kr.co.mini5.detail.servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.co.mini5.common.util.DateUtil;
+import kr.co.mini5.detail.dao.DetailDAO;
+import kr.co.mini5.vo.FeedVO;
+
+@WebServlet("/detail/detail")
+public class DetailServlet extends HttpServlet {
+	
+	@Override
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		int userNo = Integer.parseInt(request.getParameter("userNo"));
+		
+		DetailDAO dao = new DetailDAO();
+		
+		List<FeedVO> feed = dao.selectFeed(userNo);
+		
+		if(feed != null) {
+
+			for(int i = 0; i < feed.size(); i++) {
+				FeedVO vo = feed.get(i);
+				String endDate = vo.getEndDate();
+				/* 화면에서 필요한 날짜 dateUtil이용하여 계산 */
+				DateUtil util = new DateUtil();
+				String dday = util.getDday(endDate);
+				vo.setDday(dday);
+			}
+			
+		}
+		
+		request.setAttribute("dday", dday);
+		request.setAttribute("feed", feed);
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/view/detail/detail.jsp");
+		rd.forward(request, response);
+	}
+		
+}

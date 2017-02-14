@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../framework.js"></script>
+<style>
+	.code {
+		margin-right: 5px;
+	}
+</style>
+</head>
+<body>
+<button id="addBtn">추가</button>
+<button id="delBtn">삭제</button>
+<br>
+<div id="dList">
+	<div class="dObj">코드값 : <input type="text" class="code" id="code1"  /> <input type="text" class="codeName" id="codeName1" /><br></div>
+	<div class="dObj">코드값 : <input type="text" class="code" id="code2"  /> <input type="text" class="codeName" id="codeName2" /><br></div>
+	<div class="dObj">코드값 : <input type="text" class="code" id="code3"  /> <input type="text" class="codeName" id="codeName3" /><br></div>
+</div>
+<script>
+console.log($(".dObj"));
+console.log($(".code"));
+var seq = 1;
+$("#addBtn").on("click", function() {
+	
+	if($(".dObj").attr("style", "display:block")length > 2) {
+		alert("최대 3개까지 가능 합니다.");
+		return false;
+	}
+
+/* 	var html  = $("#dList").html()
+			  + '<div class="dObj">'
+			  + '코드값 : <input type="text" class="code" id="code'+ ++seq +'" />'
+			  + ' <input type="text" class="codeName" id="codeName'+ seq +'" /><br>'
+			  + '</div>';
+	$("#dList").html(html); */
+					 
+});
+
+
+$("#delBtn").on("click", function() {
+	
+	if($(".dObj").length == 1) {
+		alert("더이상 삭제가 불가능 합니다.");
+		return false;
+	}
+	
+	$("#dList").removeChild($(".dObj")[$(".dObj").length-1]);
+	
+});
+
+	
+$("#code1").on("keyup", function() {
+	getCodeName(this);
+});
+
+
+$("#code2").on("keyup", function() {
+	getCodeName(this);
+});
+
+$("#code3").live("keyup", function() {
+	getCodeName(this);
+});
+
+function getCodeName(obj) {
+	
+var xhr = new XMLHttpRequest();
+	
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			if(xhr.status == 200) {
+				console.log("성공");
+				alert(xhr.responseText == null? "" : xhr.responseText);
+				obj.nextNode.value = xhr.responseText == null? "" : xhr.responseText;
+			}
+		}
+	}
+	xhr.open("GET", "exam02?code="+ obj.value, true);
+	xhr.send(null);
+	
+}
+	
+	
+
+
+	
+	
+</script>
+</body>
+</html>

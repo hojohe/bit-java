@@ -1,0 +1,41 @@
+function loginSuccess(id) {
+	
+	swal(id + "입력하신 정보가 올바르지 않습니다.");
+	location.href = '/mini1-team5'
+	return false;
+}
+function loginFail() {
+	swal("입력하신 정보가 올바르지 않습니다.");
+	return false;
+}
+
+
+/* 로그인 버튼 클릭시 */
+/*$("#btnLogin").on("click", function() {
+	console.log("ajax시작");
+	
+	$("#frm").attr("action", "/mini1-team5/user/login");
+	$("#frm").attr("method", "post");
+	$("#frm").submit();
+	
+	console.log("ajax끝");
+});*/
+
+
+/* 로그인상태유지 체크박스 클릭시 */
+$("#autoType").on("click", function() {
+
+console.log("dochk들어옴");
+	if($(this).attr("checked")) {
+		$(this).attr("checked", false);
+		$("#autoType").val("N");
+	} else {
+		$(this).attr("checked", true);
+		$("#autoType").val("Y");
+	}
+	if($(this).attr("checked")) {
+	
+	} 
+console.log("value = " + $("#autoType").val());
+});
+

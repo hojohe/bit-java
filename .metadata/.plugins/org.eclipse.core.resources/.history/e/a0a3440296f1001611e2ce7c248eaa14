@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mini5.feed.dao.FeedDAO">
+	<resultMap id="feedMap" type="feed" >
+		<result property="feedNo" column="feed_no"/>
+		<result property="userNo" column="user_no"/>
+		<result property="bulletNo" column="bullet_no"/>
+		<result property="feedType" column="feed_type"/>
+		<result property="feedDday" column="feed_dday"/>
+		<result property="startDate" column="start_date"/>
+		<result property="endDate" column="end_date"/>
+		<result property="feedTitle" column="feed_title"/>
+		<result property="feedContent" column="feed_content"/>
+		<result property="regDate" column="reg_date"/>
+		<result property="modDate" column="mod_date"/>
+		<result property="deleteYn" column="delete_yn"/>
+		<result property="alertDate" column="alert_date"/>
+		<result property="alertSchedule" column="alert_schedule"/>
+		<result property="confYn" column="conf_yn"/>
+		<result property="confImgPath" column="conf_img_path"/>
+		<result property="confContent" column="conf_content"/>
+		<result property="hashTag" column="hash_tag"/>
+		<result property="bulletImgPath" column="bullet_img_path"/>
+	</resultMap>
+	
+    <select id="getFeedList" parameterType="feed" resultMap="feedMap">
+    	select f.feed_no,
+    		   f.user_no,
+    		   f.bullet_no,
+    		   f.feed_type,
+    		   f.feed_dday,
+    		   f.start_date,
+    		   f.end_date,
+    	       f.feed_title, 
+    	       f.delete_yn,
+    	       f.reg_date,
+    	       f.conf_yn,
+    	       b.bullet_img_path 
+    	  from t_feed f, t_bullet b
+    	 where f.bullet_no = b.bullet_no
+    	   and f.user_no = #{userNo}
+    	  <if test="feedType != null">
+    	  	<choose>
+    	  		<when test="feedType == 0">
+    	  			and f.feed_type in (1,2)
+    	  		</when>
+    	  		<otherwise>
+    	  			and f.feed_type = #{feedType}
+    	  		</otherwise>
+    	  	</choose>
+    	  </if>
+    	  <if test="confYn != null">
+    	  	and f.conf_yn = #{confYn} 
+    	  </if>
+    	 order by feed_type desc, end_date asc
+    </select> 
+    
+    <select id="getFeedOne" parameterType="int" resultMap="feedMap">
+    	select f.feed_no,
+    		   f.user_no,
+    		   f.bullet_no,
+    		   f.feed_type,
+    		   f.feed_dday,
+    		   to_char(f.start_date, 'yyyy-mm-dd') as startDate,
+    		   to_char(f.end_date, 'yyyy-mm-dd') as endDate,
+    		   to_char(nvl(f.alert_date,sysdate), 'yyyy-mm-dd') as alertDate,
+    		   f.alert_schedule,
+    	       f.feed_title,
+    	       f.feed_content,
+    	       f.delete_yn,
+    	       f.reg_date,
+    	       b.bullet_img_path 
+    	  from t_feed f, t_bullet b
+    	 where f.bullet_no = b.bullet_no 
+    	 	   and f.feed_no = #{feedNo}
+    		   
+    </select>
+    
+    <!-- 일반 피드 등록 -->
+    <!-- sql문에서 not null값은 무조건 포함시키고, default는 추가할 필요 X. 화면에 없더라도 필요한 값은 등록시킨다. -->
+    <insert id="insertFeed" parameterType="feed">
+    	insert into t_feed(
+    		bullet_no,
+			feed_no,
+    		user_no,
+    		feed_type,
+    		start_date,
+    	    feed_title, 
+    	    feed_content, 
+    	    alert_date,
+    	    alert_schedule
+		) values (
+			#{bulletNo},
+			s_feed_no.nextval,
+			#{userNo},
+			#{feedType},
+    		#{startDate},
+    	    #{feedTitle}, 
+    	    #{feedContent},
+    	    #{alertDate},
+    	    #{alertSchedule}
+		)    
+    </insert>
+    
+    <!-- 스토리 피드 등록 -->
+    <insert id="insertStory" parameterType="feed">
+    	<selectKey keyProperty="feedNo" order="BEFORE" resultType="int">
+    		select s_feed_no.nextval from dual
+    	</selectKey>
+    	insert into t_feed(
+    		bullet_no,
+			feed_no,
+    		user_no,
+    		feed_type,
+    		feed_dday,
+    		start_date,
+    		end_date,
+    	    feed_title, 
+    	    feed_content, 
+    	    alert_schedule 
+		) values (
+			#{bulletNo},
+			#{}
+			#{userNo},
+			#{feedType},
+			#{feedDday},
+    		#{startDate},
+    	    #{endDate},
+    	    #{feedTitle}, 
+    	    #{feedContent},
+    	    #{alertSchedule}
+		)    
+    </insert>
+    
+    <!-- 스토리인 경우 마이스타 페이지 d-day 수에 맞게 생성  -->
+    <insert id="insertFeedDetail" parameterType="detail">
+    	insert into t_feed_detail(
+    		detail_no,
+			feed_no,
+    		user_no,
+    		days,
+    		percent
+		) values (
+			s_detail_no.nextval,
+			#{feedNo},
+			#{userNo},
+			#{days},
+			#{percent}
+		)    
+    </insert>
+    
+    
+    <!-- 스토리 인증 -->
+    <update id="updateFeedConf" parameterType="feed">
+    	update t_feed
+    	   set feed_title = #{feedTitle}
+    	   	 , conf_content = #{confContent}
+    	   	<if test="confImgPath != null" >
+    	   		, conf_img_path = #{confImgPath}
+    	   	 </if>
+    	   	 , conf_yn = 'Y'
+    	   	 , hash_tag = #{hashTag}
+    	   	 , mod_date = sysdate
+    	 where feed_no = #{feedNo}
+    </update>
+    
+    <!-- 인증 List -->
+    <select id="getFeedConfList" parameterType="feed">
+    	select f.feed_no,
+    		   f.user_no,
+    		   f.feed_type,
+    	       f.feed_title, 
+    	       f.reg_date,
+    	       f.conf_yn,
+    	       f.conf_content,
+    	       f.conf_img_path,
+    	       f.hash_tag
+    	  from t_feed f
+    	 where f.feed_no = #{feedNo}
+    	  <if test="confYn != null">
+    	  	and f.conf_yn = #{confYn} 
+    	  </if>
+    
+    </select>
+    
+    <update id="updateFeed" parameterType="feed">
+    	update t_feed
+    	   set feed_title = #{feedTitle},
+    	   	   feed_content = #{feedContent},
+    	   	   mod_date = sysdate
+    	 where feed_no = #{feedNo}
+    </update>
+
+    <update id="deleteFeed" parameterType="int">
+    	update t_feed
+    	   set delete_yn = 'Y'
+    	 where feed_no = #{feedNo}
+    </update>
+    
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

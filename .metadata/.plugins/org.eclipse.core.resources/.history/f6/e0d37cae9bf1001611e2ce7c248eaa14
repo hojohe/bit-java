@@ -1,0 +1,45 @@
+/**
+ * feedList.jsp에 연결되는 js 파일 
+ * 스토리일때 d-day 불러와야해
+ */
+
+window.onload = function () {
+	var dObj = document.querySelectorAll(".delChange");
+	var dChk = document.querySelectorAll(".delYn");
+	
+	for (var i = 0; i < dObj.length; i++) {
+		if (dChk[i].value == 'Y') {
+			dObj[i].style.textDecoration = "line-through";
+		}
+	}
+}
+
+function delChk(statusFeedNo) {
+	
+	/* 1. db 삭제 처리 */
+	$("#delFeedNo").val(statusFeedNo);
+	
+	dForm.action = "/mini1-team5/feed/feedDelete";
+	dForm.method = "post";
+	dForm.submit();
+	
+	/* 2. 삭제 화면 처리 (밑줄쫙) */
+	var dObj = document.querySelectorAll(".delChange");
+	
+	for (var i = 0; i < dObj.length; i++) {
+		var no = dObj[i].getAttribute("data-no");
+		if (no == statusFeedNo) {
+			
+			if($(".delYn").val() == "Y") {}
+			if(confirm("삭제하시겠습니까?")) {
+				dObj[i].style.textDecoration = "line-through";
+				$(".delYn").val("Y");
+			} else {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+//$("#").css("border","1px");

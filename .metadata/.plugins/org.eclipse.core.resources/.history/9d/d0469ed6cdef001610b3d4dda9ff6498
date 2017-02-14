@@ -1,0 +1,75 @@
+package kr.co.mini5.feed.servlet;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+
+import kr.co.mini5.feed.dao.FeedDAO;
+import kr.co.mini5.vo.FeedVO;
+
+@WebServlet("/feed/feedConfWrite")
+public class FeedConfWriteServlet extends HttpServlet {
+	private FeedDAO dao;
+	
+	public FeedConfWriteServlet() {
+		this.dao = new FeedDAO();
+	}
+
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
+		
+		ServletContext context = request.getServletContext();
+		String path = context.getRealPath("/upload");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("/yyyy/MM/dd");
+		String datePath = sdf.format(new Date());
+		
+		String savePath = path + datePath;
+		File f = new File(savePath);
+		if (!f.exists()) f.mkdirs();
+		
+		// 파일 처리를 위한 API 클래스 호출
+		MultipartRequest mRequest = new MultipartRequest(
+				request, 
+				savePath, 
+				1024 * 1024 * 10, 
+				"UTF-8",
+				new kr.co.mini5.common.file.MlecFileRenamePolicy()
+		);
+		
+		
+		File file = mRequest.getFile("confImgPath");
+		
+		
+		FeedVO feed = new FeedVO();
+		feed.setFeedTitle(mRequest.getParameter("feedTitle"));
+		feed.setConfContent(mRequest.getParameter("confContent"));
+		feed.setHashTag(mRequest.getParameter("hashTag"));
+		feed.setFeedNo(Integer.parseInt(mRequest.getParameter("feedNo")));
+		if (file != null) {
+			feed.setConfImgPath(savePath + file.getFilesystemName("confImgPath"));
+		}
+		dao.updateFeedConf(feed);
+		
+		
+	
+	request.setAttribute("msg", "등록이 완료되었습니다.");
+	
+	RequestDispatcher rd = request.getRequestDispatcher("/feed/feedConfList");
+	rd.forward(request, response);
+	
+	}
+	
+}

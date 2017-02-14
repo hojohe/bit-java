@@ -1,0 +1,6 @@
+
+$($("input[type=radio]")).on("click", function() {
+	if($("input[type=radio]").is(":checked")) {
+		$("#feedTypeChk").val(this.value);
+	}
+});

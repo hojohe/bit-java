@@ -1,0 +1,24 @@
+<!-- 
+window.onload 기능 대체
+$(document).ready(function)
+단축된 표현 $(function)
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		var h1Obj = document.querySelector("h1");
+		alert(h1Obj.innerHTML);
+	</script>
+</head>
+<body>
+	<h1>jQuery란?</h1>
+</body>
+</html>
+
+
+
+

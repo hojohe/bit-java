@@ -1,0 +1,84 @@
+package kr.co.mini5.feed.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.co.mini5.common.util.DateUtil;
+import kr.co.mini5.feed.dao.FeedDAO;
+import kr.co.mini5.vo.DetailVO;
+import kr.co.mini5.vo.FeedVO;
+
+@WebServlet("/feed/feedWrite")
+public class FeedWriteServlet extends HttpServlet {
+	private FeedDAO dao;
+	
+	public FeedWriteServlet() {
+		this.dao = new FeedDAO();
+	}
+
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
+		FeedVO feed = new FeedVO();
+		
+		int userNo = Integer.parseInt(request.getParameter("userNo"));
+		
+		
+		feed.setUserNo(userNo);
+		feed.setBulletNo(Integer.parseInt(request.getParameter("bulletChk")));
+		feed.setFeedTitle(request.getParameter("feedTitle"));
+		feed.setFeedType(Integer.parseInt(request.getParameter("feedTypeChk")));
+		feed.setFeedContent(request.getParameter("feedContent"));
+
+		
+		if (request.getParameter("feedTypeChk").equals("1")) {
+			
+			feed.setAlertDate(request.getParameter("alertDate"));
+			feed.setStartDate(request.getParameter("startDate"));
+			dao.insertFeed(feed);
+			
+		} else {
+		
+			String startDate2 = request.getParameter("startDate2");
+			int dday = Integer.parseInt(request.getParameter("feedDday"));
+			int alertSchedule = Integer.parseInt(request.getParameter("alertScheduleChk"));
+			
+			feed.setFeedDday(dday);
+			feed.setStartDate(startDate2);
+			feed.setAlertSchedule(alertSchedule);
+
+			DateUtil date = new DateUtil();
+			String endDate = date.getEndDate(startDate2, dday);
+			
+			feed.setEndDate(endDate);
+			
+			dao.insertStory(feed);
+			
+			
+			DetailVO detail = new DetailVO();
+			detail.setFeedNo(feedNo);
+			detail.setUserNo(userNo);
+			
+			
+			for(int i = 1; i <= dday ; i++) {
+				
+				detail.setDays(i);
+				
+				dao.insertFeedDetail(detail);
+				
+			}
+			
+		}
+		
+		request.setAttribute("msg", "등록이 완료되었습니다.");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/feed/feedList");
+		rd.forward(request, response);
+	}
+}

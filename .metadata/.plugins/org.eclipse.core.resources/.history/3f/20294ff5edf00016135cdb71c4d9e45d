@@ -1,0 +1,164 @@
+select feed_no,
+			   user_no,
+		       end_date,
+		       feed_dday
+		  from (
+		  	select d.feed_no,
+		  		   d.user_no,
+		 	       f.end_date,
+		 	       f.feed_dday
+		   	  from t_feed_detail d, t_feed f
+		  	 where d.feed_no = f.feed_no
+		  	   and d.user_no = f.user_no
+		  	   and d.user_no = 42
+			order by days
+		)
+		where rownum = 1
+		
+select feed_no, user_no, end_date, feed_dday, reg_date
+  from (
+  		select d.feed_no, d.user_no, f.end_date, f.feed_dday, f.reg_date
+  		  from t_feed f, t_feed_detail d
+  		 where 1=1
+  		   and f.feed_no = d.feed_no
+  		   and f.user_no = d.user_no
+  		   and f.feed_type = 2
+  		   and d.user_no = 42
+  		   group by d.feed_no, d.user_no, f.end_date, f.feed_dday, f.reg_date
+		   order by f.reg_date desc
+  	   ) a
+ where 1=1
+   and rownum = 1
+
+
+ 
+ 
+update t_feed
+    set end_date = to_date('20170311', 'yyyy-mm-dd')
+  where feed_no = 2
+  
+  
+select * from t_feed
+where user_no = 42
+
+
+select f.feed_no,
+    		   f.user_no,
+    		   f.bullet_no,
+    		   f.feed_type,
+    		   f.feed_dday,
+    		   f.start_date,
+    		   f.end_date,
+    	       f.feed_title, 
+    	       f.delete_yn,
+    	       f.reg_date,
+    	       f.conf_yn,
+    	       b.bullet_img_path 
+    	  from t_feed f, t_bullet b
+    	 where f.bullet_no = b.bullet_no
+    	   and f.user_no = 42
+
+select percent
+  from t_feed_detail
+ where 1=1
+   and user_no = 42
+   and feed_no = 2
+   and days = 29
+
+alter table t_user
+rename corv_img_path
+
+select * from t_user
+where id = 'hojohe'
+AND PASS = 1234
+
+insert into t_feed(     
+	feed_no,       
+	user_no,       
+	feed_type,          
+	feed_title,           
+	conf_content,           
+	conf_img_path,          
+	conf_yn,          
+	hash_tag   
+) 
+values (    
+	?,    
+	?,    
+	?,          
+	?,           
+	?,          
+	?,          
+	?,          
+	?      
+)
+select * from t_feed
+update t_feed
+    	   set feed_title = '111'
+    	   	 , conf_content = '22222'
+    	   	 , conf_img_path = 'saa'
+    	   	 , conf_yn = 'Y'
+    	   	 , hash_tag = '2222'
+    	 where feed_no = 3
+
+
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 1);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 2);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 3);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 4);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 5);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 6);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 7);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 8);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 9);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 10);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 11);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 12);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 13);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 14);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 15);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 16);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 17);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 18);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 19);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 20);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 21);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 22);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 23);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 24);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 25);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 26);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 27);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 28);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 29);
+insert into t_feed_detail(detail_no, feed_no, user_no, days)
+values(s_feed_detail_detail_no.nextval, 3, 42, 30);

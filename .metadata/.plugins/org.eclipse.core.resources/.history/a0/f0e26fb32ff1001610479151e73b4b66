@@ -1,0 +1,38 @@
+package kr.co.mini5.feed.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import kr.co.mini5.feed.dao.FeedDAO;
+import kr.co.mini5.vo.FeedVO;
+
+@WebServlet("/feed/feedDelete")
+public class FeedDeleteServlet extends HttpServlet {
+	private FeedDAO dao;
+	
+	public FeedDeleteServlet() {
+		this.dao = new FeedDAO();
+	}
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int feedNo = Integer.parseInt(request.getParameter("delFeedNo"));
+		System.out.println(request.getParameter("delFeedNo"));
+		
+		FeedVO feed = new FeedVO();
+		feed.setDeleteYn(request.getParameter("delYn"));
+		dao.deleteFeed(feedNo);
+		
+		request.setAttribute("msg", "삭제가 완료되었습니다.");
+		FeedVO result = dao.selectOneFeed(feedNo);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/feed/feedList?userNo= "+ result.getUserNo() + "&feedType=" + result.getFeedType());
+		rd.forward(request, response);
+		
+	}
+	
+}

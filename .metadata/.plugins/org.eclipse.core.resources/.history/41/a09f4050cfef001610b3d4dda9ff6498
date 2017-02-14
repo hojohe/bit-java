@@ -1,0 +1,8 @@
+
+$($("input[type=radio]")).on("click", function() {
+	if($("input[type=radio]").is(":checked")) {
+		alert(this.value);
+		$("#feedNo").val($(this).attr("data-no"));
+		$("#feedTitle").val($(this).attr("data-no"));
+	}
+});

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/11_ajax/quiz/exam01")
 public class Exam01 extends HttpServlet {
 
-	MemberDAO dao = new MemberDAO();
+	QuizDAO dao = new QuizDAO();
 	
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
