@@ -1,0 +1,8 @@
+
+1. DB-Script폴더에 있는 dbSQL.sql파일의 내용 실행
+
+2. C:/Windows/System32/drivers/etc/hosts파일에 
+192.168.0.10 bit-hojohe.com 으로 도메인설정
+
+3. url에 bit-hojohe.com:9090/mini1-team5 입력 후 실행
+

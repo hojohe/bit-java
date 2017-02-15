@@ -1636,3 +1636,10 @@
 2월 10, 2017 12:08:30.94 KLIB_SelfTest return : KLR_OK
 2월 10, 2017 14:22:27.92 
 2월 10, 2017 14:22:27.92 KLIB_SelfTest return : KLR_OK
+
+2월 14, 2017 14:25:17.01 NEW SESSION
+2월 14, 2017 14:25:17.01 [15544:18816:0214/142517.013:ERROR:cast_crl.cc(355)] No supported version of revocation data.
+
+2월 15, 2017 09:10:08.29 NEW SESSION
+2월 15, 2017 09:10:08.29 
+2월 15, 2017 09:10:08.29 KLIB_SelfTest return : KLR_OK

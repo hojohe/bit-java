@@ -1,0 +1,19 @@
+01_basic
+exam01: <script> 태그의 위치 <head> 태그 안과 <body> 태그 종료 전
+exam02: <script src="">
+exam03: 변수 var 와 변수 값 undefined 의 이해
+exam04: 변수 중복 선언
+exam05: 호이스팅 (컴파일:  , 실행:  )
+exam06: 데이터 타입 (기본 데이터 타입, 객체 데이터 타입)
+		string
+		number
+		boolean
+		null
+		undefined
+		object
+exam07: typeof("test") 	: string
+		typeof(10)		: number
+		typeof(true)	:boolean
+		typeof(a)
+		typeof(null)
+		typeof({})

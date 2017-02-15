@@ -50,6 +50,28 @@
 	<button>filter()</button>
 		
 	<script>
+		$("button:eq(0)").on("click", function() {
+// 			$("div").css("background", "yellow");
+// 			$("div, p").css("color", "tomato");
+			
+			$("div").css("background", "yellow")
+					.add("p")
+					.css("color", "tomato");
+			
+		});
+		$("button:eq(1)").on("click", function() {
+			$("div").css("background", "yellow")
+					.children("span")
+					.css("color","tomato");
+		});
+		$("button:eq(2)").on("click", function() {
+			console.log($("body").children().length);
+			console.log($("body").children().children("span").length);
+			console.log($("body").children().children("span").end().length);
+		});
+		$("button:eq(3)").on("click", function() {
+			$("div").filter(":gt(0)").css("color", "tomato");
+		});
 
 	</script>		
 </body>

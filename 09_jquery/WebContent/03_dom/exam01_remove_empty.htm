@@ -33,7 +33,13 @@
 		<h1>5</h1>
 	</div>
 	<script>
-
+		$("button:eq(0)").on("click", function() {
+			$("div > h1:last").remove();
+		});
+		
+		$("button:eq(1)").on("click", function() {
+			$("div > h1:last").empty();
+		});
 	</script>	
 </body>
 </html>

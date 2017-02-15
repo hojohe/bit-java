@@ -23,7 +23,10 @@
     <div class="a"></div>
     <img src="images/pic1.jpg" width="150" height="200" />
 	<script>
-
+	 
+	    $("button").on("click", function() {
+			$("div.a").append($("body > img").clone());
+	    });
 	</script>
 </body>
 </html>

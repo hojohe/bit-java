@@ -20,7 +20,14 @@ prop( "속성명", "값" ) : 속성값 설정
 		<button>prop 추출</button>
 	</div>
 	<script>
-
+		$("button:eq(0)").on("click", function() {
+			
+			$("input[name=msg]").prop("checked", !$("input[name=msg]").prop("checked"));
+		});
+		
+		$("button:eq(1)").on("click", function() {
+			console.log($("input[name=msg]").prop("checked"));
+		});
 	</script>
 </body>
 </html>

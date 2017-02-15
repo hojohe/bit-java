@@ -48,9 +48,67 @@
 	<button>next()</button>
 	<button>nextAll()</button>
 	<button>slice(0,2)</button>
+	<button>siblings()</button>
 	
 	<script>
-
+		$("button:eq(0)").on("click", function() {
+			// div의 자식 엘리먼트 중에서 아이디가 s2인것 선택
+			$("div").find("#s2").css({
+				"background": "tomato",
+				"color": "white",
+				"font-size": "30px",
+				"border": "5px solid black"
+			});
+		});
+		
+		$("button:eq(1)").on("click", function() {
+			$("#p2").prev().css({
+				"background": "tomato",
+				"color": "white",
+				"font-size": "30px",
+				"border": "5px solid black"
+			});
+		});
+		$("button:eq(2)").on("click", function() {
+			$("#p2").prevAll().css({
+				"background": "tomato",
+				"color": "white",
+				"font-size": "30px",
+				"border": "5px solid black"
+			});
+		});
+		$("button:eq(3)").on("click", function() {
+			$("#p2").next().css({
+				"background": "tomato",
+				"color": "white",
+				"font-size": "30px",
+				"border": "5px solid black"
+			});
+		});
+		$("button:eq(4)").on("click", function() {
+			$("#p2").nextAll().css({
+				"background": "tomato",
+				"color": "white",
+				"font-size": "30px",
+				"border": "5px solid black"
+			});
+		});
+		$("button:eq(5)").on("click", function() {
+			$("div").slice(0,2).css({			// 0<=div<2인 느낌! 2번 인덱스는 포함되지 않는다.
+				"background": "tomato",
+				"color": "white",
+				"font-size": "30px",
+				"border": "5px solid black"
+			});
+		});
+		$("button:eq(6)").on("click", function() {
+			$("#p2").siblings().css({			// 형제태그들 모두 선택 (nextAll()과 prevAll()의 조합)
+				"background": "tomato",
+				"color": "white",
+				"font-size": "30px",
+				"border": "5px solid black"
+			});
+		});
 	</script>	
 </body>
 </html>

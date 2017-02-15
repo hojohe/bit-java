@@ -35,7 +35,21 @@ prependTo : 선택자 엘리먼트 내용의 앞에 추가
 	<button>prependTo()</button>
 	
 	<script>
-	
+		var cnt = 1;
+		$("button:eq(0)").on("click", function() {
+			$("<b>"+ cnt++ +"</b>").insertAfter("p#p2");	// <b>태그를 #p앨리먼트 자리에 추가해줌
+		});
+		
+		$("button:eq(1)").on("click", function() {
+			$("<b>"+ cnt++ +"</b>").insertBefore("p#p2");
+		});
+		$("button:eq(2)").on("click", function() {
+			$("<b>"+ cnt++ +"</b>").appendTo("p#p2");
+		});
+		
+		$("button:eq(3)").on("click", function() {
+			$("<b>"+ cnt++ +"</b>").prependTo("p#p2");
+		});
 	</script>
 </body>
 </html>

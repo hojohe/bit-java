@@ -23,7 +23,11 @@
     <button>create</button>
 	<div class="a"></div>
 	<script>
-
+		$("button").on("click", function() {
+// 			$("<h1>11</h1>").appendTo("div.a");
+// 			$("<h1></h1>").text("11").appendTo("div.a");
+			$("<h1></h1>", {width: 200, height: 200}).text("11").appendTo("div.a");
+		});
 	</script>
 </body>
 </html>

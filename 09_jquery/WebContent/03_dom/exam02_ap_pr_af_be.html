@@ -37,7 +37,24 @@ replaceWith : 해당 선택자를 완전히 변경
 	<button>replaceWith()</button>
 	
 	<script>
-
+		var cnt = 1;
+		$("button:eq(0)").on("click", function() {
+			$("p#p2").after("<b>"+ cnt++ +"</b>");
+		});
+		
+		$("button:eq(1)").on("click", function() {
+			$("p#p2").before("<b>"+ cnt++ +"</b>");
+		});
+		$("button:eq(2)").on("click", function() {
+			$("p#p2").append("<b>"+ cnt++ +"</b>");
+		});
+		
+		$("button:eq(3)").on("click", function() {
+			$("p#p2").prepend("<b>"+ cnt++ +"</b>");
+		});
+		$("button:eq(4)").on("click", function() {
+			$("p#p2").replaceWith("<b>"+ cnt++ +"</b>");
+		});
 	</script>
 </body>
 </html>

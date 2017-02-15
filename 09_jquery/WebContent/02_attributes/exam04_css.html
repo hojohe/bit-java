@@ -43,12 +43,21 @@ button {
 			$("div.a").css("background", "tomato");
 		});
 		$("button:eq(1)").on("click", function() {
-			$("div.a").css("background", "tomato");
-			$("div.a").css("color", "white");
-		});
-		$("button:eq(2)").on("click", function() {
 			
+// 			$("div.a").css("background", "tomato");
+// 			$("div.a").css("color", "white");
+			
+			$("div.a").css({
+				"background":"tomato",
+				"color":"white"
+			});
 		});
+		
+		$("button:eq(2)").on("click", function() {
+// 			$("div.a").removeAttr("style");
+			$("div.a").css("background", "");
+		});
+		
 	</script>
 </body>
 </html>

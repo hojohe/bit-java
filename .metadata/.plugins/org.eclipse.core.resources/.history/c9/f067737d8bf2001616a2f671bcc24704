@@ -1,0 +1,8 @@
+
+1. DB-Script폴더에 있는 dbSQL.sql파일의 sql을 실행
+
+2. C:\Windows\System32\drivers\etchosts파일에 
+192.168.0.10 bit-hojohe.com 으로 도메인설정
+
+
+

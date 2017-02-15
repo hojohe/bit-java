@@ -26,7 +26,23 @@
 	</div>
     
     <script>
-
+    var timer = null;
+    
+    $("button:eq(0)").on("click", function() {
+		if (timer == null) {
+			timer = setInterval(function() {
+				$("div").append($("img:first"));
+			}, 1000);
+		}    	
+	});
+    
+    
+    $("button:eq(1)").on("click", function() {
+    	if(timer != null) {
+			clearInterval(timer);  
+			timer = null;
+    	}
+	});
     </script>
 </body>
 </html>

@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="alert" key="selection"/>
+		<item value="obj1" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="obj1"/>
+			<item value="items"/>
+			<item value="disabled"/>
 			<item value="alert"/>
 			<item value="img-responsive img-circle logo"/>
 			<item value="logO"/>
 			<item value="logo"/>
 			<item value="signUpBtn"/>
-			<item value="delYn"/>
-			<item value="collectionList"/>
-			<item value="FeedNo"/>
 		</list>
 		<list key="replacehistory">
 			<item value="url(&apos;/mini1-team5"/>

@@ -36,7 +36,17 @@
 		<button>크기확인(sizeCk())</button>
 	</div>
 	<script>
-
+		$("button:eq(0)").on("click", function(){
+			$("div:first").html(
+				$("p").offset().left+ ", " + $("p").offset().top		
+			);	
+		});
+		
+		$("button:eq(1)").on("click", function(){
+			$("div:first").html(
+					$("p").width() + ", " + $("p").height()		
+			);
+		});
 	</script>
 </body>
 </html>

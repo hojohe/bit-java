@@ -1,0 +1,120 @@
+/*
+ * 1. 불렛 테이블
+ * */
+drop table t_bullet
+create table t_bullet(
+	bullet_no number(2) not null, 
+	bullet_name varchar2(20) not null,
+	bullet_img_path varchar2(200) not null, 
+	constraint pk_bullet primary key (bullet_no)
+);
+
+/*
+ * 1-1. 불렛 데이터
+ * */
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (1, '1.png', '/img/bullet/1.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (2, '2.png', '/img/bullet/2.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (3, '3.png', '/img/bullet/3.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (4, '4.png', '/img/bullet/4.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (5, '5.png', '/img/bullet/5.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (6, '6.png', '/img/bullet/6.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (7, '7.png', '/img/bullet/7.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (8, '8.png', '/img/bullet/8.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (9, '9.png', '/img/bullet/9.png' );
+insert into t_bullet (bullet_no, bullet_name, bullet_img_path)
+values (10, '10.png', '/img/bullet/10.png' );
+
+/*
+ * 2. 회원 테이블 & 시퀀스
+ * */
+drop table t_user
+create table t_user(
+	user_no number(6) not null, 
+	id varchar2(50) not null,
+	pass varchar2(16),
+   	nick_name varchar2(20) not null,
+	auto_type char(1) default 'N',
+	prof_img_path varchar2(2000),
+	corv_img_path varchar2(2000),
+	reg_date date,
+	mod_date date,
+	constraint pk_user primary key (user_no)
+);
+create sequence s_user_user_no
+
+/*
+ * 2-1. 회원 데이터
+ * */
+insert into t_user (user_no, id, pass, nick_name) 
+values(s_user_user_no.nextVal, 'abc', '1234', '김신');
+
+
+/*
+ * 3. 피드 테이블 & 시퀀스
+ * */
+drop table t_feed
+create table t_feed(
+	feed_no number(6) not null,
+    user_no number(6) not null,
+    bullet_no number(2) not null,
+    feed_type number(1) not null,
+    feed_dday number(3), 
+    start_date date,
+    end_date date,
+    feed_title varchar2(90) not null,
+    feed_content varchar2(2000),    
+    reg_date date default sysdate,
+    mod_date date,
+    delete_yn char(1) default 'N',
+    alert_date date,
+    alert_schedule number(1),-- 1:매일, 2:주간
+    conf_yn char(1) default 'N',
+    conf_img_path varchar2(2000),
+    hash_tag varchar2(2000),
+    conf_content varchar2(2000),
+    constraint pk_feed primary key (feed_no),
+    foreign key(user_no) references t_user(user_no),
+    foreign key(bullet_no) references t_bullet(bullet_no)   
+);  
+create sequence s_feed_feed_no
+
+/*
+ * 4. 피드상세 테이블 & 시퀀스
+ * */
+drop table t_feed_detail
+create table t_feed_detail(
+    detail_no number(6) not null,
+    feed_no number(6) not null,
+    user_no number(6) not null,
+    days number(3) not null,
+    percent number(3) default 0,
+    constraint pk_detail_no primary key (detail_no),
+    foreign key(feed_no) references t_feed(feed_no),   
+    foreign key(user_no) references t_user(user_no)   
+);
+create sequence s_feed_detail_detail_no
+
+/*
+ * 5. 피드댓글 테이블 & 시퀀스
+ * */
+drop table t_feed_comment
+create table t_feed_comment(
+	comment_no number(6) not null,
+    feed_no number(6) not null,
+    user_no number(6) not null,
+    comments varchar2(100),
+    constraint pk_comment_no primary key (comment_no),
+    foreign key(feed_no) references t_feed(feed_no),
+    foreign key(user_no) references t_user(user_no)
+);
+create sequence s_feed_comment_comment_no
+

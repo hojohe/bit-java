@@ -39,7 +39,16 @@
 	</div>
 	 
 	<script>
-
+		$(function () {
+			$("div").scroll(function() {
+				console.log("top : " + $("div").scrollTop());
+			});
+		});
+		
+		$("button").on("click", function() {
+			$("div").scrollTop(0);
+		});
+		
 	</script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;코드 설명&apos; to &apos;08_javascript&apos;&#x0D;&#x0A;- Original project: &apos;01_java-basic&apos;&#x0D;&#x0A;- Destination element: &apos;08_javascript&apos;&#x0D;&#x0A;- Original element: &apos;코드 설명&apos;" description="Copy file" element1="코드 설명" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1487060038463" target="/08_javascript" units="0" version="1.0"/>
+</session>

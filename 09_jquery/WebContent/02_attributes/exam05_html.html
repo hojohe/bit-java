@@ -20,6 +20,14 @@
 		<button>HTML 추출</button>
 	</div>
 	<script>
+	
+		$("button:eq(0)").on("click", function() {
+			$("p.hClass").html("<b>변경</b>");
+		});
+		
+		$("button:eq(1)").on("click", function() {
+			console.log($("p.hClass").html());
+		});
 
 	</script>
 </body>

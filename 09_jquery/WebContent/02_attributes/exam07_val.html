@@ -14,7 +14,13 @@
 		<button>VAL 추출</button>
 	</div>
 	<script>
-
+		$("button:eq(0)").on("click", function() {
+			$("input[name=msg]").val("jQuery를 이용한 값 설정");
+		});
+		
+		$("button:eq(1)").on("click", function() {
+			console.log($("input[name=msg]").val());
+		});
 	</script>	
 </body>
 </html>
