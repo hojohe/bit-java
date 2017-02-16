@@ -1,12 +1,15 @@
 package kr.co.mlec.board.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
 
 import kr.co.mlec.board.dao.BoardDAO;
 
@@ -26,9 +29,21 @@ public class CommentDeleteServlet extends HttpServlet {
 		int commentNo = Integer.parseInt(request.getParameter("commentNo"));
 		
 		dao.deleteBoardComment(commentNo);
-		response.sendRedirect("detail?no=" + no);
+		
+		response.setContentType("text/json; charset=utf-8"); 
+		PrintWriter out = response.getWriter();
+		
+		out.println(new Gson().toJson(dao.selectBoardCommentByNo(no)));
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

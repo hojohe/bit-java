@@ -31,7 +31,9 @@ public class UpdateServlet extends HttpServlet {
 		boardVO.setContent(request.getParameter("content"));
 		dao.updateBoard(boardVO);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/board/update.jsp");
+		request.setAttribute("msg", "게시물이 수정되었습니다");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("list");
 		rd.forward(request, response);
 		
 	}

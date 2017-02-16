@@ -24,7 +24,14 @@
     <p>이벤트 연습</p>
     <div></div>
     <script>
-
+		$("p").click(function(){
+			$("div").append("p 클릭됨<br>");
+		});
+		
+		setInterval(function() {
+			// 이벤트 자동 호출
+			$("p").trigger("click");
+		},1000);
     </script>
 </body>
 </html>

@@ -1643,3 +1643,24 @@
 2월 15, 2017 09:10:08.29 NEW SESSION
 2월 15, 2017 09:10:08.29 
 2월 15, 2017 09:10:08.29 KLIB_SelfTest return : KLR_OK
+2월 15, 2017 11:12:52.86 
+2월 15, 2017 11:12:52.86 KLIB_SelfTest return : KLR_OK
+2월 15, 2017 15:29:47.99 
+2월 15, 2017 15:29:47.99 KLIB_SelfTest return : KLR_OK
+2월 15, 2017 15:35:49.01 
+2월 15, 2017 15:35:49.01 KLIB_SelfTest return : KLR_OK
+2월 15, 2017 16:18:46.43 
+2월 15, 2017 16:18:46.43 KLIB_SelfTest return : KLR_OK
+2월 15, 2017 17:51:05.14 
+2월 15, 2017 17:51:05.15 KLIB_SelfTest return : KLR_OK
+
+2월 16, 2017 10:57:10.54 NEW SESSION
+2월 16, 2017 10:57:10.54 A Parser-blocking, cross-origin script, https://www.googletagservices.com/tag/js/gpt.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+2월 16, 2017 10:57:10.55 A Parser-blocking, cross-origin script, https://securepubads.g.doubleclick.net/gpt/pubads_impl_110.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+2월 16, 2017 10:57:10.55 A Parser-blocking, cross-origin script, https://securepubads.g.doubleclick.net/gpt/pubads_impl_110.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+2월 16, 2017 10:57:10.55 A Parser-blocking, cross-origin script, https://securepubads.g.doubleclick.net/gampad/ads?gdfp_req=1&correlator=3565358501313805&output=json_html&callback=googletag.impl.pubads.setPassbackAdContents&impl=s&eid=108809080%2C108809147&sc=0&sfv=1-0-6&iu=%2F92704417%2FSedaily.com_120x600-2&sz=120x600&eri=2&cookie_enabled=1&lmt=1487210229&dt=1487210229254&cc=24&frm=20&biw=1920&bih=950&oid=3&adk=3072784307&ifi=1&u_tz=540&u_his=1&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=5&u_nmime=7&u_sd=1&flash=24.0.0&url=http%3A%2F%2Fwww.sedaily.com%2FNewsView%2F1OC47VK6MA&ref=https%3A%2F%2Fsearch.naver.com%2Fsearch.naver%3Fwhere%3Dnexearch%26query%3D%25EC%2595%2588%25EC%25B2%25A0%25EC%2588%2598%26sm%3Dtop_lve%26ie%3Dutf8&dssz=12&icsg=4042&std=0&vrg=110&vrp=110&ga_vid=1819084673.1487210229&ga_sid=1487210229&ga_hid=393680858, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+2월 16, 2017 10:57:10.55 A Parser-blocking, cross-origin script, https://securepubads.g.doubleclick.net/gampad/ads?gdfp_req=1&correlator=3565358501313805&output=json_html&callback=googletag.impl.pubads.setPassbackAdContents&impl=s&eid=108809080%2C108809147&sc=0&sfv=1-0-6&iu=%2F92704417%2FSedaily.com_120x600-2&sz=120x600&eri=2&cookie_enabled=1&lmt=1487210229&dt=1487210229254&cc=24&frm=20&biw=1920&bih=950&oid=3&adk=3072784307&ifi=1&u_tz=540&u_his=1&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=5&u_nmime=7&u_sd=1&flash=24.0.0&url=http%3A%2F%2Fwww.sedaily.com%2FNewsView%2F1OC47VK6MA&ref=https%3A%2F%2Fsearch.naver.com%2Fsearch.naver%3Fwhere%3Dnexearch%26query%3D%25EC%2595%2588%25EC%25B2%25A0%25EC%2588%2598%26sm%3Dtop_lve%26ie%3Dutf8&dssz=12&icsg=4042&std=0&vrg=110&vrp=110&ga_vid=1819084673.1487210229&ga_sid=1487210229&ga_hid=393680858, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+2월 16, 2017 10:57:10.55 A Parser-blocking, cross-origin script, http://cm.interworksmedia.co.kr/adTagRequest.htm?mediaId=sedaily&newsId=1OC47VK6MA&site=www.sedaily.interplay&page=sedaily_news&position=x90&tagId=JX&scriptId=iwmads-cm-1487210230363, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+2월 16, 2017 10:57:10.56 A Parser-blocking, cross-origin script, http://cm.interworksmedia.co.kr/adTagRequest.htm?mediaId=sedaily&newsId=1OC47VK6MA&site=www.sedaily.interplay&page=sedaily_news&position=x90&tagId=JX&scriptId=iwmads-cm-1487210230363, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+2월 16, 2017 10:57:10.56 A Parser-blocking, cross-origin script, http://ds.interworksmedia.co.kr/RealMedia/ads/adstream_jx.ads/www.sedaily.interplay/sedaily_news@x90?_4151&_5387&_5409, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+2월 16, 2017 10:58:36.38 A Parser-blocking, cross-origin script, http:

@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+$.ajax({
+	url: "/09_jquery/sticky/list.do",
+	type: "POST",
+	dataType: "json"
+}).done(function (result) {
+	
+	$("#memo1").html(result[0].content);
+	$("#memo1").css({
+		left:result[0].posY
+	});
+	$("#memo1").top(result[0].posY);
+	
+})
+
+$("input[type=button]").click(function () {
+	
+	$("#divObj").html();
+	$.ajax({
+		url: "/09_jquery/sticky/save.do",
+		type: "POST",
+		data: {
+			x:10,
+			y:10,
+			content: $("#memo1").html()
+		}
+	});
+	
+});
+
+$("#memo1").keyup(function () {
+	
+	$.ajax({
+		url: "/09_jquery/sticky/edit.do",
+		type: "POST",
+		data: {
+			x:123, 
+			y:123, 
+			id:1,
+			content:$("#memo1").html()
+		}
+	})
+	
+});

@@ -11,7 +11,21 @@
         <textarea cols="70"rows="5"></textarea>
     </div>
     <script>
-
+    
+    	// keypress 이벤트랑 한글 인식 ?? 
+		$("textarea").keyup(
+			function () {
+				// 입력된 글자 수
+				var len = $(this).val().length;
+				$("#countSpan").text(len);
+				
+				var color = "black";
+				if (len > 50) {
+					color = "red";
+				}
+				$("#countSpan").css("color", color);
+			}		
+		);
     </script>
 </body>
 </html>

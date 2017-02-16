@@ -21,10 +21,28 @@
 </head>
 <body>
     <div>
-        <a href="http://www.mlec.co.kr">mLec 이동하기</a>
+        <a href="http://www.naver.com">mLec 이동하기</a>
     </div>
     <script>
+    
+    	/* 이벤트 전파됨 a태그 눌르면 div 이벤트까지 같이 먹음 */
+		$("a").click(function (event) {
+			alert("a 태그 클릭됨");
 
+			/*
+			// 이벤트 전파 중지하기 -> div 이벤트가 막힘 = 이벤트 전파를 막음
+			event.stopPropagation();
+			
+			// 기본 할당된 이벤트 중지하기 -> 페이지 이동이 안됨 = 할당된 이벤트
+			event.preventDefault();
+			*/
+			
+			// 의미 : 전파 중지 + 기본 할당된 이벤트 중지
+			return false; 
+		});
+		$("div").click(function () {
+			alert("div 태그 클릭됨");
+		});
     </script>
 </body>
 </html>

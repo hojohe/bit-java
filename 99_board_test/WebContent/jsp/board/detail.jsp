@@ -76,5 +76,20 @@
 		<c:import url="/jsp/include/bottom.jsp" />
 	</div>
 </div>
+<script>
+	$.ajax({
+		url: "/99_board_test/comment/update",
+		type: "POST",
+		data: {
+			no: '${board.no}',
+			commentNo: '${comment.commentNo}',
+			content: '${comment.content}'
+		},
+		dataType: "JSON"
+	}).done(function (msg) {
+		
+		
+	});
+</script>
 </body>
 </html>

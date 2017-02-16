@@ -10,7 +10,32 @@
 	<div id="result"></div>
 	
 	<script>
-
+		// $.ajax({});
+		$("button").click(function () {
+			
+			// success, error: jquery 버전 1.8 deprecated
+			/*
+			$.ajax({
+				url: "/09_jquery/ajax/exam01",
+				type: "GET",
+				success: function (msg) {
+					$("#result").html(msg);
+				},
+				error: function () {
+					
+				}
+				
+			});
+			*/
+			$.ajax({
+				url: "/09_jquery/ajax/exam01",
+				type: "GET"
+			}).done(function (msg) {
+				$("#result").html(msg);
+			}).fail(function (jqXhr, textStatus, errorText) {
+				alert("에러 발생 : " + errorText);
+			});
+		});
 	</script>
 </body>
 </html>

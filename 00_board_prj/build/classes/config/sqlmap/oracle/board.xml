@@ -130,7 +130,8 @@
 	           content,
 	           reg_date
 	      from tb_board_comment
-	     where no = #{no}      
+	     where no = #{no}     
+	     order by comment_no 
 	</select>
 	
 	<delete id="deleteBoardComment" parameterType="int">

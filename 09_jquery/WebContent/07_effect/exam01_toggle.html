@@ -35,7 +35,16 @@
         <p>jQuery는 애니메이션 효과를 쉽게 적용할 수 있다.</p>
     </div>
     <script>
-
+		$("button").click(function () {
+// 			$("#effDiv1").toggle();
+// 			$("#effDiv1").toggle(2000);		// slide
+//  		$("#effDiv1").fadeToggle(2000); 
+//  		$("#effDiv1").slideToggle(2000);
+// 			$("#effDiv1").slideUp(2000); 
+//  		$("#effDiv2").slideDown(2000); 
+			$("#effDiv1").fadeOut(2000); 
+ 			$("#effDiv2").fadeIn(2000); 
+		});
     </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+		background-color: skyblue;
+	}
+	input[type=button]{
+		margin-left: 90%;
+		color: green;
+	}
+</style>
+</head>
+<body>
+
+	<input type="button" />메모추가
+	
+</body>
+</html>

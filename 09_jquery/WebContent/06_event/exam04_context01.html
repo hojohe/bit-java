@@ -25,7 +25,10 @@
     <p>이벤트 <span>연습2</span></p>
     <div></div>
     <script>
-
+		$("p").click(function(){
+// 			$("div").html( $(this).find("span").html());
+			$("div").html( $("span", this).html());
+		});
     </script>
 </body>
 </html>

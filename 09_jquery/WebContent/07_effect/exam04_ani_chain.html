@@ -14,7 +14,16 @@
 <body>
     <div></div>
     <script>
+		$("div").click(function () {
+// 			$(this).animate({left: "+=100"}, 1000);
+// 			$(this).animate({width: "+=100"}, 1000);
+// 			$(this).animate({height: "+=100"}, 1000);
 
+			$(this).animate({left: "+=100"}, 1000)
+				   .animate({width: "+=100"}, 1000)
+				   .animate({height: "+=100"}, 1000);
+			
+		});
     </script>
 </body>
 </html>

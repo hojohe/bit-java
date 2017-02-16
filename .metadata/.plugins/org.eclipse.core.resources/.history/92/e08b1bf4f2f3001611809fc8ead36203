@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+$("input[type=button]").click(function () {
+	
+	$("#divObj").html();
+	
+});
+
+$("#memo1").keyup(function () {
+
+	$.ajax
+});

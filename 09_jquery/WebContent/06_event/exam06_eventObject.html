@@ -34,7 +34,14 @@
 	    <div></div>
     </section>
     <script>
-
+		$("div:first").mousedown(function (event) {
+			var pos = $(this).offset();
+			console.log(
+				pos.left, pos.top, event.clientX, event.clientY, event.offsetX, event.offsetY);
+		});
+		$("div:first").mouseup(function() {
+			
+		});
     </script>
 </body>
 </html>

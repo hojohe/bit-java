@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+$("input[type=button]").click(function () {
+	
+	$("#divObj").html();
+	$.ajax({
+		url: "/09_jquery/sticky/save.do",
+		type: "POST",
+		data: {},
+	});
+	
+});
+
+$("#memo1").keyup(function () {
+	
+	$.ajax({
+		url: "/09_jquery/sticky/edit.do",
+		type: "POST",
+		data: {
+			"x":"123", 
+			"y":"123", 
+			"content":$("#memo1")
+		}
+	}).done( function (msg) {
+		
+	} );
+});

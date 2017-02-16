@@ -13,7 +13,10 @@
         <button>로그인</button>
     </form>
     <script>
-
+		$("#f").submit(function (event) {
+			alert("서브밋 호출 들어옴");
+			return false;
+		});
     </script>
 </body>
 </html>

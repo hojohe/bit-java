@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+$("input[type=button]").click(function () {
+	
+	$("#divObj").html();
+	
+	
+});

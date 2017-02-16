@@ -24,7 +24,41 @@
     <p>이벤트 연습</p>
     <div></div>
     <script>
-
+		
+    	/* $("p").click(function() {
+			$("div").append("클릭 이벤트 발생<br>");
+		});
+		
+		$("p").mouseenter(function(){
+			$("div").append("마우스 들어옴<br>");
+		});
+		
+		$("p").mouseleave(function(){
+			$("div").append("마우스 나감<br>");
+		}); */
+		
+    	/* $("p")
+    	.click(function() {
+			$("div").append("클릭 이벤트 발생<br>");
+		})
+		.mouseenter(function(){
+			$("div").append("마우스 들어옴<br>");
+		})
+		.mouseleave(function(){
+			$("div").append("마우스 나감<br>");
+		}); */
+		
+    	$("p")
+    	.click(function() {
+			$("div").append("클릭 이벤트 발생<br>");
+		})
+		.hover(function(){
+					$("div").append("마우스 들어옴<br>");
+			   }, function(){
+					$("div").append("마우스 나감<br>");
+			   }
+		);
+		
     </script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<form id="ajaxForm" action="/09_jquery/ajaxfile/exam01"
+	      method="post"
+	      enctype="multipart/form-data">
+		<input type="text" name="msg" /><br>
+		<input type="file" name="attachFile" multiple="multiple" />
+		<button type="button">업로드</button>	      
+	</form>
+	<script>
+		$("button").click(function () {
+			
+			console.dir( $("[name=attachFile]")[0].files );
+			console.dir( $("[name=attachFile]")[0].files[0] );
+			
+			// 폼의 데이터를 처리할 수 있는 스크립트 객체
+			var fd = new FormData();
+			fd.
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

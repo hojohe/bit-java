@@ -42,5 +42,14 @@
 		<c:import url="/jsp/include/bottom.jsp" />
 	</div>
 </div>
+<script>
+	$.ajax({
+		url: "",
+		data: {},
+		dataType: "",
+	}).done(function () {
+		
+	});
+</script>
 </body>
 </html>

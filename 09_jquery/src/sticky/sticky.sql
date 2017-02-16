@@ -6,3 +6,7 @@ create table tb_sticky(
 );
 
 create sequence seq_sticky_id;
+
+select * from tb_sticky
+
+delete from tb_sticky

@@ -17,7 +17,7 @@ public class Exam02 extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String upload = "C:/java90/workspace/09_jquery/WebContent/upload";
+		String upload = "C:/java90/git/workspace/09_jquery/WebContent/upload";
 		MultipartRequest mRequest = 
 				new MultipartRequest(
 						request, 

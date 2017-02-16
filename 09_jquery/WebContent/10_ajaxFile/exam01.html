@@ -15,7 +15,17 @@
 		<button>업로드</button>	      
 	</form>
 	<script>
-
+		$("ajaxForm").ajaxForm({
+			beforeSubmit: function () {
+				alert("서브밋 되기전임");	
+			},
+			success: function (reponseText) {
+				alert("업로드 성공");
+			}, 
+			error: function () {
+				alert("업로드시 에러 발생");
+			}
+		});
 	</script>
 </body>
 </html>

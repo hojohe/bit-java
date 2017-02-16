@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title</title>
+<%@ include file="/jsp/include/basicInclude.jsp" %>
 </head>
 <body>
 <div class="container">
@@ -15,84 +16,202 @@
 	</div>
 	
 	<div class="content">
-		<hr>
-		번호 : <c:out value="${boardVO.no}"/><br>
-		제목 : <c:out value="${boardVO.title}"/><br>
-		글쓴이 : <c:out value="${boardVO.writer}"/><br>
-		내용 : <c:out value="${boardVO.content}"/><br>
-		첨부파일 : <a href="${pageContext.request.contextPath}/upload${file.filePath}/${file.systemName}">${file.oriName}</a>(${file.fileSize} byte)<br>
-		등록일 : <fmt:formatDate value="${boardVO.regDate}" pattern="yyyy-MM-dd hh:mm:ss" /><br>
-		<hr>
+		<ol class="breadcrumb">
+		  <li><a href="${pageContext.request.contextPath}/main/main">Home</a></li>
+		  <li class="active">자유게시판</li>
+		</ol>
+		<table class="table table-no-border">
+		<tr>
+			<td class="td-txt-right td-wp10">번호</td>
+		 	<td><c:out value="${boardVO.no}"/></td>
+		</tr>
+		<tr>
+			<td class="td-txt-right td-wp10">제목</td>
+		 	<td><c:out value="${boardVO.title}"/></td>
+		</tr>
+		<tr>
+			<td class="td-txt-right td-wp10">글쓴이</td>
+		 	<td><c:out value="${boardVO.writer}"/></td>
+		</tr>
+		<tr>
+			<td class="td-txt-right td-wp10">내용</td>
+		 	<td><c:out value="${boardVO.content}"/></td>
+		</tr>
+		<tr>
+			<td class="td-txt-right td-wp10">첨부파일</td>
+		 	<td><a href="${pageContext.request.contextPath}/upload${file.filePath}/${file.systemName}">${file.oriName}</a>(${file.fileSize} byte)</td>
+		</tr>
+		<tr>
+			<td class="td-txt-right td-wp10">등록일</td>
+		 	<td><fmt:formatDate value="${boardVO.regDate}" pattern="yyyy-MM-dd hh:mm:ss" /></td>
+		</tr>
+		</table>
 		
-		<a href='updateForm?no=${param.no}'>수정</a>
-		<a href='delete?no=${param.no}'>삭제</a>
-		<a href='list'>목록</a>
-			
-		<%-- 댓글 관련 파트 시작 --%>
+		<div class="row">
+		    <div class="col-md-9"></div>
+		    <div class="col-md-3">
+				<a href='updateForm?no=${param.no}' class="btn btn-success btn-lg">수정</a>
+				<a href='delete?no=${param.no}' class="btn btn-danger btn-lg">삭제</a>
+				<a href='list' class="btn btn-info btn-lg">목록</a>
+		    </div>
+		</div>
+		<hr>	
+
+		<%-- 댓글 관련 파트 시작 --%>		
 		<div id="comment">
-			<form method="post" action="commentRegist">
-				<input type="hidden" name="no" value="${boardVO.no}" />	
-				<table width="70%">
-				<tr>
-					<td><input type="text" name="userId" value="${user.userId}" /></td>
-					<td><textarea name="content" rows="2" cols="60"></textarea></td>
-					<td><input type="submit" value="등록" /></td>
-				</tr>	
-				</table>
-			</form>
+			<form id="rForm" class="form-inline">
+			    <div class="form-group">
+				    <input type="text" name="userId" class="form-control" value="<c:out value="${user.userId}" />" placeholder="아이디를 입력하세요">
+			    </div>
+			    <div class="form-group">
+				    <input type="text" name="content" class="form-control input-wp1" placeholder="내용을 입력하세요">
+			    </div>
+			  	<button class="btn btn-primary">등록</button>
+			</form>					
 		</div>
+		<hr>
+		<div id="commentList"></div>
+		<%-- 댓글 관련 파트 끝 --%>		
 		
-		<form action="commentUpdate" method="post">
-			<input type="hidden" name="no" value="${boardVO.no}" />
-			<input type="hidden" name="commentNo" value="${commentNo}" />
-		
-		<div id="commentList">
-		  <table width='80%' border='1'>
-		  <tr>
-			<c:forEach var="comment" items="${commentList}">
-			<c:choose>
-		  		<c:when test="${commentNo eq comment.commentNo}">	
-					<tr>
-					  <td><c:out value="${comment.userId}" /></td>
-					  <td>
-					  	<textarea name="content" rows="2" cols="60"><c:out value="${comment.content}" /></textarea>
-					  </td>
-					  <td colspan="2">
-					  	  <input type="submit" value="수정" />	
-					  </td>
-					 </tr>
-			 	</c:when>
-			 	<c:otherwise>
-					<tr>
-					  <td><c:out value="${comment.userId}" /></td>
-					  <td>
-					  		<c:out value="${comment.content}" /></td>
-					  <td><fmt:formatDate var="regDate" value="${comment.regDate}" 
-					                      pattern="yyyy-MM-dd HH:mm:ss" />
-					      <c:out value="${regDate}" />
-					  </td>
-					  <td>
-					  	  <a href="commentDelete?commentNo=${comment.commentNo}&no=${comment.no}">삭제</a>	
-					  	  <a href="detail?commentNo=${comment.commentNo}&no=${comment.no}">수정</a>	
-					  </td>
-					 </tr>
-			 	</c:otherwise>
-			 </c:choose>	
-			 </c:forEach>
-			 <c:if test="${empty commentList}">
-			 <tr>
-			    <td colspan='4'>댓글이 존재하지 않습니다.</td>
-			 </tr>
-		 	</c:if>
-		 </table>
-		</div>
-		</form>			
 	</div>
 	
 	<div class="bottom">
 		<c:import url="/jsp/include/bottom.jsp"	/>
 	</div>
+	<script>
+		// 댓글 등록 처리
+		$("#rForm").submit(function () {
+			$.ajax({
+				url: "commentRegist",
+				type: "POST",
+				data: {
+					no: "${boardVO.no}", 
+					content: $("#rForm input[name=content]").val(), 
+					userId: $("#rForm input[name=userId]").val()
+				},
+				dataType: "json"
+			})
+			.done(function (result) {
+				if (!'${user.userId}') {
+					$("#rForm input[name=userId]").val("");
+				}
+				$("#rForm input[name=content]").val("");
+				
+				makeCommentList(result);
+			});
+			// 서브밋 이벤트 중지시킴
+			return false;
+		});
 		
+		function commentDelete(commentNo) {
+			$.ajax({
+				url: "commentDelete",
+				data: {
+					no: "${boardVO.no}", 
+					commentNo: commentNo
+				},
+				dataType: "json"
+			})
+			.done(makeCommentList);	
+		}
+		
+		function commentUpdateForm(commentNo) {
+			
+			$("#commentList tr[id^=row]").show();
+			$("#commentList tr[id^=modRow]").remove();
+			
+			var modId = $("#row" + commentNo + " > td:eq()").text();
+			var modContent = $("#row" + commentNo + " > td:eq(1)").text();
+			
+			var html = '';
+			html += '<tr id="modRow' + commentNo + '">';
+			html += '	<td>' + modId + '</td>';
+			html += '	<td>';
+			html += '		<div class="form-group">';
+			html += '			<input type="text" name="content" value="' + modContent + '" class="form-control input-wp2" placeholder="내용을 입력하세요">';
+			html += '		</div>';
+			html += '	</td>';
+			html += '	<td colspan="2">'; 
+			html += '		<a href="javascript:commentUpdate(' + commentNo + ');" class="btn btn-success btn-sm" role="button">수정</a>';
+			html += '		<a href="javascript:commentCancel(' + commentNo + ');" class="btn btn-warning btn-sm" role="button">취소</a>';
+			html += '	</td>';
+			html += '</tr>';
+			$("#row" + commentNo).after(html);	
+			$("#row" + commentNo).hide();
+		}
+		
+		function commentUpdate(commentNo) {
+			$.ajax({
+				url: "commentUpdate",
+				type: "POST",
+				data: {
+					no: "${boardVO.no}", 
+					content: $("#modRow" + commentNo + " input[name=content]").val(), 
+					commentNo: commentNo
+				},
+				dataType: "json"
+			})
+			.done(function (result) {
+				makeCommentList(result);
+			});
+		}
+		
+		function commentCancel(commentNo) {
+			$("#row" + commentNo).show();
+			$("#modRow" + commentNo).remove();
+		}
+		
+		// 댓글 목록 만드는 공통 함수
+		function makeCommentList(result) {
+
+			var html = "";
+			html += '<table class="table table-hover table-bordered">';
+			html += '	<colgroup>'; 
+			html += '		<col width="7%">'; 
+			html += '		<col width="*">'; 
+			html += '		<col width="14%">'; 
+			html += '		<col width="10%">'; 
+			html += '	</colgroup>'; 
+			  
+			for (var i = 0; i < result.length; i++) {
+				var comment = result[i];
+				html += '<tr id="row' + comment.commentNo + '">';
+				html += '	<td>' + comment.userId + '</td>';
+				html += '	<td>' + comment.content + '</td>';
+				var date = new Date(comment.regDate);
+				var time = date.getFullYear() + "-" 
+				         + date.getMonth() + "-" 
+				         + date.getDate() + " "
+				         + date.getHours() + ":"
+				         + date.getMinutes() + ":"
+				         + date.getSeconds();
+				html += '	<td>' + time + '</td>';  
+				html += '	<td>';    
+				html += '		<a href="javascript:commentUpdateForm(' + comment.commentNo + ')" class="btn btn-success btn-sm" role="button">수정</a>';    
+				html += '		<a href="javascript:commentDelete(' + comment.commentNo + ')" class="btn btn-danger btn-sm" role="button">삭제</a>';    
+				html += '	</td>';    
+				html += '</tr>';
+			}
+			if (result.length == 0) {
+				html += '<td colspan="4">댓글이 존재하지 않습니다.</td>';
+			}
+			$("#commentList").html(html);
+		}
+		
+		// 댓글 목록 조회
+		function commentList() {
+			$.ajax({
+				url: "commentList",
+				data: {no: "${boardVO.no}"},
+				dataType: "json"
+			})
+			.done(makeCommentList);
+		}
+		
+		// 상세 페이지 로딩시 댓글 목록 조회 ajax 호출
+		commentList();
+		
+	</script>	
 </div>
 </body>
 </html>

@@ -13,7 +13,10 @@
 <body>
     <div></div>
 	<script>
-
+		$("div").click(function () {
+// 			$(this).animate({width: $(this).width() + 50}, "slow");
+			$(this).animate({width: "+=50", height: "+=50"}, "slow");
+		});
 	</script>    
 </body>
 </html>

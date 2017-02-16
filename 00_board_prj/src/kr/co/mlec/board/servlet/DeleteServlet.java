@@ -25,12 +25,22 @@ public class DeleteServlet extends HttpServlet {
 				throws ServletException, IOException {
 		
 		int no = Integer.parseInt(request.getParameter("no"));
-		boolean flag = dao.deleteBoard(no);
+		dao.deleteBoard(no);
 		
-		request.setAttribute("no", no);
-		request.setAttribute("flag", flag);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/board/delete.jsp");
+		request.setAttribute("msg", "게시물이 삭제되었습니다");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("list");
 		rd.forward(request, response);
 
 	}
 }
+
+
+
+
+
+
+
+
+
+

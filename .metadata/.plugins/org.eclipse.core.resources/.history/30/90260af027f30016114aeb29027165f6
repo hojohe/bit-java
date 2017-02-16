@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <div>
+        <p>지금 내 생각을</p>
+        <h1><span id="countSpan">0</span>/50</h1>
+        <textarea cols="70"rows="5"></textarea>
+    </div>
+    <script>
+    
+    	// keypress 이벤트랑 한글 인식 ?? 
+		$("textarea").keyup(
+			function () {
+				var len = $(this).val();
+			}		
+		);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

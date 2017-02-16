@@ -52,6 +52,7 @@ public class WriteServlet extends HttpServlet {
 		);
 		
 		// 게시판과 파일 테이블에 저장할 글번호를 조회
+		
 		BoardVO board = new BoardVO();
 		board.setTitle(mRequest.getParameter("title"));
 		board.setWriter(mRequest.getParameter("writer"));
@@ -77,8 +78,22 @@ public class WriteServlet extends HttpServlet {
 			dao.insertBoardFile(boardFile);
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/board/write.jsp");
-		rd.forward(request, response);
+		request.setAttribute("msg", "게시물이 등록되었습니다");
 		
+		RequestDispatcher rd = request.getRequestDispatcher("list");
+		rd.forward(request, response);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
