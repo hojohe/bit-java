@@ -1664,3 +1664,5 @@
 2월 16, 2017 10:57:10.56 A Parser-blocking, cross-origin script, http://cm.interworksmedia.co.kr/adTagRequest.htm?mediaId=sedaily&newsId=1OC47VK6MA&site=www.sedaily.interplay&page=sedaily_news&position=x90&tagId=JX&scriptId=iwmads-cm-1487210230363, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
 2월 16, 2017 10:57:10.56 A Parser-blocking, cross-origin script, http://ds.interworksmedia.co.kr/RealMedia/ads/adstream_jx.ads/www.sedaily.interplay/sedaily_news@x90?_4151&_5387&_5409, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.
 2월 16, 2017 10:58:36.38 A Parser-blocking, cross-origin script, http:
+2월 16, 2017 20:31:56.93 
+2월 16, 2017 20:31:56.93 KLIB_SelfTest return : KLR_OK

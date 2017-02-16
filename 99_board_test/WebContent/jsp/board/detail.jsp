@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="../js/jquery-3.1.1.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -28,7 +30,7 @@
 		<a href="${pageContext.request.contextPath}/board/list">목록</a>
 		
 		<h3>댓글</h3>
-		<form action="${pageContext.request.contextPath}/comment/write" method="post">
+		<form id="frm" action="${pageContext.request.contextPath}/comment/write" method="post">
 			<input type="hidden" name="no" value="${board.no}" />
 			<input type="text" name="userId" />
 			<input type="text" name="content" />
@@ -77,19 +79,27 @@
 	</div>
 </div>
 <script>
+
+$("#frm").submit(function () {
+	
+	alert("1" + $("input[name=content]").val());
+	
+	
 	$.ajax({
-		url: "/99_board_test/comment/update",
-		type: "POST",
+		url: "${pageContext.request.contextPath}/comment/write",
 		data: {
-			no: '${board.no}',
-			commentNo: '${comment.commentNo}',
-			content: '${comment.content}'
+			"no":	'${board.no}',
+			"userId":	$("input[name=userId]").val() ,
+			"content": $("input[name=content]").val()
 		},
-		dataType: "JSON"
-	}).done(function (msg) {
-		
-		
+		type: "POST",
+		dataType: "json"
+	}).done(function (result) {
+		console.dir(result[0]);
 	});
+	
+	return false;
+});
 </script>
 </body>
 </html>

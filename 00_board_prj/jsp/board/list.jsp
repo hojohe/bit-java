@@ -10,6 +10,7 @@
 <%@ include file="/jsp/include/basicInclude.jsp" %>
 </head>
 <body>
+
 <div class="container">
 
 	<div class="header">
