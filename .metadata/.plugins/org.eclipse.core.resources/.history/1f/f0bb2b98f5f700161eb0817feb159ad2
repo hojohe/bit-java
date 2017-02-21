@@ -1,0 +1,26 @@
+package org.springframework.mvc;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class URLHandlerMapping {
+
+	private Map<String, CtrlAndMethod> mappings = new HashMap<>();
+
+	public URLHandlerMapping(String ctrlNames) throws Exception {
+		/*
+		kr.co.mlec.board.controller.BoardController;
+		kr.co.mlec.login.controller.LoginController;
+		kr.co.mlec.main.controller.MainController;
+		*/
+		String[] arr = ctrlNames.split(";");
+		for (String ctrlInfo: arr) {
+			Class clz = Class.forName(ctrlInfo.trim());
+			mappings.put(ctrlArr[0], (Controller)clz.newInstance());
+		}
+	}
+	
+	public CtrlAndMethod getController(String url) {
+		return mappings.get(url);
+	}
+}

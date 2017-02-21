@@ -2,6 +2,7 @@ package org.springframework.mvc;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Set;
 
@@ -45,17 +46,18 @@ public class DispatcherServlet extends HttpServlet {
 		try {
 			// http://localhost: 9090/10_mvc/board/write.do
 			
-			Controller controller = mapping.getController(requestUri);
+			CtrlAndMethod cam = mapping.getCtrlAndMethod(requestUri);
 			
-			if(controller == null) {
+			if(cam == null) {
 				throw new ServletException("요청하신 URL이 존재하지 않습니다.");
 			}
+			Object target = cam.getTarget();
+			Method method = cam.getMethod();
 			
-			ModelAndView mav = controller.service(request, response);
+			ModelAndView mav = (ModelAndView)method.invoke(target, request, response);
 			
 			String view = mav.getView();
-			
-			
+
 			if (view.startsWith("redirect:")) {
 				response.sendRedirect(view.substring("redirect:".length()));
 			} 
