@@ -1,0 +1,8 @@
+package annotation.exam03;
+
+import java.lang.annotation.Target;
+
+@Target
+public @interface MyTarget {
+	
+}

@@ -1,0 +1,9 @@
+package annotation.exam04;
+
+import java.lang.annotation.ElementType;
+
+@Target(ElementType.METHOD)
+public @interface RunAnno2 {
+	String id();
+	String msg();
+}

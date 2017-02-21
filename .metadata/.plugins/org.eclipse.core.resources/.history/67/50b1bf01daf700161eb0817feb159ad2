@@ -1,0 +1,7 @@
+package annotation.exam04;
+
+@Target
+public @interface RunAnno2 {
+	String id();
+	String msg();
+}

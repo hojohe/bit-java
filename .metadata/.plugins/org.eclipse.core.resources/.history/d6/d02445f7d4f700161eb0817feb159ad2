@@ -1,0 +1,6 @@
+package annotation.exam04;
+
+@Target({})
+public @interface ClassAnno {
+	String value();
+}

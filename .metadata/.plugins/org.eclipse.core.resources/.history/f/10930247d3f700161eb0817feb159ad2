@@ -1,0 +1,13 @@
+package annotation.exam02;
+
+public class Test {
+	
+//	@FullValue(name="Lee", type="string")
+//	@FullValue("string")
+//	@FullValue(name="string", value="b")
+//	@FullValue(value="b")
+//	@FullValue(name="b")
+//	@FullValue
+	@FullValue("value", name="name", type="type")
+	public void call() {}
+}

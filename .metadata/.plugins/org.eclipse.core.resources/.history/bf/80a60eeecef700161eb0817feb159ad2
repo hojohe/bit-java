@@ -1,0 +1,6 @@
+package annotation;
+
+@Marker
+public class Test {
+	public void
+}

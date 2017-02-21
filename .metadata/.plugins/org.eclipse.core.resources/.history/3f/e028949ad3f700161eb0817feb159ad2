@@ -1,0 +1,13 @@
+package annotation.exam03;
+
+public class Test {
+	
+	private String name;
+	
+	public void call() {}
+
+	public void call(String name) {}
+	
+	
+	
+}

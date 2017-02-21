@@ -1,0 +1,12 @@
+package annotation.exam03;
+
+@MyTarget
+public class Test {
+	
+	private String name;
+	
+	public void call() {}
+	
+	public void call(String name) {}
+	
+}

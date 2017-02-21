@@ -1,0 +1,7 @@
+package annotation.exam02;
+
+public class Test {
+	
+	@FullValue(name="hahaha", type="string")
+	public void call() {}
+}

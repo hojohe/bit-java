@@ -1,0 +1,7 @@
+package annotation;
+
+@Marker
+public class Test {
+	@Type1
+	public void call() {}
+}

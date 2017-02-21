@@ -1,0 +1,9 @@
+package annotation;
+
+import javax.servlet.annotation.WebServlet;
+
+@Marker
+public class Test {
+	
+	public void call() {}
+}

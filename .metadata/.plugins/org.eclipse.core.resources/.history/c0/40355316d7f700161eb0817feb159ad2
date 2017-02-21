@@ -1,0 +1,14 @@
+package annotation.exam04;
+
+public class Test {
+	public static void main(String[] args) {
+		Class<?> clz = AnnoApply.class;
+		ClassAnno cAnno = clz.getAnnotation(ClassAnno.class);
+		RunAnno1 rAnno1 = clz.getAnnotation(RunAnno1.class);
+		
+		System.out.println(cAnno);
+		System.out.println(rAnno1);
+		
+		// 
+	}
+}

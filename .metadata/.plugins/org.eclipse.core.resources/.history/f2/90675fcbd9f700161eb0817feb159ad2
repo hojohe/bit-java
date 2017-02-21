@@ -1,0 +1,5 @@
+package annotation.exam04;
+
+public @interface RunAnno2 {
+	
+}
