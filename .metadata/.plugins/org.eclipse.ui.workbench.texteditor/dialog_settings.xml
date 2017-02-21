@@ -6,22 +6,25 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="slider_panel" key="selection"/>
+		<item value="BoardCommentVO" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="slider_panel"/>
-			<item value="slider_panel2"/>
-			<item value="moveSilder"/>
-			<item value="slider_image2"/>
-			<item value="border"/>
-			<item value="selectPhoto"/>
-			<item value="imgBox"/>
-			<item value="imgbox"/>
+			<item value="BoardCommentVO"/>
+			<item value="pTypeName"/>
+			<item value="pValue"/>
+			<item value="mName"/>
+			<item value="목록"/>
+			<item value="())"/>
+			<item value="());"/>
+			<item value=");"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
+			<item value="=kr.co.mlec."/>
+			<item value="============="/>
 			<item value="url(&apos;/mini1-team5"/>
 			<item value="&quot;"/>
 			<item value="/"/>

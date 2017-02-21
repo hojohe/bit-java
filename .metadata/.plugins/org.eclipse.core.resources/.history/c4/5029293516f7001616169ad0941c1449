@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+	<display-name>10_mvc</display-name>
+
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.mvc.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name></param-name>
+			<param-value>
+				mappings.put("/board/list.do", new ListController());
+		mappings.put("/board/detail.do", new DetailController());
+		mappings.put("/board/updateForm.do", new UpdateFormController());
+		mappings.put("/board/update.do", new UpdateController());
+		mappings.put("/board/writeForm.do", new WriteFormController());
+		mappings.put("/board/write.do", new WriteController());
+		mappings.put("/board/delete.do", new DeleteController());
+		mappings.put("/board/commentRegist.do", new CommentRegistController());
+		mappings.put("/board/commentDelete.do", new CommentDeleteController());
+		mappings.put("/board/commentUpdate.do", new CommentUpdateController());
+		mappings.put("/board/commentList.do", new CommentListController());
+		mappings.put("/main/main.do", new MainController());
+		mappings.put("/login/loginForm.do", new LoginFormController());
+		mappings.put("/login/login.do", new LoginController());
+		mappings.put("/login/logout.do", new LogoutController());
+			</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

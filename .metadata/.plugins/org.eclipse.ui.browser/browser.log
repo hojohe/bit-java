@@ -1666,3 +1666,18 @@
 2월 16, 2017 10:58:36.38 A Parser-blocking, cross-origin script, http:
 2월 16, 2017 20:31:56.93 
 2월 16, 2017 20:31:56.93 KLIB_SelfTest return : KLR_OK
+
+2월 20, 2017 12:32:51.56 NEW SESSION
+2월 20, 2017 12:32:51.56 [35516:812:0220/123251.563:ERROR:CONSOLE(57)] "Uncaught TypeError: Cannot read property 'addExtensions' of undefined", source: chrome-devtools://devtools/bundled/devtools_compatibility.js (57)
+2월 20, 2017 13:02:24.67 [35516:812:0220/130224.669:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+2월 20, 2017 13:02:45.78 [35516:812:0220/130245.782:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+2월 20, 2017 13:03:31.75 [35516:812:0220/130331.750:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+2월 20, 2017 13:05:10.39 [35516:812:0220/130510.396:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+2월 20, 2017 13:08:21.37 [35516:812:0220/130821.371:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+2월 20, 2017 14:45:46.60 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 20, 2017 15:56:06.62 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 20, 2017 15:57:12.66 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 20, 2017 15:58:40.87 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 20, 2017 16:01:55.13 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 20, 2017 17:55:16.33 [12316:36752:0220/175516.337:ERROR:gles2_cmd_decoder.cc(16945)] [.DisplayCompositor-0000022A4CC99A50]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+2월 20, 2017 17:55:16.34 [12316:36752:0220/175516.338:ERROR:gles2_cmd_decoder.cc(9408)] [.DisplayCompositor-0000022A4CC99A50]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.

@@ -1,8 +1,0 @@
-package ajax;
-
-import javax.servlet.annotation.WebServlet;
-
-@WebServletet("/11_ajax/exam01")
-public class Exam02 {
-
-}

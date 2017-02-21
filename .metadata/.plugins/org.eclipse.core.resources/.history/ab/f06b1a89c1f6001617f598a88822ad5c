@@ -1,0 +1,8 @@
+package org.springframework.mvc;
+
+
+public interface Controller {
+	
+	
+
+}

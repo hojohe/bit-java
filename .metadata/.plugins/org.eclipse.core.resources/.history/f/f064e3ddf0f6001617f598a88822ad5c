@@ -1,0 +1,6 @@
+package org.springframework.mvc;
+
+public class ModelAndView {
+	private String view;
+	private Map<String, Object> model = new HashMap<>();
+}

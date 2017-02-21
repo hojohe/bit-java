@@ -1,0 +1,7 @@
+package org.springframework.mvc;
+
+public class URLHandlerMapping {
+	private Map<String, Controller> mappings = HashMap<>();
+	
+
+}

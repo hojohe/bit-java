@@ -1,0 +1,15 @@
+package kr.co.mlec.main;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.mvc.Controller;
+
+public class MainController implements Controller {
+	public String service(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		return "/jsp/main/main.jsp"
+		request.getRequestDispatcher()
+		       .forward(request, response);
+	}
+}

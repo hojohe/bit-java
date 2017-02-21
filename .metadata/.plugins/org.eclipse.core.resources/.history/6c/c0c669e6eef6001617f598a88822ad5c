@@ -1,0 +1,19 @@
+package org.springframework.mvc;
+
+import java.util.Map;
+
+import kr.co.mlec.board.controller.ListController;
+
+public class URLHandlerMapping {
+	
+	private Map<String, Controller> mappings = HashMap<>();
+	
+	public URLHandlerMapping() {
+		mappings.put("/board/list.do", new ListController());
+	}
+	
+	public Controller getController(String url) {
+		return mappings.get(url);
+	}
+
+}

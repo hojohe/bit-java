@@ -1,0 +1,22 @@
+1487290077138	Delete element
+1487290267555	Delete elements
+1487290277715	Delete element
+1487290283807	Delete element
+1487297043909	Rename package 'kr.co.mlec.board.servlet'
+1487297860602	Rename type 'ListServlet'
+1487297869272	Rename type 'DetailServlet'
+1487297961793	Rename type 'controller'
+1487299443554	Rename type 'UpdateFormServlet'
+1487299452078	Rename type 'UpdateServlet'
+1487299462350	Rename type 'WriteFormServlet'
+1487299627057	Rename type 'WriteServlet'
+1487299875489	Rename type 'DeleteServlet'
+1487300004408	Rename type 'CommentRegistServlet'
+1487300223833	Rename type 'CommentDeleteServlet'
+1487300303854	Rename type 'CommentUpdateServlet'
+1487300388376	Rename type 'CommentListServlet'
+1487300430986	Rename type 'Main'
+1487300576927	Rename type 'Login'
+1487300633079	Rename type 'LoginForm'
+1487300717106	Rename type 'Logout'
+1487312712770	Rename compilation unit 'UrlHandlerMapping.java'

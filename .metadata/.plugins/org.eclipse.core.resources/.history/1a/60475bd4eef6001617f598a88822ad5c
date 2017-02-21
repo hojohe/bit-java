@@ -1,0 +1,17 @@
+package org.springframework.mvc;
+
+import java.util.Map;
+
+public class URLHandlerMapping {
+	
+	private Map<String, Controller> mappings = HashMap<>();
+	
+	public URLHandlerMapping() {
+		mappings.put("/board/list.do", value);
+	}
+	
+	public Controller getController(String url) {
+		return mappings.get(url);
+	}
+
+}

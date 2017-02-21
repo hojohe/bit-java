@@ -1,6 +1,0 @@
-
-$($("input[type=radio]"))
-if($("input[type=radio]").is(":checked")) {
-	alert("1");
-	
-};

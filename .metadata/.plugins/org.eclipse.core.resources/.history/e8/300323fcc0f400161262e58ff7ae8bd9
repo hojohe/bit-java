@@ -1,0 +1,40 @@
+package kr.co.mlec.board.controller;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.mvc.Controller;
+
+import kr.co.mlec.board.dao.BoardDAO;
+
+public class DeleteController implements Controller {
+	
+	private BoardDAO dao;
+	public DeleteController() {
+		this.dao = new BoardDAO();
+	}
+	
+	public String service(
+			HttpServletRequest request, HttpServletResponse response) 
+				throws Exception {
+		
+		int no = Integer.parseInt(request.getParameter("no"));
+		dao.deleteBoard(no);
+		
+		request.setAttribute("msg", "게시물이 삭제되었습니다");
+		
+		return "list.do";
+
+	}
+}
+
+
+
+
+
+
+
+
+
+

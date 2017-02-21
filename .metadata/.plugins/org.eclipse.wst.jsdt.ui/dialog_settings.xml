@@ -2,10 +2,21 @@
 <section name="Workbench">
 	<item value="filter_imports;" key="filters_last_used"/>
 	<section name="JavaSearchPage">
-		<item value="5" key="HISTORY_SIZE"/>
+		<item value="6" key="HISTORY_SIZE"/>
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="11" key="INCLUDE_MASK"/>
 		<section name="HISTORY4">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="11" key="includeMask"/>
+			<item value="onload" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="13" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
 			<item value="false" key="isCaseSensitive"/>
 			<item value="" key="javaElement"/>
 			<item value="0" key="scope"/>
@@ -21,9 +32,9 @@
 			<item value="" key="javaElement"/>
 			<item value="0" key="scope"/>
 			<item value="11" key="includeMask"/>
-			<item value="load" key="pattern"/>
+			<item value="onload" key="pattern"/>
 			<item value="2" key="limitTo"/>
-			<item value="0" key="searchFor"/>
+			<item value="13" key="searchFor"/>
 			<list key="workingSets">
 			</list>
 		</section>
@@ -32,9 +43,9 @@
 			<item value="" key="javaElement"/>
 			<item value="0" key="scope"/>
 			<item value="11" key="includeMask"/>
-			<item value="onload" key="pattern"/>
+			<item value="load" key="pattern"/>
 			<item value="2" key="limitTo"/>
-			<item value="13" key="searchFor"/>
+			<item value="0" key="searchFor"/>
 			<list key="workingSets">
 			</list>
 		</section>
@@ -43,7 +54,7 @@
 			<item value="" key="javaElement"/>
 			<item value="0" key="scope"/>
 			<item value="11" key="includeMask"/>
-			<item value="label" key="pattern"/>
+			<item value="screen" key="pattern"/>
 			<item value="2" key="limitTo"/>
 			<item value="13" key="searchFor"/>
 			<list key="workingSets">
@@ -54,7 +65,7 @@
 			<item value="" key="javaElement"/>
 			<item value="0" key="scope"/>
 			<item value="11" key="includeMask"/>
-			<item value="onload" key="pattern"/>
+			<item value="label" key="pattern"/>
 			<item value="2" key="limitTo"/>
 			<item value="13" key="searchFor"/>
 			<list key="workingSets">

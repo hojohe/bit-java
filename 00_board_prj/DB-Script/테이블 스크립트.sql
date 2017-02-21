@@ -17,7 +17,7 @@ create table tb_board_file (
 
 create sequence s_board_file_no;
 
-select * from tb_board_file;
+select * from tb_user;
 
 create table tb_board_comment (
 	comment_no number(6) primary key,
