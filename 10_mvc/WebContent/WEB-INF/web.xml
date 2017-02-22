@@ -13,6 +13,14 @@
 				kr.co.mlec.main.controller.MainController;
 			</param-value>
 		</init-param>
+		<init-param>
+			<param-name>prefix</param-name>
+			<param-value>/jsp/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>suffix</param-name>
+			<param-value>.jsp</param-value>
+		</init-param>
 	</servlet>
 	
 	<servlet-mapping>

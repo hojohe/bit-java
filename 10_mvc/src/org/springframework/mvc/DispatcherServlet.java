@@ -17,11 +17,15 @@ import javax.servlet.http.HttpServletResponse;
 public class DispatcherServlet extends HttpServlet {
 	
 	private URLHandlerMapping mapping;
+	private String prefix, suffix;
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		
 		// web.xml 에 설정된 init-param 태그의 값 접근하기
 		String ctrlNames = config.getInitParameter("controller");
+		prefix  = config.getInitParameter("prefix");
+		suffix  = config.getInitParameter("suffix");
+		
 //		System.out.println(ctrlNames);
 		try {
 			mapping = new URLHandlerMapping(ctrlNames);
@@ -34,7 +38,10 @@ public class DispatcherServlet extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("요청들어옴");
+		
+		if(request.getMethod().equals("POST")) {
+			request.setCharacterEncoding("utf-8");
+		}
 		
 		// 사용자의 요청 URI 얻기
 		String requestUri = request.getRequestURI();
@@ -54,9 +61,34 @@ public class DispatcherServlet extends HttpServlet {
 			Object target = cam.getTarget();
 			Method method = cam.getMethod();
 			
-			ModelAndView mav = (ModelAndView)method.invoke(target, request, response);
+			// 파라미터 처리하기
+			PreParameterProcess ppp = new PreParameterProcess();
+			Object[] param = ppp.process(method, request);
 			
-			String view = mav.getView();
+			
+			Class<?> rType = method.getReturnType();
+			String rName = rType.getSimpleName();
+			
+			ModelAndView mav = null;
+			String view = null;
+			
+			switch (rName){
+				case "ModelAndView":
+					mav = (ModelAndView)method.invoke(target, param);
+					view = mav.getView();
+					break;
+					
+				case "String" :
+					view = (String)method.invoke(target, param);
+					break;
+				case "void" :
+					method.invoke(target, param);
+					// requestUri -> /board/list.do
+					view = requestUri.substring(1).replace(".do", "");
+					break;
+			}
+			
+			
 
 			if (view.startsWith("redirect:")) {
 				response.sendRedirect(view.substring("redirect:".length()));
@@ -67,19 +99,23 @@ public class DispatcherServlet extends HttpServlet {
 				out.println(view.substring("ajax:".length()));
 			}
 			else {
+				if(mav != null) {
+					Map<String,Object> model = mav.getModel();
+					// map의 key 가져오기
+					Set<String> keys = model.keySet();
+					for(String key : keys) {
+						request.setAttribute(key, model.get(key));
+					}
+				}
 				
-				Map<String,Object> model = mav.getModel();
-				// map의 key 가져오기
-				Set<String> keys = model.keySet();
-				for(String key : keys) {
-					request.setAttribute(key, model.get(key));
+				if(!view.endsWith(".do")) {
+					view = prefix + view + suffix;
 				}
 				
 				RequestDispatcher rd = request.getRequestDispatcher(view);
 				rd.forward(request, response);
 				
 			}
-			
 			
 		} catch (Exception e) {
 			

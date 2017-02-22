@@ -1,0 +1,26 @@
+package org.springframework.mvc;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class PreParameterProcess {
+	public Object[] process(Method method, HttpServletRequest request) 
+			throws Exception  {
+		// 메서드에서 파라미터 정보를 추출하자
+		// update(int no, String title)
+		Parameter[] pArr = method.getParameters();
+		
+		for(Parameter p: pArr) {
+			
+			// Parameter p -> int no
+			
+			// Class<?> pType -> int
+			Class<?> pType = p.getType();
+			String name = p.getName();
+		}
+		
+		return null;
+	}
+}

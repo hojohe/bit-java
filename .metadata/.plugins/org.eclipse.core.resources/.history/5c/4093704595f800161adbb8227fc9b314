@@ -1,0 +1,7 @@
+package org.springframework.mvc;
+
+public class PreParameterProcess {
+	public Object[] process(Method method, HttpServletRequest request) {
+		
+	}
+}

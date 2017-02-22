@@ -1,0 +1,8 @@
+package org.springframework.mvc;
+
+import java.lang.annotation.ElementType;
+
+@Target(ElementType.PARAMETER)
+public @interface RequestParam {
+	String value();
+}

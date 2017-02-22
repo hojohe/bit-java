@@ -1,0 +1,21 @@
+package varargs;
+
+public class Test01 {
+	
+	public static void call() {
+		System.out.println("call1");
+	}
+	public static void call(int i) {
+		System.out.println("call2");
+	}
+	public static void call(int i, int j) {
+		System.out.println("call3");
+	}
+	public static void call(int i, int j, int k) {
+		System.out.println("call4");
+	}
+	
+	public static void main(String[] args) {
+		call();
+	}
+}

@@ -1,0 +1,21 @@
+package varargs;
+
+public class Test01 {
+	
+	public static void call() {
+		
+	}
+	public static void call(int i) {
+		
+	}
+	public static void call(int i, int k) {
+		
+	}
+	public static void call() {
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

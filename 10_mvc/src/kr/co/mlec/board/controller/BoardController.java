@@ -7,10 +7,10 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.mvc.ModelAndView;
 import org.springframework.mvc.RequestMapping;
+import org.springframework.mvc.RequestParam;
 import org.springframework.mvc.WebUtil;
 
 import com.google.gson.Gson;
@@ -30,20 +30,13 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/writeForm.do")
-	public ModelAndView writeForm(
-			HttpServletRequest request, HttpServletResponse response) 
-					throws Exception {
-		
-		ModelAndView mav = new ModelAndView("/jsp/board/writeForm.jsp");
-		return mav;
-	}
+	public void writeForm() throws Exception {}
+//	public String writeForm() throws Exception {
+//		return "board/writeForm";
+//	}
 	
 	@RequestMapping("/board/write.do")
-	public ModelAndView write(
-			HttpServletRequest request, HttpServletResponse response)
-					throws Exception {
-		request.setCharacterEncoding("utf-8");
-		
+	public ModelAndView write(HttpServletRequest request) throws Exception {
 		ServletContext context = request.getServletContext();
 		String path = context.getRealPath("/upload");
 		
@@ -99,21 +92,18 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/updateForm.do")
-	public ModelAndView service(HttpServletRequest request, HttpServletResponse response) 
-			throws Exception {
+	public ModelAndView updateForm(int no) throws Exception {
 
-		BoardVO board = dao.selectOneBoard(Integer.parseInt(request.getParameter("no")));
+		BoardVO board = dao.selectOneBoard(no);
 		
-		ModelAndView mav = new ModelAndView("/jsp/board/updateForm.jsp");
+		ModelAndView mav = new ModelAndView("board/updateForm");
 		mav.addAttribute("board", board);
 		
 		return mav;
 	}	
 	
 	@RequestMapping("/board/update.do")
-	public ModelAndView update (
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("utf-8");
+	public ModelAndView update (BoardVO board) throws Exception {
 		
 		/*BoardVO boardVO = new BoardVO();
 		boardVO.setNo(Integer.parseInt(request.getParameter("no")));
@@ -121,7 +111,9 @@ public class BoardController {
 		boardVO.setContent(request.getParameter("content"));
 		dao.updateBoard(boardVO);*/
 		
-		dao.updateBoard((BoardVO)WebUtil.getParamToVO(request, BoardVO.class));
+//		dao.updateBoard((BoardVO)WebUtil.getParamToVO(request, BoardVO.class));
+		
+		dao.updateBoard(board);
 
 		ModelAndView mav = new ModelAndView("list.do");
 		mav.addAttribute("msg", "게시물이 수정되었습니다");
@@ -132,13 +124,12 @@ public class BoardController {
 	
 	
 	@RequestMapping("/board/list.do")
-	public ModelAndView list (
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView list() throws Exception {
 
 		// 공유 데이터 
 		List<BoardVO> list = dao.selectBoard();
 		
-		ModelAndView mav = new ModelAndView("/jsp/board/list.jsp");
+		ModelAndView mav = new ModelAndView("board/list");
 		mav.addAttribute("list", list);
 		
 		return mav;
@@ -146,17 +137,14 @@ public class BoardController {
 	
 	
 	@RequestMapping("/board/detail.do")
-	public ModelAndView detail(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		int no = Integer.parseInt(request.getParameter("no"));
-		
+	public ModelAndView detail(@RequestParam(value="no") int no) throws Exception {
 		
 		// 게시물 정보 추출
-		BoardVO boardVO = dao.selectOneBoard(Integer.parseInt(request.getParameter("no")));
+		BoardVO boardVO = dao.selectOneBoard(no);
 		// 게시물과 연관된 파일 정보 추출
 		BoardFileVO fileVO = dao.selectBoardFileByNo(no);
 
-		ModelAndView mav = new ModelAndView("/jsp/board/detail.jsp");
+		ModelAndView mav = new ModelAndView("board/detail");
 		mav.addAttribute("boardVO", boardVO);
 		mav.addAttribute("file", fileVO);
 		
@@ -164,13 +152,10 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/delete.do")
-	public ModelAndView delete(
-			HttpServletRequest request, HttpServletResponse response) 
-				throws Exception {
+	public ModelAndView delete(int no) throws Exception {
 		
-		int no = Integer.parseInt(request.getParameter("no"));
 		dao.deleteBoard(no);
-		
+	
 		ModelAndView mav = new ModelAndView("list.do");
 		mav.addAttribute("msg", "게시물이 삭제되었습니다");
 		
@@ -179,30 +164,24 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/commentUpdate.do")
-	public ModelAndView commentUpdate(
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("utf-8");
-		
-		int commentNo = Integer.parseInt(request.getParameter("commentNo"));
-		int no = Integer.parseInt(request.getParameter("no"));
+	public String commentUpdate(BoardCommentVO comment) throws Exception {
 		
 		// 게시판과 파일 테이블에 저장할 글번호를 조회
 		/*BoardCommentVO comment = new BoardCommentVO();
 		comment.setContent(request.getParameter("content"));
 		comment.setCommentNo(commentNo);*/
 		
-		dao.updateBoardComment((BoardCommentVO)WebUtil.getParamToVO(request, BoardCommentVO.class));
+//		dao.updateBoardComment((BoardCommentVO)WebUtil.getParamToVO(request, BoardCommentVO.class));
 		
-		return new ModelAndView("ajax:" + new Gson().toJson(dao.selectBoardCommentByNo(no)));
+		dao.updateBoardComment(comment);
+		return "ajax:" + new Gson().toJson(dao.selectBoardCommentByNo(comment.getNo()));
+		
+		
+		
 	}
 	
 	@RequestMapping("/board/commentRegist.do")
-	public ModelAndView commentRegist(
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		request.setCharacterEncoding("utf-8");
-		
-		int no = Integer.parseInt(request.getParameter("no"));
+	public ModelAndView commentRegist(BoardCommentVO comment) throws Exception {
 		
 		// 게시판과 파일 테이블에 저장할 글번호를 조회
 		/*BoardCommentVO comment = new BoardCommentVO();
@@ -211,36 +190,22 @@ public class BoardController {
 		comment.setUserId(request.getParameter("userId"));*/
 		
 		// 게시물 저장 처리 부탁..
-		dao.insertBoardComment((BoardCommentVO)WebUtil.getParamToVO(request, BoardCommentVO.class));
-		
-		
-		
-		return new ModelAndView("ajax:" + new Gson().toJson(dao.selectBoardCommentByNo(no)));
+//		dao.insertBoardComment((BoardCommentVO)WebUtil.getParamToVO(request, BoardCommentVO.class));
+		return new ModelAndView("ajax:" + new Gson().toJson(dao.selectBoardCommentByNo(comment.getNo())));
 	}
 	
-	@RequestMapping("/board/commentList.do")
-	public ModelAndView commentList(
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public String commentList(int no) throws Exception {
 		
-		int no = Integer.parseInt(request.getParameter("no"));
-		
-		
-		return new ModelAndView("ajax:" + new Gson().toJson(dao.selectBoardCommentByNo(no)));
+		return "ajax:" + new Gson().toJson(dao.selectBoardCommentByNo(no));
 	}
 	
 	
 	
 	@RequestMapping("/board/commentDelete.do")
-	public ModelAndView commentDelete(
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public String commentDelete(BoardCommentVO comment) throws Exception {
 
-		int no = Integer.parseInt(request.getParameter("no"));
-		int commentNo = Integer.parseInt(request.getParameter("commentNo"));
-		
-		dao.deleteBoardComment(commentNo);
-		
-		
-		return new ModelAndView("ajax:" + new Gson().toJson(dao.selectBoardCommentByNo(no)));
+		dao.deleteBoardComment(comment.getCommentNo());
+		return "ajax:" + new Gson().toJson(dao.selectBoardCommentByNo(comment.getNo()));
 	}
 	
 }
