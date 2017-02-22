@@ -1,9 +1,0 @@
-package annotation.exam04;
-
-public class Test {
-	public static void main(String[] args) {
-		Class<?> clz = AnnoApply.class;
-		ClassAnno cAnno = clz.getAnnotation(ClassAnno.class);
-		ClassAnno cAnno = clz.getAnnotation(ClassAnno.class);
-	}
-}
