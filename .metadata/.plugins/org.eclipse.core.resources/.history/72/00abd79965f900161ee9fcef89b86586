@@ -1,0 +1,17 @@
+package O3basic;
+
+public class TvFactory {
+	
+	public Tv getBean(String name) {
+		TvFactory factory = new TvFactory();
+		Tv tv = factory.getBean(name)
+		switch (name) {
+			case "sony":
+				return new SonyTv();
+			case "lg":
+				return new SonyTv();
+		}
+		return null;
+	}
+	
+}

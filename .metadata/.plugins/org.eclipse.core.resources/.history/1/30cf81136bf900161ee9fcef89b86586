@@ -1,0 +1,14 @@
+package O4container;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("1");
+		ApplicationContext container = new ClassPathXmlApplicationContext("container/test.xml");
+		System.out.println("2");
+		/*ISand sand = (ISand)container.getBean("ham2");
+		sand.info();*/
+	}
+}

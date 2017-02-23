@@ -1,0 +1,10 @@
+package O1basic;
+
+public class SonyTv {
+	public void powerOn() {
+		
+	}
+	public void powerOn() {
+		
+	}
+}

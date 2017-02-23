@@ -1,0 +1,22 @@
+package O7collection;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		ApplicationContext container = new ClassPathXmlApplicationContext("collection/test.xml");
+		System.out.println("=========================");
+		System.out.println("list");
+		System.out.println("=========================");
+		Menu menu = (Menu)container.getBean("menu");
+		menu.printList();
+		System.out.println("=========================");
+		System.out.println("list");
+		System.out.println("=========================");
+		Menu menu = (Menu)container.getBean("menu");
+		menu.printList();
+		System.out.println("=========================");
+	}
+}

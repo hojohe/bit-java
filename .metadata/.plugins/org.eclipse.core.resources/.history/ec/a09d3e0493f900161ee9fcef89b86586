@@ -1,0 +1,6 @@
+package O9autowired;
+
+public class Menu {
+	
+	public Menu(ISand sand)
+}

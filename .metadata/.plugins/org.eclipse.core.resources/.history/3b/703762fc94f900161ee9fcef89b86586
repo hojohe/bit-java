@@ -1,0 +1,26 @@
+package O9autowired;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Menu {
+	
+	@Autowired
+	private ISand sand;
+	
+	public void setSand(ISand sand) {
+		this.sand = snad;
+	}
+	
+	/*
+	@Autowired
+	public Menu(ISand sand) {
+		this.sand = sand;
+		System.out.println("Menu 샌드위치 객체 생성자 호출");
+	}
+	*/
+	
+	public void print() {
+		sand.info();
+	}
+	
+}

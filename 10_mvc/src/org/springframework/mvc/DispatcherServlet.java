@@ -77,7 +77,6 @@ public class DispatcherServlet extends HttpServlet {
 					mav = (ModelAndView)method.invoke(target, param);
 					view = mav.getView();
 					break;
-					
 				case "String" :
 					view = (String)method.invoke(target, param);
 					break;

@@ -1,0 +1,24 @@
+package O9autowired;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+public class Menu {
+	
+	@Autowired
+//	@Qualifier("hamham")
+	private ISand sand;
+	
+//	@Autowired
+	public void setSand(ISand sand) {
+		this.sand = sand;
+	}
+	
+//	@Autowired
+	public Menu() {}
+	
+	public void print() {
+		sand.info();
+	}
+	
+}

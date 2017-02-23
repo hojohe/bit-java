@@ -1,0 +1,10 @@
+package quiz;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+	public static void main(String[] args) {
+		AppicationContext container = 
+				new ClassPathXmlApplicationContext("quiz/test.xml");
+	}
+}

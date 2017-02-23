@@ -1,0 +1,10 @@
+package quiz;
+
+public class Perseon {
+	private Animal animal;
+	
+	public void setAnimal() {
+		
+	}
+
+}

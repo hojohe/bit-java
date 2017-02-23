@@ -1,0 +1,13 @@
+package O2basic;
+
+// 사용자 
+public class Test {
+	public static void main(String[] args) {
+		Tv tv = new SonyTv();
+		sTv.powerOn();
+		sTv.powerOff();
+		
+		lgTv.powerOn();
+		lgTv.powerOff();
+	}
+}

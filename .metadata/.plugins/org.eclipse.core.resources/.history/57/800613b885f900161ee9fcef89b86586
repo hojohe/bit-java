@@ -1,0 +1,13 @@
+package O7collection;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		ApplicationContext container = new ClassPathXmlApplicationContext("setter/test.xml");
+		
+		Menu menu1 = (Menu)container.getBean("menu1");
+	}
+}

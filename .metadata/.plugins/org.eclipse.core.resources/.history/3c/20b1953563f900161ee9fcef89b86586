@@ -1,0 +1,5 @@
+package O2basic;
+
+public interface Tv {
+
+}

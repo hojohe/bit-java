@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:p="http://www.springframework.org/schema/p" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+                           
+    <bean id="ani" class="quiz.Animal">
+    	<constructor-arg value="쫑" />
+    </bean>
+    
+<!--     <bean id="ani" class="quiz.Animal">
+    	<constructor-arg>
+    		<value>쫑</value>
+    	</constructor-arg>
+    </bean> -->
+    
+    <bean id="user" class="quiz.Person" p:animal-ref="ani" />
+    
+    <!-- <bean id="user" class="quiz.Person">
+    	<property name="animal" ref="ani" />
+    </bean> -->
+    
+    <!-- <bean id="user" class="quiz.Person">
+    	<property name="animal">
+    		<ref bean="ani" />
+    	</property>
+    </bean> -->
+	
+</beans>
