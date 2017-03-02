@@ -1,0 +1,30 @@
+package _04_schema;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		try {
+			
+			ApplicationContext context = new ClassPathXmlApplicationContext("schema/test.xml");
+			Controller controller = (BoardController)context.getBean("board");
+			controller.execute();
+			
+			// 인터페이스 상속 개념을 인정해주지 않음
+			controller = (MemberController)context.getBean("member");
+			controller.execute();
+			
+//			ProxyController controller = new ProxyController(new BoardController());
+//			controller.execute();
+//			controller = new ProxyController(new MemberController());
+//			controller.execute();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

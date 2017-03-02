@@ -1,0 +1,29 @@
+package _03_basic;
+
+public class ProxyController implements Controller {
+
+	private Controller controller;
+	
+	public ProxyController(Controller controller) {
+		this.controller = controller;
+	}
+	
+	@Override
+	public void execute() throws Exception {
+		
+		String clzName = controller.getClass();
+		
+		
+		
+		long s = System.currentTimeMillis();
+		
+		controller.execute();
+		
+		long e = System.currentTimeMillis();
+		double time = (e-s) / 1000d;
+		
+		System.out.println("BoardController execute 메서드 실행 시간 : " + time);
+		
+	}
+
+}

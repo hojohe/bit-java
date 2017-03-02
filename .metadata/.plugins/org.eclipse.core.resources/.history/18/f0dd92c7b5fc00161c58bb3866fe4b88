@@ -1,0 +1,17 @@
+package kr.co.mlec.method;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MethodController {
+	@RequestMapping(value="/method/method.do",  
+					method=RequestMethod.GET) 
+	public String callGet() { 
+	return "method/methodForm"; 
+	} 
+	@RequestMapping(value="/method/method.do",  
+	            method=RequestMethod.POST) 
+	public String callPost() { 
+	return "method/methodProcess"; 
+	}
+}

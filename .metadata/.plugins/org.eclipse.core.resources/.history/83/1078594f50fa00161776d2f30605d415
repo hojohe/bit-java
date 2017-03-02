@@ -1,0 +1,8 @@
+package kr.co.mlec.board.vo;
+
+public class Snippet {
+	ModelAndView mav = new ModelAndView("board/list");
+			mav.addAttribute("list", list);
+			
+}
+

@@ -1,0 +1,8 @@
+package _01_basic;
+
+public class BoardController implements Controller {
+
+	public void execute() throws Exception {
+		
+	}
+}

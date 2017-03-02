@@ -1,5 +1,0 @@
-package annotation.exam04;
-
-public @interface ClassAnno {
-	
-}

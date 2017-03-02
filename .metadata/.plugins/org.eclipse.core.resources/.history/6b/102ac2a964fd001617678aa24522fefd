@@ -1,0 +1,103 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%-- MVC 기본 예제  --%>
+	<a href="${pageContext.request.contextPath}/hello/hello.do">hello</a>
+	<br />
+
+	<%-- MVC RequestMapping 예제 (method) --%>
+	<a href="${pageContext.request.contextPath}/method/method.do">method</a>
+	<br />
+
+	<%-- MVC Form 예제 (method) --%>
+	<a href="${pageContext.request.contextPath}/form/joinForm.do">form</a>
+	<br />
+
+	<%-- MVC ResponseBody 예제 --%>
+	<a href="${pageContext.request.contextPath}/ajax/resBody.do">문자열 응답</a>
+	<br />
+
+	<%-- MVC ResponseBody 예제 (MAP > JSON) --%>
+	<a href="${pageContext.request.contextPath}/ajax/resBody.json">JSON
+		응답</a>
+	<br />
+
+	<%-- MVC ResponseBody 예제 (객체 > JSON) --%>
+	<a href="${pageContext.request.contextPath}/ajax/resVOBody.json">JSON
+		VO 응답</a>
+	<br />
+
+	<%-- MVC ResponseBody 예제 (List<String> > JSON) --%>
+	<a
+		href="${pageContext.request.contextPath}/ajax/resStringListBody.json">JSON
+		List( 문자열 ) 응답</a>
+	<br />
+
+	<%-- MVC ResponseBody 예제 (List<객체> > JSON) --%>
+	<a href="${pageContext.request.contextPath}/ajax/resVOListBody.json">JSON
+		List(VO) 응답</a>
+	<br />
+
+
+
+
+
+	<%-- MVC RestController 예제 (MAP > JSON) --%>
+	<a href="${pageContext.request.contextPath}/rest/resBody.json">REST
+		JSON 응답</a>
+	<br />
+
+	<%-- MVC RestController 예제 (객체 > JSON) --%>
+	<a href="${pageContext.request.contextPath}/rest/resVOBody.json">REST
+		JSON VO 응답</a>
+	<br />
+
+	<%-- MVC RestController 예제 (List<String> > JSON) --%>
+	<a
+		href="${pageContext.request.contextPath}/rest/resStringListBody.json">REST
+		JSON List( 문자열 ) 응답</a>
+	<br />
+
+	<%-- MVC RestController 예제 (List<객체> > JSON) --%>
+	<a href="${pageContext.request.contextPath}/rest/resVOListBody.json">REST
+		JSON List(VO) 응답</a>
+	<br />
+
+
+	<%-- 컨트롤러 없이 페이지 매핑 --%>
+	<a href="${pageContext.request.contextPath}/file/uploadForm.do">파일
+		업로드</a>
+	<br />
+
+
+
+
+
+
+	<%-- MVC Interceptor 로그인 폼 --%>
+	<a href="${pageContext.request.contextPath}/interceptor/loginForm.do">로그인폼</a>
+	<br />
+
+
+	<%-- MVC PathVariable 로그인 폼 --%>
+	<a href="${pageContext.request.contextPath}/path/paramMemberInfo.do?id=a"> PathVariable 파라미터 </a>
+	<br />
+	<a href="${pageContext.request.contextPath}/path/b/pathMemberInfo.do"> PathVariable 경로처리 </a>
+	<br />
+
+
+
+
+
+
+
+
+</body>
+</html>

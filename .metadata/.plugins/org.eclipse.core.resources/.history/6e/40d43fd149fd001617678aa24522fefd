@@ -1,0 +1,11 @@
+package kr.co.mlec.body;
+
+@Controller 
+@RequestMapping("/ajax") 
+public class ResBodyController {
+    @RequestMapping("/resBody.do") 
+    @ResponseBody 
+    public String resStringBody() {         return "OK, ¼º°ø"; 
+    } 
+} 
+@

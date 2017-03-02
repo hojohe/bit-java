@@ -1,0 +1,23 @@
+package _04_schema;
+
+import org.springframework.context.ApplicationContext;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		try {
+			
+			ApplicationContext
+			
+//			ProxyController controller = new ProxyController(new BoardController());
+//			controller.execute();
+//			
+//			controller = new ProxyController(new MemberController());
+//			controller.execute();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

@@ -1,0 +1,5 @@
+package kr.co.mlec.form;
+
+public class MemberVO {
+	private String id;
+}

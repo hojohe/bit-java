@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="mav" key="selection"/>
+		<item value="Dbill_0002_03_c001_FB_FILE_REC" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="mav"/>
-			<item value="view"/>
-			<item value="param"/>
-			<item value="rArr"/>
-			<item value="pArr"/>
-			<item value="DETAIL"/>
-			<item value="commentList"/>
-			<item value="CommentList"/>
+			<item value="Dbill_0002_03_c001_FB_FILE_REC"/>
+			<item value="validateFbFileRec"/>
+			<item value="fbFileItem"/>
+			<item value="fbFileRec"/>
+			<item value="FbFileRec"/>
+			<item value="servletContext"/>
+			<item value="uploadDir"/>
+			<item value="upload"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

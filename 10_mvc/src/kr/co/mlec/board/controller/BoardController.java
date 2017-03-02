@@ -20,6 +20,8 @@ import kr.co.mlec.board.dao.BoardDAO;
 import kr.co.mlec.board.vo.BoardCommentVO;
 import kr.co.mlec.board.vo.BoardFileVO;
 import kr.co.mlec.board.vo.BoardVO;
+import kr.co.mlec.board.vo.PageResultVO;
+import kr.co.mlec.board.vo.SearchVO;
 import kr.co.mlec.file.MlecFileRenamePolicy;
 
 public class BoardController {
@@ -124,15 +126,20 @@ public class BoardController {
 	
 	
 	@RequestMapping("/board/list.do")
-	public ModelAndView list() throws Exception {
+	public ModelAndView list(SearchVO search) throws Exception {
+System.out.println(search.getBegin());
+System.out.println(search.getEnd());
+System.out.println(search.getPageNo());
 
-		// 공유 데이터 
-		List<BoardVO> list = dao.selectBoard();
+		List<BoardVO> list = dao.selectBoard(search);
+		int count = dao.selectBoardCount(search);
 		
 		ModelAndView mav = new ModelAndView("board/list");
 		mav.addAttribute("list", list);
 		
+		mav.addAttribute("pageResult", new PageResultVO(search.getPageNo(), count));
 		return mav;
+		
 	}
 	
 	

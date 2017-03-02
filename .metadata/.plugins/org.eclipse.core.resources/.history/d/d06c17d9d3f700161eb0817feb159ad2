@@ -1,6 +1,0 @@
-package annotation.exam03;
-
-@Target
-public @interface MyTarget {
-	
-}

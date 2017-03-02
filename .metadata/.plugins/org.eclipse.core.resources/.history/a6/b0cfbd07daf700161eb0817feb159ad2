@@ -1,7 +1,0 @@
-package annotation.exam04;
-
-@Target(ElementType.)
-public @interface RunAnno2 {
-	String id();
-	String msg();
-}

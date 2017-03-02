@@ -1,8 +1,0 @@
-package annotation.quiz;
-
-import java.lang.annotation.Retention;
-
-@Retention(RetentionPolicy)
-public @interface RequestMapping {
-	String value();
-}

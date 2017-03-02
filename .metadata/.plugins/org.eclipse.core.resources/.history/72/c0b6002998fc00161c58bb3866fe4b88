@@ -1,0 +1,18 @@
+package _04_schema;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class TimeAspect {
+	
+	// around advice 일 경우
+	public void executeTime(ProceedingJoinPoint pjp) throws Throwable {
+		System.out.println("실행 전");
+		
+		// 핵심기능 메서드 호출
+		try {
+			pjp.proceed();
+		}
+		
+		System.out.println("실행 후");
+	}
+}

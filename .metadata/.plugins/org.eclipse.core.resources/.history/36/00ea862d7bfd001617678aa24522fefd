@@ -1,0 +1,8 @@
+package kr.co.mlec.board.vo;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class SearchVO extends PageVO {
+
+}

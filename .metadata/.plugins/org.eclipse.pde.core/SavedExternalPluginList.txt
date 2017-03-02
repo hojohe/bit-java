@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1486190533324
+# List of external plug-in models previously loaded. Timestamp: 1488265082084
 file:/C:/java90/bin/eclipse/plugins/ch.qos.logback.classic_1.0.7.v20121108-1250.jar
 file:/C:/java90/bin/eclipse/plugins/ch.qos.logback.core_1.0.7.v20121108-1250.jar
 file:/C:/java90/bin/eclipse/plugins/ch.qos.logback.slf4j_1.0.7.v201505121915.jar
@@ -912,6 +912,12 @@ file:/C:/java90/bin/eclipse/plugins/org.objectweb.asm_5.0.1.v201404251740.jar
 file:/C:/java90/bin/eclipse/plugins/org.objectweb.asm.tree_5.0.1.v201404251740.jar
 file:/C:/java90/bin/eclipse/plugins/org.sat4j.core_2.3.5.v201308161310.jar
 file:/C:/java90/bin/eclipse/plugins/org.sat4j.pb_2.3.5.v201404071733.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.cfr_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.jad_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.jd_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.procyon_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.update_2.9.0.r20160620180.jar
 file:/C:/java90/bin/eclipse/plugins/org.slf4j.api_1.7.2.v20121108-1250.jar
 file:/C:/java90/bin/eclipse/plugins/org.slf4j.impl.log4j12_1.7.2.v20131105-2200.jar
 file:/C:/java90/bin/eclipse/plugins/org.sonatype.m2e.mavenarchiver_0.17.0.201502101659-signed-20150525172209.jar
@@ -921,3 +927,8 @@ file:/C:/java90/bin/eclipse/plugins/org.w3c.css.sac_1.3.1.v200903091627.jar
 file:/C:/java90/bin/eclipse/plugins/org.w3c.dom.events_3.0.0.draft20060413_v201105210656.jar
 file:/C:/java90/bin/eclipse/plugins/org.w3c.dom.smil_1.0.1.v200903091627.jar
 file:/C:/java90/bin/eclipse/plugins/org.w3c.dom.svg_1.1.0.v201011041433.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.cfr.source_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.jad.source_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.jd.source_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.procyon.source_2.9.0.r20160620180.jar
+file:/C:/java90/bin/eclipse/plugins/org.sf.feeling.decompiler.source_2.9.0.r20160620180.jar

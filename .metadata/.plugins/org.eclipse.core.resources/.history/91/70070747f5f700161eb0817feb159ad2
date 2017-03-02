@@ -1,9 +1,0 @@
-package org.springframework.mvc;
-
-
-/* 
- * 사용자가 요청하는 URL에 대한 연관된 컨트롤러 객체와 메서드 정보를 표현
- */
-public class CtrlAndMethod {
-
-}

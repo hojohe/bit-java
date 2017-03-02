@@ -1,0 +1,25 @@
+package _04_schema;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class TimeAspect {
+	
+	// around advice �� ���
+	public void executeTime(ProceedingJoinPoint pjp) throws Throwable {
+		long s = System.currentTimeMillis();
+		try {
+			System.out.println("");
+			// after-returning
+			pjp.proceed(); 
+		} catch (Throwable t) {
+			// after-throwing
+			// �� �κ��� �α� �ױ� 
+		} finally {
+			// after
+			System.out.println("");
+			long e = System.currentTimeMillis();
+			System.out.println("" + (double)( e - s ) / 1000d );
+		}
+		
+	}
+}

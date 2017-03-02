@@ -1,0 +1,8 @@
+package _01_basic;
+
+public class MemberController implements Controller {
+	@Override
+	public void execute() throws Exception {
+		
+	}
+}

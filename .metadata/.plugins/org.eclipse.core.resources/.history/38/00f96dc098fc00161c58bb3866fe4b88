@@ -1,0 +1,26 @@
+package _04_schema;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class TimeAspect {
+	
+	// around advice 일 경우
+	public void executeTime(ProceedingJoinPoint pjp) throws Throwable {
+		long s = System.currentTimeMillis();
+		try {
+			System.out.println("실행 전");
+			// after-returning
+			// 핵심기능 메서드 호출
+			pjp.proceed(); 
+		} catch (Throwable t) {
+			// after-throwing
+			// 로그 쌓기 
+		} finally {
+			// after
+			System.out.println("실행 후");
+			long e = System.currentTimeMillis();
+			System.out.println("실행 시간" + (double)( e - s ) / 1000d );
+		}
+		
+	}
+}

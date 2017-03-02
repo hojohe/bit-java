@@ -1,7 +1,0 @@
-package O5constructor;
-
-public class Menu {
-	public Menu() {
-		System.out.println("");
-	}
-}

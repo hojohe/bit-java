@@ -1,5 +1,0 @@
-package annotation;
-
-public @interface Type1 {
-	String
-}

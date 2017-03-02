@@ -1681,3 +1681,30 @@
 2월 20, 2017 16:01:55.13 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
 2월 20, 2017 17:55:16.33 [12316:36752:0220/175516.337:ERROR:gles2_cmd_decoder.cc(16945)] [.DisplayCompositor-0000022A4CC99A50]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
 2월 20, 2017 17:55:16.34 [12316:36752:0220/175516.338:ERROR:gles2_cmd_decoder.cc(9408)] [.DisplayCompositor-0000022A4CC99A50]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+
+2월 24, 2017 10:22:44.31 NEW SESSION
+2월 24, 2017 10:22:44.31 
+2월 24, 2017 10:22:44.32 KLIB_SelfTest return : KLR_OK
+
+2월 24, 2017 11:31:10.65 NEW SESSION
+2월 24, 2017 11:31:10.65 
+2월 24, 2017 11:31:10.65 KLIB_SelfTest return : KLR_OK
+2월 24, 2017 11:33:16.72 
+2월 24, 2017 11:33:16.72 KLIB_SelfTest return : KLR_OK
+2월 24, 2017 14:05:40.78 
+2월 24, 2017 14:05:40.78 KLIB_SelfTest return : KLR_OK
+2월 24, 2017 14:21:52.80 
+2월 24, 2017 14:21:52.81 KLIB_SelfTest return : KLR_OK
+2월 24, 2017 15:12:04.93 
+2월 24, 2017 15:12:04.93 KLIB_SelfTest return : KLR_OK
+2월 24, 2017 16:48:31.62 
+2월 24, 2017 16:48:31.63 KLIB_SelfTest return : KLR_OK
+2월 24, 2017 18:09:55.39 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 24, 2017 18:09:55.39 [WARNING:..\..\..\..\flash\platform\pepper\pep_sslsocket.cpp(289)] 000001B774F8DDB8 PlatformSSLSocket::Receive()/Send() called from state 0.
+2월 24, 2017 19:01:30.83 
+2월 24, 2017 19:01:30.83 KLIB_SelfTest return : KLR_OK
+
+2월 28, 2017 14:10:50.49 NEW SESSION
+2월 28, 2017 14:10:50.49 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED
+2월 28, 2017 16:17:13.18 [780:17872:0228/161713.186:ERROR:CONSOLE(130)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://trello.com') does not match the recipient window's origin ('https://www.google.co.kr').", source: chrome-search://most-visited/single.js (130)
+2월 28, 2017 16:19:50.49 [WARNING:..\..\..\..\flash\platform\pepper\pep_module.cpp(63)] SANDBOXED

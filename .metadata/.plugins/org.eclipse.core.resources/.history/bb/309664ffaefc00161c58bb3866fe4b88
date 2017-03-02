@@ -1,0 +1,10 @@
+package kr.co.mlec.hello;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HelloController {
+	public 
+}
+
+

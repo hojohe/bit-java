@@ -1,0 +1,22 @@
+package kr.co.mlec.interceptor;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/interceptor")
+public class MyPage {
+	
+	// 리턴 타입이 void라면 requestMapping 경로 + .jsp로 이동한다
+	@RequestMapping("/myPage.do")
+	public void info(Model model) {
+	       MemberVO member = (MemberVO)session.getAttribute("user"); 
+	       if (member == null) { 
+	           return "redirect:loginForm.do"; 
+	       }        model.addAttribute("msg", "반갑습니다"); 
+	       return "interceptor/myPage";
+		
+		
+	}
+}

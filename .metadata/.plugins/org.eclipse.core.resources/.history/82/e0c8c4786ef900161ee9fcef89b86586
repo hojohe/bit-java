@@ -1,9 +1,0 @@
-package O5constructor;
-
-public class Menu {
-	public Menu() {
-		System.out.println("Menu 매개변수 없는 생성자");
-	}
-	
-	private String desc;
-}

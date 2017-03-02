@@ -1,5 +1,0 @@
-package annotation.quiz;
-
-public @interface RequestMapping {
-	String value();
-}

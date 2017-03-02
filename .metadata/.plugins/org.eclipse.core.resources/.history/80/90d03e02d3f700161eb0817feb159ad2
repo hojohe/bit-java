@@ -1,7 +1,0 @@
-package annotation.exam02;
-
-public @interface FullValue {
-	String name() default "a";
-	String name() default "a";
-	String value() default "b";
-}

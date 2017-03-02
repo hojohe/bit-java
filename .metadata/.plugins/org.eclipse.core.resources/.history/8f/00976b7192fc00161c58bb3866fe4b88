@@ -1,0 +1,17 @@
+package _04_schema;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class LogAspect {
+	public void showLog() {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		System.out.println("-------------------------------");
+		System.out.println("호출 시간 : " + sdf.format(new Date()));
+		System.out.println("-------------------------------");
+		
+		
+	}
+}

@@ -1,0 +1,8 @@
+package kr.co.mlec.hello;
+
+@Controller
+public class HelloController {
+	
+}
+
+

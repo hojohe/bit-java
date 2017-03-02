@@ -1,9 +1,0 @@
-package annotation.exam04;
-
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Target;
-
-@Targetet(ElementType.METHOD)
-public @interface ClassAnno {
-	String value();
-}

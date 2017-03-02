@@ -1,0 +1,10 @@
+package _01_basic;
+
+public class BoardController implements Controller {
+
+	@Override
+	public void execute() throws Exception {
+		
+	}
+
+}

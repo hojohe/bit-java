@@ -1,8 +1,0 @@
-package annotation.exam03;
-
-import java.lang.annotation.Target;
-
-@Target(value={ElementType})
-public @interface MyTarget {
-	
-}

@@ -1,0 +1,13 @@
+package kr.co.mlec.hello;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HelloController {
+    public ModelAndView hello() { 
+        ModelAndView mav = new ModelAndView("hello/hello");         mav.addObject("msg", "hi ½ºÇÁ¸µ MVC~~"); 
+        return mav; 
+    }
+}
+
+

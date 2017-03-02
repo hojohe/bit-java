@@ -1,6 +1,0 @@
-package annotation.exam04;
-
-@Target({ElementType.METHOD})
-public @interface ClassAnno {
-	String value();
-}

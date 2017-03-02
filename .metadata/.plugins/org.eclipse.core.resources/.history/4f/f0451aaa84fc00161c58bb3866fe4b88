@@ -1,0 +1,5 @@
+package _03_basic;
+
+public class ProxyController implements Controller {
+
+}

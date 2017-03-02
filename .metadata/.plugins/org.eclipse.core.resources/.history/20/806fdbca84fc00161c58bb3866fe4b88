@@ -1,0 +1,16 @@
+package _03_basic;
+
+public class ProxyController implements Controller {
+
+	private Controller controller;
+	
+	public ProxyController(Controller controller) {
+		
+	}
+	
+	@Override
+	public void execute() throws Exception {
+		
+	}
+
+}

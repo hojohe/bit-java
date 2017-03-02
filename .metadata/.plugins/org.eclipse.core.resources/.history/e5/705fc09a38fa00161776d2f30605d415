@@ -1,0 +1,59 @@
+package kr.co.mlec.board.controller;
+
+import java.util.List;
+
+import org.springframework.mvc.Controller;
+import org.springframework.mvc.ModelAndView;
+import org.springframework.mvc.RequestMapping;
+
+import kr.co.mlec.board.dao.BoardDAO;
+import kr.co.mlec.board.vo.BoardVO;
+import kr.co.mlec.repository.vo.SearchVO;
+
+@Controller
+public class BoardController {
+	
+	private BoardDAO dao;
+	
+	public BoardController() {
+		this.dao = new BoardDAO();
+	}
+	
+	@RequestMapping("/board/list1.do")
+	public ModelAndView list1(SearchVO search) throws Exception {
+		List<BoardVO> list = dao.selectBoard(search);
+		int count = dao.selectBoardCount(search);
+		
+		// 마지막 페이지 구하기
+//		int lastPage = (count % 10 == 0) ? count / 10 : count / 10 + 1;
+//		System.out.println(lastPage);
+		
+		int lastPage = (int)Math.ceil(count / 10d);
+		
+		ModelAndView mav = new ModelAndView("board/list1");
+		mav.addAttribute("list", list);
+		mav.addAttribute("count", count);
+		mav.addAttribute("lastPage", lastPage);
+		mav.addAttribute("pageNo", search.getPageNo());
+		return mav;
+	}
+	
+	public static void main(String[] args) {
+		for (int count = 0; count < 100; count++) {
+			// 마지막 페이지 구하기
+			int p1 = (count % 10 == 0) ? count / 10 : count / 10 + 1;
+			int p2 = (int)Math.ceil(count / 10d);
+			System.out.println(p1 + "-" + p2);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

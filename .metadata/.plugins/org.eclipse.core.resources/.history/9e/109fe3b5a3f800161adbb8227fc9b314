@@ -1,6 +1,0 @@
-package org.springframework.mvc;
-
-@Target()
-public @interface RequestParam {
-	String value();
-}

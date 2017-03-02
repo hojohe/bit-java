@@ -1,0 +1,5 @@
+package kr.co.mlec.interceptor;
+
+public class AuthInterceptor {
+
+}
